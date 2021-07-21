@@ -1,0 +1,4 @@
+/node_modules/
+/.vuepress/dist
+/package-lock.json
+/.vuepress/public/assets/*.json

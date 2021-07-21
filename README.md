@@ -1,1 +1,3 @@
-# documentation
+---
+home: true
+---

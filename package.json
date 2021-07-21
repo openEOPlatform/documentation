@@ -1,0 +1,30 @@
+{
+	"name": "docs.openeo.cloud",
+	"version": "1.0.0",
+	"author": "openEO Platform",
+	"description": "The openEO Platform homepage, powered by VuePress.",
+	"license": "Apache-2.0",
+	"homepage": "https://docs.openeo.cloud",
+	"bugs": {
+		"url": "https://github.com/openEOPlatform/documentation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/openEOPlatform/documentation.git"
+	},
+	"devDependencies": {
+		"@openeo/processes-docgen": "^1.2.0",
+		"@vuepress/plugin-active-header-links": "^1.5.2",
+		"dayjs": "^1.8.30",
+		"vuepress": "^1.5.2",
+		"vuepress-plugin-check-md": "0.0.2",
+		"vuepress-plugin-code-copy": "^1.0.6",
+		"vuepress-plugin-code-switcher": "^1.1.0"
+	},
+	"scripts": {
+		"prepare": "node .vuepress/prepare.js",
+		"build": "npm run prepare && vuepress build",
+		"dev": "npm run prepare && vuepress dev",
+		"test": "npm run prepare && vuepress check-md"
+	}
+}
