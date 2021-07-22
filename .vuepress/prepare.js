@@ -11,6 +11,8 @@ copyFromWeb(
 	'.vuepress/public/assets/openapi.yaml'
 );
 
+// https://api.github.com/repos/Open-EO/openeo.org/git/trees/master?recursive=true
+
 function copyFromWeb(from, to) {
 	var file = fs.createWriteStream(to);
 	https.get(from, response => {

@@ -1,5 +1,8 @@
 <template>
-	<FileFormats heading="File Formats for Import and Export" :formats="formats" />
+	<section>
+		<p v-if="!collections">Loading data...</p>
+		<FileFormats v-else heading="File Formats for Import and Export" :formats="formats" />
+	</section>
 </template>
 
 <script>
@@ -13,7 +16,7 @@ export default {
 	},
 	data() {
 		return {
-			formats: {}
+			formats: null
 		};
 	},
 	async created() {

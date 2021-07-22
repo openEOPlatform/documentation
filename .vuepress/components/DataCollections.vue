@@ -1,5 +1,8 @@
 <template>
-	<Collections :collections="collections" :loadAdditionalData="loadCollection" />
+	<section>
+		<p v-if="!collections">Loading data...</p>
+		<Collections v-else :collections="collections" :loadAdditionalData="loadCollection" />
+	</section>
 </template>
 
 <script>
