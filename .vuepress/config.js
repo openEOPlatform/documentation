@@ -32,7 +32,7 @@ module.exports = {
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
       ] },
       { text: 'Processes', link: '/processes/' },
-      { text: 'File Formats (Import/Export)', link: '/file-formats/' },
+      { text: 'File Formats', link: '/file-formats/' },
 //    { text: 'Developers', items: [
         { text: 'API', link: '/api/' },
 //    ] },

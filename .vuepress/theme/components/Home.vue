@@ -16,7 +16,7 @@
         <NavLink class="action-button" :item="{link: 'https://openeo.cloud/contact/', text: 'Contact'}"/>
       </p>
     </header>
-
+<!--
     <div class="features">
       <div class="feature">
         <h2>Get started</h2>
@@ -39,7 +39,7 @@
         </ul>
       </div>
     </div>
-
+-->
     <Content class="theme-default-content custom"/>
   </main>
 </template>

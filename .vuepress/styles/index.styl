@@ -3,6 +3,7 @@
     border-bottom-width: 4px;
     border-bottom-style: solid;
     border-color: #335E6F;
+    z-index: 9999;
 }
 
 .navbar .links {
@@ -17,15 +18,13 @@
 a:not(.action-button), a.sidebar-link, .mobile-dropdown-title {
     color: #00AE9D !important;
     transition: all .3s ease-in-out !important;
+    text-decoration: none !important;
 }
 .mobile-dropdown-title  {
     font-size: 1em !important;
 }
 a:not(.action-button):hover, a.sidebar-link:hover {
     color: #003247 !important;
-}
-.page a:not(.action-button), .home a:not(.action-button) {
-    text-decoration: underline;
 }
 
 
@@ -76,6 +75,18 @@ a:not(.action-button):hover, a.sidebar-link:hover {
     background-color: black !important;
 }
 
-tr:nth-child(2n) {
+.vue-component th,
+.vue-component td,
+.vue-component tr {
+    border: 0 !important;
+} 
+.vue-component tr {
     background-color: inherit !important;
+}
+
+.vue-component.search-box span.icon {
+    display: none;
+}
+.vue-component.search-box input {
+    left: 0 !important;
 }
