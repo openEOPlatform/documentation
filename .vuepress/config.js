@@ -25,6 +25,7 @@ module.exports = {
       { text: 'Use Cases', items: [
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
         { text: 'Analysis-Ready Data (ARD)', items: [
+          { text: 'Overview', link: '/usecases/ard/' },
           { text: 'SAR (Sentinel-1)', link: '/usecases/ard/sar/' },
           { text: 'Multi-Spectral Imagery', link: '/usecases/ard/msi/' },
         ] },
