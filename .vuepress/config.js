@@ -34,9 +34,10 @@ module.exports = {
       ] },
       { text: 'Processes', link: '/processes/' },
       { text: 'File Formats', link: '/file-formats/' },
-//    { text: 'Developers', items: [
-        { text: 'API', link: '/api/' },
-//    ] },
+      { text: 'Advanced', items: [
+        { text: 'Federation Aspects', link: '/federation/' },
+        { text: 'HTTP API', link: '/api/' },
+      ] },
       { text: 'Contact', link: 'https://openeo.cloud/contact/' }
     ],
     sidebar: 'auto'
