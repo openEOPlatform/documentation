@@ -4,7 +4,7 @@
     aria-labelledby="main-title"
   >
     <header class="hero">
-      <img src="https://openeo.cloud/wp-content/uploads/2021/07/openEO-platform-KY-horizontal.png" alt="openEO Platform">
+      <img src="/images/logo.png" alt="openEO Platform">
 
       <p class="description">
         This is the user manual for the European EO cloud service provider <strong>openEO Platform</strong>.<br />
