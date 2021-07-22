@@ -101,7 +101,7 @@ info.links().forEach(link => {
 ### Collections
 
 Collections represent the basic data the back-end provides (e.g. Sentinel 2 collection).
-Collections are used as input data for job executions ([more info on collections](../glossary.md#eo-data-collections)).
+Collections are used as input data for job executions ([more info on collections](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections)).
 With the following code snippet you can print all 400+ available collection names and their summary.
 
 ```js
@@ -116,7 +116,7 @@ To get detailed information about a single collection, you can pass any of the c
 In this example we request information about the Sentinel-2 Level 1C data from Google:
 
 ```js
-console.log(await con.describeCollection("COPERNICUS/S2"));
+console.log(await con.describeCollection("SENTINEL1_GRD"));
 ```
 
 The collections descriptions returned by `listCollections` are usually not complete. To get the full set of metadata you should always use `describeCollection`.
@@ -125,7 +125,7 @@ The collections descriptions returned by `listCollections` are usually not compl
 
 Processes in openEO are small tasks that can be applied on (EO) data.
 The input of a process might be the output of another process, so that several connected processes form a new (user-defined) process itself.
-Therefore, a process resembles the smallest unit of task descriptions in openEO.
+Therefore, a process resembles the smallest unit of task descriptions in openEO ([more details on processes](https://openeo.org/documentation/1.0/glossary.html#processes)).
 With the following code snippet you can print all available process IDs and their summaries.
 
 ```js
@@ -147,7 +147,9 @@ console.log(await con.describeProcess("apply"));
 
 For a graphical overview of the openEO processes, please see our [online documentation](../../processes/index.md)
 
-## Authentication 
+## Authentication
+
+TODO (WWU)
 
 In the code snippets above, authentication is usually not necessary, since we only fetch general information about the back-end.
 To run your own jobs at the back-end or to access job results, you need to authenticate at the back-end.
@@ -169,7 +171,7 @@ If you have included the library using HTML `script` tags, then you need to incl
 No further action is required, if you have installed the client via npm.
 ::: 
 
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/2.0.0/OidcProvider.html) for more information.
+As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) and the [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/2.0.0/OidcProvider.html) for more information.
 
 
 ## Creating a (user-defined) process

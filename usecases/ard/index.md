@@ -1,4 +1,6 @@
-ToDo: Infos about ARD on openEO Platform (pre-computed, on-demand, ...)
+# Analysis-Ready Data (ARD)
+
+ToDo (EURAC/EODC/VITO): Infos about ARD on openEO Platform (pre-computed, on-demand, ...)
 
 **Examples:**
 * [SAR](./sar/index.md)
