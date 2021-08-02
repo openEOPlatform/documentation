@@ -7,7 +7,7 @@ multiple instances.
 
 This image gives you a look at platforms that make up the federation:
 
-![openeo.cloud federation](federation.png "openeo.cloud federation")
+![openeo.cloud federation](./federation.png)
 
 At this time, the federation can not yet entirely hide the fact that it is built out of 
 separate components:
