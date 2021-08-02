@@ -7,13 +7,21 @@
       <img src="/images/logo.png" alt="openEO Platform">
 
       <p class="description">
-        This is the user manual for the European EO cloud service provider <strong>openEO Platform</strong>.<br />
-        If you can't find what you are looking for, please submit a request to our community forums or contact us directly.
+        This is the user manual for the European EO cloud service provider <strong>openEO Platform</strong>.
+        Get started now:
       </p>
 
       <p class="action">
-        <NavLink class="action-button" :item="{link: 'https://forums.openeo.cloud', text: 'Forums'}"/>
-        <NavLink class="action-button" :item="{link: 'https://openeo.cloud/contact/', text: 'Contact'}"/>
+        <NavLink class="action-button" :item="{link: 'https://openeo.org/documentation/1.0/datacubes.html', text: 'Data Cubes'}"/>
+        <NavLink class="action-button" :item="{link: '/getting-started/editor/', text: 'Editor'}"/>
+        <NavLink class="action-button" :item="{link: '/getting-started/javascript/', text: 'JavaScript'}"/>
+        <NavLink class="action-button" :item="{link: '/getting-started/jupyterlab/', text: 'JupyterLab'}"/>
+        <NavLink class="action-button" :item="{link: '/getting-started/python/', text: 'Python'}"/>
+        <NavLink class="action-button" :item="{link: '/getting-started/r/', text: 'R'}"/>
+      </p>
+
+      <p class="description">
+        If you can't find what you are looking for, please submit a request to our <a href="https://forums.openeo.cloud" target="_blank">community forums</a> or <a href="https://openeo.cloud/contact/" target="_blank">contact us</a> directly.
       </p>
     </header>
 <!--
