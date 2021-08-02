@@ -42,7 +42,7 @@ First we need to establish a connection to the openEO Platform back-end, which i
 
 ```python
 import openeo
-connection = openeo.connect("https://earthengine.openeo.org")
+connection = openeo.connect("openeo.cloud")
 ```
 
 The [`connection` object](https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.connection) bundles information about the back-end, so that the provided data and capabilities can be accessed. 
@@ -117,10 +117,10 @@ The following code snippet shows how to log in via OIDC authentication:
 
 ```python
 print("Authenticate with OIDC authentication")
-connection.authenticate_OIDC("Client ID")
+connection.authenticate_OIDC()
 ```
 
-Calling this method opens your system web browser, with which you can authenticate yourself on the back-end authentication system. 
+Calling this method shows a link that you can open in your system web browser, with which you can authenticate yourself on the back-end authentication system. 
 After that the website will give you the instructions to go back to the python client, where your connection has logged your account in. 
 This means, that every call that comes after that via the connection variable is executed by your user account.
 
