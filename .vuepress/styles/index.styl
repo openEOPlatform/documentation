@@ -17,7 +17,6 @@
 
 a:not(.action-button), a.sidebar-link, .mobile-dropdown-title {
     color: #00AE9D !important;
-    transition: all .3s ease-in-out !important;
     text-decoration: none !important;
 }
 .mobile-dropdown-title  {
@@ -89,4 +88,14 @@ a:not(.action-button):hover, a.sidebar-link:hover {
 }
 .vue-component.search-box input {
     left: 0 !important;
+}
+
+.theme-default-content pre, .theme-default-content pre[class*=language-] {
+    color: white;
+}
+
+// Makes (for example) long CRS lists scrollable
+.vue-component.collections .value > .formatted {
+    max-height: 20em;
+    overflow: auto;
 }
