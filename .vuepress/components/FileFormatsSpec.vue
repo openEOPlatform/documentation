@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<p v-if="!collections">Loading data...</p>
+		<p v-if="!formats">Loading data...</p>
 		<FileFormats v-else heading="File Formats for Import and Export" :formats="formats" />
 	</section>
 </template>
