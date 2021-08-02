@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<p v-if="!collections">Loading data...</p>
-		<Collections v-else :collections="collections" :loadAdditionalData="loadCollection" />
+		<Collections v-else :collections="collections" :showKeywords="true" :loadAdditionalData="loadCollection" />
 	</section>
 </template>
 
