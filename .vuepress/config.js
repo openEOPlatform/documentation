@@ -38,7 +38,8 @@ module.exports = {
         { text: 'Federation Aspects', link: '/federation/' },
         { text: 'HTTP API', link: '/api/' },
       ] },
-      { text: 'Contact', link: 'https://openeo.cloud/contact/' }
+      { text: 'Contact', link: 'https://openeo.cloud/contact/' },
+      { text: 'openeo.cloud', link: 'https://openeo.cloud' }
     ],
     sidebar: 'auto'
   },
