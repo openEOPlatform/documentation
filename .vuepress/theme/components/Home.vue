@@ -21,7 +21,7 @@
       </p>
 
       <p class="description">
-        If you can't find what you are looking for, please submit a request to our <a href="https://forums.openeo.cloud" target="_blank">community forums</a> or <a href="https://openeo.cloud/contact/" target="_blank">contact us</a> directly.
+        If you can't find what you are looking for, please <a href="https://openeo.cloud/contact/" target="_blank">contact us</a> directly.
       </p>
     </header>
 <!--
