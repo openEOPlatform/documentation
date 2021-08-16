@@ -221,7 +221,7 @@ Other so called "reducer" processes exist, e.g. for computing maximum and mean v
 
 ::: tip Note
 Everything applied to the datacube at this point is neither executed locally on your machine nor executed on the back-end.
-It just defines the input data and process chain the back-end needs to apply when it sends the data cube to the back-end and executes it there.
+It just defines the input data and process chain the back-end needs to apply when it sends the datacube to the back-end and executes it there.
 How this can be done is the topic of the next chapter. 
 :::
 
