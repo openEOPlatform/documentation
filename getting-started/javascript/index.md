@@ -113,7 +113,7 @@ response.collections.forEach(collection => {
 ```
 
 To get detailed information about a single collection, you can pass any of the collection IDs requested earlier to `describeCollection` and get a full object of [STAC compliant Collection metadata](https://github.com/radiantearth/stac-spec/tree/v1.0.0/collection-spec/collection-spec.md) back.
-In this example we request information about the Sentinel-2 Level 1C data from Google:
+In this example we request information about the Sentinel-1 GRD data from Terrascope:
 
 ```js
 console.log(await con.describeCollection("SENTINEL1_GRD"));
@@ -183,7 +183,7 @@ First we need to create a user-defined process and for that a process builder is
 var builder = await con.buildProcess();
 ```
 
-With the builder, a [datacube]((https://openeo.org/documentation/1.0/glossary.html#spatial-datacubes) can be initialized by selecting a collection from the back-end with the process `load_collection`:
+With the builder, a [datacube](https://openeo.org/documentation/1.0/glossary.html#spatial-datacubes) can be initialized by selecting a collection from the back-end with the process `load_collection`:
 
 ```js
 var datacube = builder.load_collection(
@@ -215,13 +215,13 @@ var min = function(data) { return this.min(data); };
 datacube = builder.reduce_dimension(datacube, min, "t");
 ```
 
-The datacube is now reduced by the time dimension named `t`, by taking the maximum value of the timeseries values.
+The datacube is now reduced by the time dimension named `t`, by taking the minimum value of the timeseries values.
 Now the datacube has no time dimension left.
-Other so called "reducer" processes exist, e.g. for computing minimum and mean values.
+Other so called "reducer" processes exist, e.g. for computing maximum and mean values.
 
 ::: tip Note
 Everything applied to the datacube at this point is neither executed locally on your machine nor executed on the back-end.
-It just defines the input data and process chain the back-end needs to apply, when sending and executing the datacube at the back-end.
+It just defines the input data and process chain the back-end needs to apply when it sends the data cube to the back-end and executes it there.
 How this can be done is the topic of the next chapter. 
 :::
 
@@ -233,7 +233,7 @@ var result = builder.save_result(datacube, "GTiff");
 
 ## Batch Job Management
 
-After you gave finished working on your (user-defined) process, we can now send it to the back-end and start the execution. 
+After you finished working on your (user-defined) process, we can now send it to the back-end and start the execution. 
 In openEO, an execution of a (user-defined) process (here defined using the process builder) is called a [(batch) job](https://openeo.org/documentation/1.0/glossary.html#data-processing-modes).
 Therefore, we need to create a job at the back-end using our datacube, giving it the title `Example Title`.
 
