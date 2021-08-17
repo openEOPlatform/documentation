@@ -216,7 +216,7 @@ jobs = list_jobs()
 jobs # printed as a tibble or data.frame, but the object is a list
 
 # or use the job id (in this example 'cZ2ND0Z5nhBFNQFq') as index to get a particular job overview
-list_jobs()$cZ2ND0Z5nhBFNQFq
+jobs$cZ2ND0Z5nhBFNQFq
 
 # alternatively request detailed information about the job
 describe_job(job = job)
