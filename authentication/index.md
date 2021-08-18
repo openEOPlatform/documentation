@@ -50,7 +50,7 @@ you have to setup a *Terrascope account*.
 Luckily, Terrascope also uses the same authentication service as EOSC,
 so you can quickly use your existing account to bootstrap a new Terrascope account.
 
-::: note
+::: tip Note
 If you already have an existing Terrascope account, you can also link your account to it,
 which should happen automatically (based on common email address) 
 if you follow the procedure below.
