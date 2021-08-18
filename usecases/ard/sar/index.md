@@ -14,12 +14,12 @@ with the exception of specifying filters in space and time.
 
 This section shows a few working examples for these processes.
 
-## EODC backend
+## EODC back-end
 
 
 EODC supports sar_backscatter, based on the [Sentinel-1 toolbox](https://sentinel.esa.int/web/sentinel/toolboxes/sentinel-1).
 
-## Terrascope backend
+## Terrascope back-end
 
 
 When working with the Sentinelhub SENTINEL1_GRD collection, both sar processes can be used. The underlying implementation is

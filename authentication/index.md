@@ -32,7 +32,7 @@ The next step will be to join the openEO virtual organization, this registers yo
 
  
  
-Finally, to optimally use the Terrascope backend, you need to provide your account information, so that it can give you access to the processing
+Finally, to optimally use the Terrascope back-end, you need to provide your account information, so that it can give you access to the processing
 resources. The recommended approach is to make sure that your Terrascope account is linked to EGI credentials, which are 
 also used by the [European Open Science Cloud](https://eosc-portal.eu/) .
  

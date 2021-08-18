@@ -1,6 +1,6 @@
 # Analysis-Ready Data (ARD)
 
-For certain use cases, the preprocessed data collections available in the openEO backends are not sufficient or simply not
+For certain use cases, the preprocessed data collections available in the openEO back-ends are not sufficient or simply not
 available. For that case, openEO supports a few very common preprocessing scenario:
 
 - Atmospheric correction of optical data
