@@ -1,57 +1,92 @@
 # Authentication
 
-To log in to the platform, you do not need to create a new username and password, but instead we rely on a 
-service provided by the [European Open Science Cloud 'EOSC'](https://aai.eosc-portal.eu), that allows you to login with
-a username and password from either your institution, or a social media account.
 
-Therefore, the first step is to check if you can log in to the EOSC portal. Upon your first login,
-you will have to complete a registration procedure. If problems occur during this process, you will want to 
+To log in to the openEO platform or related services,
+you do not need to pick a username and invent a new password.
+Instead, we rely on an authentication service provided by the [European Open Science Cloud 'EOSC'](https://aai.eosc-portal.eu), 
+that allows you to login through an existing account from either your institution, or a social media platform.
+
+## Connect an existing account
+
+The first step is to check if you can log in to the [EOSC portal](https://eosc-portal.eu). 
+Upon your first login, you will have to complete a small registration procedure
+to properly connect your account.
+If problems occur during this process, you will want to 
 ask for help using the [EOSC support](https://eosc-portal.eu/helpdesk) channel.
 
-Note that if you are the first member of your institution to log in to EOSC, such problems may occur and sometimes
-require your institution's IT team to properly support EOSC login through EduGain.
+::: tip Note
+If you are the first member of your institution to log in to EOSC, 
+such problems may occur and sometimes  require your institution's IT team 
+to properly support EOSC login through EduGain.
+:::
 
-#### Security & Privacy
+
+### Security & Privacy
 
 This procedure has important advantages for our users:
 
-- openEO platform does not need to retain or exchange you account password. That information is only exchanged with your 
-institution or social media platform, to avoid the possibility of leaking your login details.
-- openEO platform only retains minimal information about its users, like an email address to contact you in case of issues, and 
-a few more general attributes, like an institution name or country to report on the uptake of EO data and processing services.
-- Processes and data that you send to the platform may be retained for a limited time, to allow platform operators to
-help you in case of issues.  
+- Neither openEO platform nor EOSC see, handle or store your password.
+  That information is only exchanged directly with your institution or social media platform, 
+  to minimize the risk of leaking sensitive credentials.
+- openEO platform only retains minimal information about its users,
+  such as an email address to be able to contact you, 
+  and a few more general attributes, 
+  like an institution name or country to report on the uptake of EO data and processing services.
+- Processes and data that you send to the platform may be retained for a limited time, 
+  to allow platform operators to help you in case of issues.  
 
 ## Virtual organization
  
-*Experimental* 
- 
 The next step will be to join the openEO virtual organization, this registers yourself as a user for the platform.
- 
-## Terrascope login
 
+::: warning
+This feature is still experimental 
+:::
  
- 
-Finally, to optimally use the Terrascope back-end, you need to provide your account information, so that it can give you access to the processing
-resources. The recommended approach is to make sure that your Terrascope account is linked to EGI credentials, which are 
-also used by the [European Open Science Cloud](https://eosc-portal.eu/) .
- 
-You can do this by choosing 'EduGAIN and social logins' when you log in to the [Terrascope portal](https://terrascope.be). This will start a one 
-time process, that should enable login to all Terrascope services using your institution or social media credentials.
+## Terrascope registration
 
-## Logging in
+To get optimal access to the processing resources of the Terrascope back-end,
+you have to setup a *Terrascope account*.
+Luckily, Terrascope also uses the same authentication service as EOSC,
+so you can quickly use your existing account to bootstrap a new Terrascope account.
 
-After this is done, you should be able to connect like this when working in Python:
+::: note
+If you already have an existing Terrascope account, you can also link your account to it,
+which should happen automatically (based on common email address) 
+if you follow the procedure below.
+:::
+
+To set up the Terrascope account: go to the [Terrascope portal](https://terrascope.be),
+click the "sign in" menu item at the top, and pick the 'EduGAIN and social logins' 
+to log in.
+After a one time registration process you should have access to all Terrascope services
+using your institution or social media credentials.
+
+
+
+## Connect to the openEO platform
+
+After one time account setup describe above, 
+you should be able to create an authenticated connection,
+e.g. from your Python code, like this:
 
 ```python
 import openeo
 connection = openeo.connect("openeo.cloud").authenticate_oidc()
 ```
- This will show a link to a website, and a code that needs to be entered there. After doing this once, you should be able
- to set up connections in the same way for some time, without requiring you to follow this again.
- 
- More detailed information on authentication, can be found
- [here](https://open-eo.github.io/openeo-python-client/auth.html#openid-connect-based-authentication).
+
+The `authenticate_oidc()` call will show a link to a website, and a short "device" code.
+Go to that website in your preferred web browser, log in (if necessary), and
+enter the "device" code when asked for it.
+After doing this, you should have an authenticated connection in your Python script or application.
+
+On top of that, a so-called "refresh token" will be stored on the machine that executes 
+that Python code. 
+As long as this refresh token hasn't expired, the `authenticate_oidc()` call
+will work directly without having to visit that website and enter the device code.
+
+More detailed information on authentication can be found
+[here](https://open-eo.github.io/openeo-python-client/auth.html#openid-connect-based-authentication).
  
  
  
