@@ -172,7 +172,7 @@ datacube = datacube.process(process_id="ndvi",
                                    "red": "B4"})
 ```
 
-This applies the [`ndvi` process](../processes.md#ndvi) to the datacube with the arguments of "nir" and "red". 
+This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "nir" and "red". 
 The "data" argument defines the input of the process and we chose latest added process of the datacube.
 
 
