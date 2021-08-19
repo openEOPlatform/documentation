@@ -163,24 +163,22 @@ Now the datacube has no time dimension left.
 Other so called "reducer" processes exist, e.g. for computing maximum and mean values.
 A list of supported processes using the Python client datacube can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/).
 
+:::tip Manually Adding Processes
 Applying a process not supported by the Python client can be added to the datacube manually:
 
 ```python
-datacube = datacube.process(process_id="ndvi", 
-                            args={ "data": {"from_node": datacube._pg}, 
-                                   "nir": "B8", 
-                                   "red": "B4"})
+datacube = datacube.process(
+    process_id="ndvi", 
+    arguments={
+        "data": datacube, 
+        "nir": "B8", 
+        "red": "B4"}
+)
 ```
 
-This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "nir" and "red". 
-The "data" argument defines the input of the process and we chose latest added process of the datacube.
-
-
-::: tip Note
-Everything applied to the datacube at this point is neither executed locally on your machine nor executed on the back-end.
-It just defines the input data and process chain the back-end needs to apply when it sends the datacube to the back-end and executes it there.
-How this can be done is the topic of the next chapter. 
+This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "data", "nir" and "red". This example requires a datacube that includes bands `B8` and `B4`.
 :::
+
 ::: tip Note
 Still unsure on how to make use of processes with the Python client? Visit the [official documentation](https://open-eo.github.io/openeo-python-client/processes.html#working-with-processes).
 :::
@@ -190,6 +188,12 @@ After applying all processes you want to execute, we need to tell the back-end t
 ```python
 result = datacube.save_result("GTiff")
 ```
+
+::: tip Note
+Everything applied to the datacube at this point is neither executed locally on your machine nor executed on the back-end.
+It just defines the input data and process chain the back-end needs to apply when it sends the datacube to the back-end and executes it there.
+How this can be done is the topic of the next chapter. 
+:::
 
 ## Batch Job Management
 
