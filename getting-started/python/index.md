@@ -1,38 +1,25 @@
 # Python Client
 
-This Getting Started guide will give you just a simple overview of the capabilities of the Python client.
-For a more detailed introduction or if you are pretty confident in Python we recommend to visit the [official documentation](https://open-eo.github.io/openeo-python-client/).
+This Getting Started guide will give you just a simple overview of the capabilities of the openEO Python client library.
+More in-depth information can be found in the [official documentation](https://open-eo.github.io/openeo-python-client/).
 
 ## Installation
 
-Before you install the Python client module into your Python environment, please make sure that you have at least Python version 3.5.
-
-The [latest stable release](https://pypi.org/project/openeo/) can be installed via [PyPi](https://pypi.org/) by using the following command:
+The openEO Python client library is available on [PyPI](https://pypi.org/project/openeo/)
+and can easily be installed with a tool like `pip`, for example:
 
 ```shell script
 pip install openeo
 ```
 
-If you want to install the development version, please have a look at the [official documentation](https://open-eo.github.io/openeo-python-client/).
-It may contain more features, but may also be unstable.
+It's recommended to work in a virtual environment of some kind (`venv`, `conda`, ...),
+containing Python 3.6 or higher.
 
-You can check the installation by trying to import the openeo module in the Python console:
+::: tip
+For more details, alternative installation procedures or troubleshooting tips:
+see the [official ``openeo`` installation documentation](https://open-eo.github.io/openeo-python-client/installation.html).
+:::
 
-```python
-import openeo
-```
-
-If this gives you the output below, something went wrong with the installation. In that case, please check the requirements again. If you still have troubles installing the Python module, feel free to leave an issue at the [GitHub project](https://github.com/Open-EO/openeo-python-client/issues).
-
-```shell script
->>> import openeo
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-ModuleNotFoundError: No module named 'openeo'
-```
-
-Now that the installation was successfully finished, we can connect to openEO compliant back-ends. 
-In the following chapters we quickly walk through the main features of the Python client.
 
 ## Connecting to openEO Platform
 
