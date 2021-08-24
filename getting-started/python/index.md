@@ -117,27 +117,33 @@ You can also use the [openEO Hub](https://hub.openeo.org/) for back-end specific
 or browse the [reference specifications of openEO processes](https://processes.openeo.org/).
 
 
-## Authentication
+### Authentication
 
-TODO (VITO)
+In the code snippets above we did not need to log in
+since we just queried publicly available back-end information.
+However, to run non-trivial processing queries one has to authenticate
+so that permissions, resource usage, etc. can be managed properly.
 
-In the code snippets above, authentication is usually not necessary, since we only fetch general information about the back-end.
-To run your own jobs at the back-end or to access job results, you need to authenticate at the back-end.
+To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
+It offers some interesting features (e.g. a user can securely reuse an existing account),
+but is a fairly complex topic, discussed in more depth in the general 
+[authentication documentation for openEO Platform](../../authentication/index.md) .
 
-[OpenID Connect (OIDC)](https://openid.net/connect/) authentication can be used to authenticate with openEO Platform.
-
-The following code snippet shows how to log in via OIDC authentication:
+The openEO Python client library tries to make authentication as streamlined as possible.
+For example, the following snippet illustrates how you can authenticate
+from a Python script or notebook:
 
 ```python
-print("Authenticate with OIDC authentication")
-connection.authenticate_OIDC()
+connection.authenticate_oidc()
 ```
 
-Calling this method shows a link that you can open in your system web browser, with which you can authenticate yourself on the back-end authentication system. 
-After that the website will give you the instructions to go back to the python client, where your connection has logged your account in. 
-This means that every call that comes after that via the connection variable is executed by your user account.
+This statement will reuse a previously authenticated session, when available, 
+and otherwise print a web link and a short user code because user interaction is required.
+After successfully visiting the web link in a browser, authenticating there and entering the user code, 
+the connection in the script will also be authenticated.
+This means that subsequent requests from the `connection` object will 
+be properly identified by the back-end as coming from your user.
 
-As OpenID Connect authentication is a bit more complex and depends on the environment you are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
 
 ## Creating a Datacube
 
