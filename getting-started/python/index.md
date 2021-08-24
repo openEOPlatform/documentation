@@ -43,18 +43,31 @@ import openeo
 connection = openeo.connect("openeo.cloud")
 ```
 
-The [`connection` object](https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.connection) bundles information about the back-end, so that the provided data and capabilities can be accessed. 
+The [`connection` object](https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.connection)
+is your central gateway to
+- list data collections, available processes, file formats and other capabilities of the back-end
+- start building your openEO algorithm
+- execute and monitor (batch) jobs
+- etc.
 
-The capabilities of the back-end is publicly available and therefore you do not need to have an account on the back-end for reading them.
 
 ### Collections
 
-Collections represent the basic data the back-end provides (e.g. Sentinel 1 collection).
-Collections are used as input data for job executions ([more info on collections](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections)).
+The EO data available at a back-end is organised in so called collections.
+For example, a back-end might provide fundamental satellite collections like "Sentinel 1" or "Sentinel 2",
+or preprocessed collections like "NDVI".
+Collections are used as input data for job executions.
+
+::: tip Note
+More information on how openEO "collections" relate to terminology used in other systems can be found in
+([the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections)).
+:::
+
+
 With the following code snippet you can get all available collection names and their description.
 
 ```python
-# List of available data collections and some metadata (dict)
+# List of available data collections and some basic metadata (dict)
 print("Available Collections")
 print(connection.list_collections())
 
@@ -62,7 +75,7 @@ print(connection.list_collections())
 print("Describe SENTINEL1_GRD")
 print(connection.describe_collection("SENTINEL1_GRD"))
 ```
-The execution of the code above results in:
+The execution of the code above results in something like:
 ```shell script
 Available Collections
 [{'id': 'AGERA5', 'title': 'ECMWF AGERA5 meteo dataset - experimental', ...}, { 'id': 'SENTINEL1_GRD', ...}]
@@ -71,7 +84,8 @@ Describe SENTINEL1_GRD
 ```
 
 By calling [`list_collections`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_collections), a list of collection dictionaries is returned. 
-The collections in the list have a general description, but to get the full collection metadata you need to call the [`describe_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.describe_collection) method. 
+The collections in the list have a general description, but to get the full collection metadata
+you need to call [`describe_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.describe_collection).
 
 
 ### Processes
