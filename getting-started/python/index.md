@@ -17,24 +17,26 @@ containing Python 3.6 or higher.
 
 ::: tip
 For more details, alternative installation procedures or troubleshooting tips:
-see the [official ``openeo`` installation documentation](https://open-eo.github.io/openeo-python-client/installation.html).
+see the [official ``openeo`` package installation documentation](https://open-eo.github.io/openeo-python-client/installation.html).
 :::
 
 
 ## Connecting to openEO Platform
 
-First we need to establish a connection to the openEO Platform back-end, which is available at `https://openeo.cloud`.
+First we need to establish a connection to the openEO Platform back-end, 
+which is available at connection URL `https://openeo.cloud`, or just in short:
 
 ```python
 import openeo
+
 connection = openeo.connect("openeo.cloud")
 ```
 
 The [`Connection` object](https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.connection)
 is your central gateway to
 - list data collections, available processes, file formats and other capabilities of the back-end
-- start building your openEO algorithm
-- execute and monitor (batch) jobs
+- start building your openEO algorithm from the desired data on the back-end
+- execute and monitor (batch) jobs on the back-end
 - etc.
 
 
@@ -43,7 +45,7 @@ is your central gateway to
 The EO data available at a back-end is organised in so-called collections.
 For example, a back-end might provide fundamental satellite collections like "Sentinel 1" or "Sentinel 2",
 or preprocessed collections like "NDVI".
-Collections are used as input data for job executions.
+Collections are used as input data for your openEO jobs.
 
 ::: tip Note
 More information on how openEO "collections" relate to terminology used in other systems can be found in
@@ -52,20 +54,19 @@ More information on how openEO "collections" relate to terminology used in other
 
 
 Let's list all available collections on the back-end,
-using [`list_collections`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_collections), which returns list of collection metadata dictionaries:
+using [`list_collections`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_collections):
 
 ```python
 print(connection.list_collections())
 ```
 
-The output will be something like:
+which returns list of collection metadata dictionaries, e.g. something like:
 
 ```
 [{'id': 'AGERA5', 'title': 'ECMWF AGERA5 meteo dataset', 'description': 'Daily surface meteorolociga datal ...', ...},
  {'id': 'SENTINEL2_L2A_SENTINELHUB', 'title': 'Sentinel-2 top of canopy', ...},
  {'id': 'SENTINEL1_GRD', ...},
- ...
-]
+ ...]
 ```
 
 This listing includes basic metadata for each collection.
@@ -75,8 +76,8 @@ If necessary, a more detailed metadata listing for a given collection can be obt
 ::: tip
 Programmatically listing collections is just a very simple usage example of the Python client.
 In reality, you probably want to look up or inspect available collections on handy webpage. 
-Check out [the openEO Platform collections overview](../../data-collections/index.md)
-or [openEO Hub](https://hub.openeo.org/) for collection listings of other back-ends.
+Check out the [openEO Platform collections overview](../../data-collections/index.md)
+or the [openEO Hub](https://hub.openeo.org/) for collection listings of other back-ends.
 :::
 
 
@@ -84,7 +85,7 @@ or [openEO Hub](https://hub.openeo.org/) for collection listings of other back-e
 ### Processes
 
 Processes in openEO are operations that can be applied on (EO) data
-(e.g calculate the mean of an array, or mask out observations outside a given polygon)
+(e.g. calculate the mean of an array, or mask out observations outside a given polygon).
 The output of one process can be used as the input of another process,
 and by doing so, multiple processes can be connected that way in a larger "process graph":
 a new (user-defined) processes that implements a certain algorithm.
@@ -96,13 +97,13 @@ for more details on pre-defined, user-defined processes and process graphs.
 
 
 Let's list the (pre-defined) processes available on the back-end
-with [`list_processes`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_processes) which returns a list of dictionaries describing the process (including expected arguments and return type): 
+with [`list_processes`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_processes):
 
 ```python
 print(connection.list_processes())
 ```
 
-Resulting in something like:
+which returns a list of dictionaries describing the process (including expected arguments and return type), e.g.: 
 
 ```
 [{'id': 'absolute', 'summary': 'Absolute value', 'description': 'Computes the absolute value of a real number `x`, which is th...', 
@@ -111,7 +112,7 @@ Resulting in something like:
 ```
 
 Like with collections, instead of programmatic exploration you'll probably prefer a 
-[visual overview of the available processes on openEO Platform](../../processes/index.md).
+[web-based overview of the available processes on openEO Platform](../../processes/index.md).
 You can also use the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions
 or browse the [reference specifications of openEO processes](https://processes.openeo.org/).
 
@@ -136,7 +137,7 @@ Calling this method shows a link that you can open in your system web browser, w
 After that the website will give you the instructions to go back to the python client, where your connection has logged your account in. 
 This means that every call that comes after that via the connection variable is executed by your user account.
 
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
+As OpenID Connect authentication is a bit more complex and depends on the environment you are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
 
 ## Creating a Datacube
 
