@@ -96,31 +96,38 @@ or [openEO Hub](https://hub.openeo.org/) for collection listings of other back-e
 
 ### Processes
 
-Processes in openEO are tasks that can be applied on (EO) data.
-The input of a process might be the output of another process, so that several connected processes themselves form a new (user-defined) process.
-Therefore, a process resembles the smallest unit of task descriptions in openEO ([more details on processes](https://openeo.org/documentation/1.0/glossary.html#processes)).
-The following code snippet shows how to get the available processes.
+Processes in openEO are operations that can be applied on (EO) data
+(e.g calculate the mean of an array, or mask out observations outside a given polygon)
+The output of one process can be used as the input of another process,
+and by doing so, multiple processes can be connected that way in a larger "process graph":
+a new (user-defined) processes that implements a certain algorithm.
+
+::: tip Note
+Check ([the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections))
+for more details on pre-defined, user-defined processes and process graphs.
+:::
+
+
+Let's list the (pre-defined) processes available on the back-end
+with [`list_processes`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_processes) which returns a list of dictionaries describing the process (including expected arguments and return type): 
 
 ```python
-print("Available Processes")
-
-# List of available openEO processes with full metadata (dict)
 print(connection.list_processes())
-
-# List of available openEO processes by identifiers (string)
-print([process["id"] for process in connection.list_processes()])
-```
-Resulting in:
-```shell script
-Available Processes
-[{'id': 'absolute', 'summary': 'Absolute value', 'description': 'Computes the absolute value of a real number `x`, which is the "unsigned" portion of x and often denoted as *|x|*.\n\nThe no-data value `null` is passed through and therefore gets propagated.', ... ]
-['absolute', 'add', 'add_dimension', 'aggregate_temporal_frequency', 'anomaly', 'apply', 'arccos',... ]
 ```
 
-The [`list_processes`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_processes) method returns a list of dictionaries with all openEO processes that the back-end provides.
-Each dictionary in the list contains the process identifier and metadata about the process, such as expected arguments and return types. 
-In the third print statement of the code block, just the identifiers of the supported processes are listed.
-For a graphical overview of the openEO processes, there is an [online documentation](../processes.md) for general process descriptions and the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions. 
+Resulting in something like:
+
+```
+[{'id': 'absolute', 'summary': 'Absolute value', 'description': 'Computes the absolute value of a real number `x`, which is th...', 
+ {'id': 'mean', 'summary': 'Arithmetic mean(average)', ...}
+ ...]
+```
+
+Like with collections, instead of programmatic exploration you'll probably prefer a 
+[visual overview of the available processes on openEO Platform](../../processes/index.md).
+You can also use the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions
+or browse the [reference specifications of openEO processes](https://processes.openeo.org/).
+
 
 ## Authentication
 
