@@ -1,7 +1,7 @@
 # Python Client
 
 This Getting Started guide will give you just a simple overview of the capabilities of the openEO Python client library.
-More in-depth information can be found in the [official documentation](https://open-eo.github.io/openeo-python-client/).
+More in-depth information can be found in its [official documentation](https://open-eo.github.io/openeo-python-client/).
 
 ## Installation
 
@@ -21,7 +21,7 @@ see the [official ``openeo`` package installation documentation](https://open-eo
 :::
 
 
-## Connecting to openEO Platform
+## Connect to openEO Platform and explore
 
 First we need to establish a connection to the openEO Platform back-end, 
 which is available at connection URL `https://openeo.cloud`, or just in short:
@@ -49,7 +49,7 @@ Collections are used as input data for your openEO jobs.
 
 ::: tip Note
 More information on how openEO "collections" relate to terminology used in other systems can be found in
-([the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections)).
+[the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections).
 :::
 
 
@@ -91,7 +91,7 @@ and by doing so, multiple processes can be connected that way in a larger "proce
 a new (user-defined) processes that implements a certain algorithm.
 
 ::: tip Note
-Check ([the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections))
+Check [the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#processes)
 for more details on pre-defined, user-defined processes and process graphs.
 :::
 
@@ -117,7 +117,7 @@ You can also use the [openEO Hub](https://hub.openeo.org/) for back-end specific
 or browse the [reference specifications of openEO processes](https://processes.openeo.org/).
 
 
-### Authentication
+## Authentication
 
 In the code snippets above we did not need to log in
 since we just queried publicly available back-end information.
