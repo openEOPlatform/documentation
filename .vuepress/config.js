@@ -5,6 +5,7 @@ module.exports = {
     logo: 'https://openeo.cloud/wp-content/themes/openeo_platform/images/logo-pages.svg',
     editLinks: true,
     docsRepo: 'openEOPlatform/documentation',
+    docsBranch: 'main',
     nav: [
       { text: 'Start', link: '/' },
       { text: 'Data Collections', link: '/data-collections/' },
