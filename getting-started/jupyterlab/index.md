@@ -1,5 +1,9 @@
 # JupyterLab (Python)
 
+::: tip Note
+You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+:::
+
 A hosted JupyterLab environment for openEO Platform is available at **[lab.openeo.cloud](https://lab.openeo.cloud/)**.
 
 It has the openEO Python client pre-installed, but it does not support running the R or JavaScript clients.

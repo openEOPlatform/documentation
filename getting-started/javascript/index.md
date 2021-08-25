@@ -1,5 +1,9 @@
 # JavaScript Client
 
+::: tip Note
+You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+:::
+
 ## Installation
 
 The openEO JavaScript Client can be used in all modern browsers (excludes Internet Explorer) and all maintained Node.js versions (>= 10.x).

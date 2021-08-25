@@ -1,5 +1,9 @@
 # R Client
 
+::: tip Note
+You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+:::
+
 ## Installation
 
 Before you install the R client module into your R environment, please make sure that you have at least R version 3.6. Older versions might also work, but were not tested.
