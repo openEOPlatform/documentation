@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@openeo/processes-docgen": "^1.2.0",
-		"@openeo/vue-components": "^2.4.0",
+		"@openeo/vue-components": "^2.5.0",
 		"@vuepress/plugin-active-header-links": "^1.5.2",
 		"axios": "^0.21.1",
 		"dayjs": "^1.8.30",

@@ -1,5 +1,8 @@
 ---
 sidebar: false
 stripCSS: true
+fullpage: true
 ---
-<FileFormatsSpec />
+<div style="max-width: 1200px; margin: auto">
+	<FileFormatsSpec />
+</div>

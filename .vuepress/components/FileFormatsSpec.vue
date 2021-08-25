@@ -1,7 +1,10 @@
 <template>
 	<section>
 		<p v-if="!formats">Loading data...</p>
-		<FileFormats v-else heading="File Formats for Import and Export" :formats="formats" />
+		<div class="columns" v-else>
+			<FileFormats heading="File Formats for Import" :formats="formats" :showOutput="false" />
+			<FileFormats heading="File Formats for Export" :formats="formats" :showInput="false" />
+		</div>
 	</section>
 </template>
 
@@ -25,3 +28,14 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+@media screen and (min-width: 700px) {
+	.columns {
+		display: flex;
+	}
+	.columns > div {
+		flex-basis: 50%;
+	}
+}
+</style>
