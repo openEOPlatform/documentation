@@ -19,10 +19,14 @@ separate components:
 
 ## Data Collections
 
-The federation exposes the union of the data collections of each of the underlying back-ends.
+The federation exposes the _union_ of the data collections of each of the underlying back-ends.
 When a processing request is submitted to the federated platform,
 the input collections are used to determine to which back-end
 the actual processing work should be delegated to.
+
+::: tip Note
+For the technical discussion on collection federation, see [Open-EO/openeo-aggregator#5](https://github.com/Open-EO/openeo-aggregator/issues/5)
+:::
 
 
 ### Terrascope
@@ -72,6 +76,14 @@ as the federation will just forward the process graph as-is to that back-end.
 :::
 
 ::: tip Note
-For the technical discussion of process federation, see [Open-EO/openeo-aggregator#4](https://github.com/Open-EO/openeo-aggregator/issues/4)
+For the technical discussion on process federation, see [Open-EO/openeo-aggregator#4](https://github.com/Open-EO/openeo-aggregator/issues/4)
 :::
 
+## File formats
+
+The federation currently lists the _union_ of import/export file formats available
+at each of the underlying back-ends.
+
+::: tip Note
+For the technical discussion on file format federation, see [Open-EO/openeo-aggregator#1](https://github.com/Open-EO/openeo-aggregator/issues/1)
+:::
