@@ -42,7 +42,12 @@ The collection metadata of the Terrascope back-end tries to clearly identify whi
 
 ### EODC
 
-ToDo: EODC
+EODC provides Sentinel-1 (GRH), Sentinel-2 and Sentinel-3 Level-1 globally. On top, pre-processed Level-2 data is
+available on request (this may result in additional costs). In detail Gamma0 data processed with SNAP and optical ARD
+products processed with FORCE are provided.
+
+If available pre-processed collections are not sufficient, there is the possibility to perform ARD processing on demand
+with SNAP respectively FORCE. This may again result in additional costs for processing and storage.
 
 ## Processes
 
