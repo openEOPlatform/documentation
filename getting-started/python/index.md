@@ -145,10 +145,19 @@ This means that subsequent requests from the `connection` object will
 be properly identified by the back-end as coming from your user.
 
 
-## Creating a Datacube
+## Working with Datacubes
 
-Now that we know how to discover the back-end and how to authenticate, lets continue by creating a new batch job to process some data.
-First you need to initialize a datacube by selecting a collection from the back-end via calling [`load_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.load_collection):
+Now that we know how to discover the capabilities of the back-end and how to authenticate, 
+let's do some real work and process some EO data in a batch job.
+We'll build the desired algorithm by working on so-called "Datacubes", 
+which is the central concept in openEO to represent EO data, 
+as [discussed in great detail here](https://openeo.org/documentation/1.0/datacubes.html).
+
+
+### Creating a Datacube
+
+The first step is loading the desired slice of a data collection
+with [`Connection.load_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.load_collection):
 
 ```python
 datacube = connection.load_collection(
@@ -159,33 +168,50 @@ datacube = connection.load_collection(
 )
 ```
 
-This results in a [`datacube` object](https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube) containing the "SENTINEL1_GRD" data restricted to the given spatial extent, the given temporal extend and the given bands .
+This results in a [`Datacube` object](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube) 
+containing the "SENTINEL1_GRD" data restricted to the given spatial extent, 
+the given temporal extend and the given bands .
 
 ::: tip
 You can also filter the datacube at a later stage by using the following filter methods:
 
 ```python
+datacube = connection.load_collection("SENTINEL1_GRD")
 datacube = datacube.filter_bbox(west=16.06, south=48.06, east=16.65, north=48.35)
 datacube = datacube.filter_temporal(start_date="2017-03-01", end_date="2017-04-01")
 datacube = datacube.filter_bands(["VV", "VH"])
 ```
 
-Still, it is recommended to always use the filters in [load_collection](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.load_collection) to avoid loading too much data upfront.
+Still, it is recommended to always use the filters directly in [load_collection](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.load_collection)
+to avoid loading too much data upfront.
 :::
 
-Having the input data ready, we want to apply a process on the datacube.
-Therefore, we can call the process directly on the datacube object, which then returns a datacube with the process applied. 
+
+### Applying processes
+
+By applying an openEO process on a datacube, we create a new datacube object that represents the manipulated data.
+The standard way to do this with the Python client is to call the appropriate [`Datacube` object](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube) method.
+The most common or popular openEO processes have a dedicated `Datacube` method (e.g. `mask`, `aggregate_spatial`, `filter_bbox`, ...). 
+Other processes without a dedicated method can still be applied in a generic way.
+An on top of that, there are also some convenience methods that implement
+openEO processes is a compact, Pythonic interface.
+
+For example, the [`min_time`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.min_time) method
+implements a `reduce_dimension` process along the temporal dimension, using the `min` process as reducer function:
 
 ```python
 datacube = datacube.min_time()
 ```
-The datacube is now reduced by the time dimension, by taking the minimum value of the timeseries values.
-Now the datacube has no time dimension left.
-Other so called "reducer" processes exist, e.g. for computing maximum and mean values.
-A list of supported processes using the Python client datacube can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/).
 
-:::tip Manually Adding Processes
-Applying a process not supported by the Python client can be added to the datacube manually:
+This creates a new datacube (we overwrite the existing variable),
+where the time dimension is eliminated and for each pixel we just have 
+the minimum value of the corresponding timeseries in the original datacube.
+
+See the [Python client `Datacube` API](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube) for a more complete listing of methods that implement openEO processes.
+
+
+openEO processes that are not supported by a dedicated `Datacube` method
+can be applied in a generic way with the [`process` method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.process), e.g.:
 
 ```python
 datacube = datacube.process(
@@ -197,12 +223,15 @@ datacube = datacube.process(
 )
 ```
 
-This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "data", "nir" and "red". This example requires a datacube that includes bands `B8` and `B4`.
-:::
+This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "data", "nir" and "red" (This example assumes a datacube with bands `B8` and `B4`).
+
 
 ::: tip Note
-Still unsure on how to make use of processes with the Python client? Visit the [official documentation](https://open-eo.github.io/openeo-python-client/processes.html#working-with-processes).
+Still unsure on how to make use of processes with the Python client? 
+Visit the [official documentation on working with processes](https://open-eo.github.io/openeo-python-client/processes.html#working-with-processes).
 :::
+
+### Defining output format
 
 After applying all processes you want to execute, we need to tell the back-end to export the datacube, for example as GeoTiff:
 
