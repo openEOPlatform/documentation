@@ -14,7 +14,7 @@ module.exports = {
         { text: 'Client Libraries', items: [
           { text: 'JavaScript', link: '/getting-started/javascript/' },
           { text: 'Python', link: '/getting-started/python/' },
-          { text: 'R', link: '/getting-started/r/' },
+//        { text: 'R', link: '/getting-started/r/' },
         ] },
         { text: 'Development Environments', items: [
           { text: 'JupyterLab (Python)', link: '/getting-started/jupyterlab/' },
