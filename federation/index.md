@@ -19,6 +19,12 @@ separate components:
 
 ## Data Collections
 
+The federation exposes the union of the data collections of each of the underlying back-ends.
+When a processing request is submitted to the federated platform,
+the input collections are used to determine to which back-end
+the actual processing work should be delegated to.
+
+
 ### Terrascope
 
 Terrascope hosts a number of collections itself.
@@ -49,6 +55,23 @@ products processed with FORCE are provided.
 If available pre-processed collections are not sufficient, there is the possibility to perform ARD processing on demand
 with SNAP respectively FORCE. This may again result in additional costs for processing and storage.
 
+
 ## Processes
 
-ToDo: How can users figure out which process is available on which back-end?
+The federation, being a openEO API compatible back-end, lists supported (predefined) processes
+(at the [`GET /processes` endpoint](https://openeo.org/documentation/1.0/developers/api/reference.html#operation/list-processes)).
+The federation's process listing is the _intersection_ 
+of the process sets of each of the underlying back-ends.
+This is the most straightforward combination with the least surprise.
+
+::: tip Advanced/experimental usage
+A savvy user that knows which underlying back-end will execute their job
+can however still submit process graphs with processes that are available
+on that back-end but fall outside the intersection,
+as the federation will just forward the process graph as-is to that back-end.
+:::
+
+::: tip Note
+For the technical discussion of process federation, see [Open-EO/openeo-aggregator#4](https://github.com/Open-EO/openeo-aggregator/issues/4)
+:::
+
