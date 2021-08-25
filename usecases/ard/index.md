@@ -1,12 +1,14 @@
 # Analysis-Ready Data (ARD)
 
-For certain use cases, the preprocessed data collections available in the openEO back-ends are not sufficient or simply not
-available. For that case, openEO supports a few very common preprocessing scenario:
+For certain use cases, the readily available preprocessed data collections in the openEO back-ends 
+are not sufficient or inappropriately preprocessed.
+openEO supports some processes to address very common preprocessing scenarios:
 
 - Atmospheric correction of optical data
 - SAR backscatter computation
 
-These processes also offer a number of parameters to customize the processing. There's also variants with a default
+These processes also offer a number of parameters to customize the processing. 
+There are also variants with a default
 parametrization that results in data that is compliant with [CEOS CARD4L specifications](https://ceos.org/ard/).
 
 We should note that these operations can be computationally expensive, so certainly affect overall processing time and

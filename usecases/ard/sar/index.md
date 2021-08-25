@@ -2,12 +2,21 @@
 
 Data from synthetic aperture radar sensors requires significant preprocessing to be calibrated and normalized for terrain.
 This is referred to as backscatter computation, and supported by
-[sar_backscatter](https://processes.openeo.org/draft/#sar_backscatter) and the CARD4L compliant variant
-[ard_normalized_radar_backscatter](https://processes.openeo.org/draft/#ard_normalized_radar_backscatter)
+- the [`sar_backscatter` process](https://processes.openeo.org/draft/#sar_backscatter) 
+- and its CARD4L compliant variant, the
+[`ard_normalized_radar_backscatter` process](https://processes.openeo.org/draft/#ard_normalized_radar_backscatter)
 
-The user should load a datacube containing raw SAR data, such as Sentinel-1 GRD. On the resulting datacube, the
-`openeo.rest.datacube.DataCube.sar_backscatter` Python method can be invoked. The CEOS CARD4L variant is:
-`openeo.rest.datacube.DataCube.ard_normalized_radar_backscatter` in Python. These processes are tightly coupled to
+The user should first load a datacube containing raw SAR data, such as "Sentinel-1 GRD" 
+and apply one of these processes to it.
+
+::: tip Python example
+The openEO Python client library provides the
+[`DataCube.sar_backscatter`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.sar_backscatter)
+and [`DataCube.ard_normalized_radar_backscatter`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.ard_normalized_radar_backscatter)
+methods for this.
+:::
+
+These processes are tightly coupled to
 metadata from specific sensors, so it is not possible to apply other processes to the datacube first,
 with the exception of specifying filters in space and time.
 
@@ -19,23 +28,32 @@ EODC supports sar_backscatter, based on the [Sentinel-1 toolbox](https://sentine
 
 ## Terrascope back-end
 
-When working with the Sentinelhub SENTINEL1_GRD collection, both sar processes can be used. The underlying implementation is
-provided by [Sentinelhub](https://docs.sentinel-hub.com/api/latest/data/sentinel-1-grd/#processing-options), and offers full
+
+### Sentinel Hub based collection
+
+When working with the Sentinel Hub based `SENTINEL1_GRD` collection, both SAR backscatter processes can be used.
+The underlying implementation is
+provided by [Sentinel Hub](https://docs.sentinel-hub.com/api/latest/data/sentinel-1-grd/#processing-options), and offers full
 CARD4L compliant processing options.
 
-This is an example of `openeo.rest.datacube.DataCube.ard_normalized_radar_backscatter` in Python:
+This is an example of [`DataCube.ard_normalized_radar_backscatter`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.ard_normalized_radar_backscatter) in Python:
 
 ```python
-s1grd = connection.load_collection('SENTINEL1_GRD',
+s1grd = connection.load_collection(
+    'SENTINEL1_GRD',
     spatial_extent={'west':2.59003,'east':2.8949,'south':51.069,'north':51.2206},
     temporal_extent=['2019-10-10','2019-10-10'],
-    bands=['VH','VV'])
+    bands=['VH','VV']
+)
 
-job = s1grd.ard_normalized_radar_backscatter().execute_batch()
+normalized = s1grd.ard_normalized_radar_backscatter()
 
-for asset in job.get_results().get_assets():
-    asset.download()
+job = normalized.execute_batch()
+job.get_results().download_files("output")
 ```
+
+
+### Other GRD collections
 
 When working with other GRD data, an implementation based on Orfeo Toolbox is used:
 
