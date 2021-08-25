@@ -173,10 +173,9 @@ containing the "SENTINEL1_GRD" data restricted to the given spatial extent,
 the given temporal extend and the given bands .
 
 ::: tip
-You can also filter the datacube at a later stage by using the following filter methods:
+You can also filter the datacube step by step or at a later stage by using the following filter methods:
 
 ```python
-datacube = connection.load_collection("SENTINEL1_GRD")
 datacube = datacube.filter_bbox(west=16.06, south=48.06, east=16.65, north=48.35)
 datacube = datacube.filter_temporal(start_date="2017-03-01", end_date="2017-04-01")
 datacube = datacube.filter_bands(["VV", "VH"])
@@ -239,40 +238,56 @@ After applying all processes you want to execute, we need to tell the back-end t
 result = datacube.save_result("GTiff")
 ```
 
-::: tip Note
-Everything applied to the datacube at this point is neither executed locally on your machine nor executed on the back-end.
-It just defines the input data and process chain the back-end needs to apply when it sends the datacube to the back-end and executes it there.
-How this can be done is the topic of the next chapter. 
-:::
 
-## Batch Job Management
 
-Assuming that the definition of the datacube object and all related processes is finished, we can now send it to the back-end and start the execution. 
-In openEO, an execution of a (user-defined) process (here defined in the datacube object) is called a [(batch) job](https://openeo.org/documentation/1.0/glossary.html#data-processing-modes).
-Therefore, we need to create a job at the back-end using our datacube, giving it the title `Example Title`.
+## Execution
+
+It's important to note that all the datacube processes we applied up to this point
+are not actually executed yet, neither locally nor remotely on the back-end.
+We just built an abstract representation of the algorithm (input data and processing chain), 
+encapsulated in a local `Datacube` object (e.g. the `result` variable above).
+To trigger an actual execution (on the back-end) we have to explicitly send this representation 
+to the back-end.
+
+
+openEO defines [several processing modes](https://openeo.org/documentation/1.0/glossary.html#data-processing-modes), 
+but for this introduction we'll focus on batch jobs, which is a good default choice.
+
+### Batch job execution
+
+The `result` datacube object we built above describes the desired input collections, processing steps and output format.
+We can now just send this description to the back-end to create a batch job with the [`send_job` method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.send_job) like this:
 
 ```python
 # Creating a new job at the back-end by sending the datacube information.
-job = result.send_job(title = "Example Title")
+job = result.send_job()
 ```
 
-The [`send_job`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.send_job) method sends all necessary information to the back-end and creates a new job, which gets returned.
-
-After this, the job is just created, but has not started the execution at the back-end yet.
+The batch job, which is referenced by the returned `job` object, is just created at the back-end, 
+it is not started yet.
 To start the job and let your Python script wait until the job has finished then 
 download it automatically, you can use the `start_and_wait` method. 
 
 ```python
 # Starts the job and waits until it finished to download the result.
-job.start_and_wait().download_results()
+job.start_and_wait()
+job.get_results().download_files("output")
 ```
 
-More information on job management with the Python client can be 
-found on the [official documentation](https://open-eo.github.io/openeo-python-client/basics.html#managing-jobs-in-openeo) 
+When everything completes successfully, the processing result will be downloaded as a GeoTIFF file
+in a folder "output".
+
+::: tip
+The official openEO Python Client documentation has more information
+on [batch job basics](https://open-eo.github.io/openeo-python-client/basics.html#managing-jobs-in-openeo) 
+or [more detailed batch job (result) management](https://open-eo.github.io/openeo-python-client/batch_jobs.html)
+:::
 
 ## Additional Information
 
-* [Examples](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
-* [Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
-* [Official Documentation](https://open-eo.github.io/openeo-python-client/)
-* [Repository](https://github.com/Open-EO/openeo-python-client)
+Additional information and resources about the openEO Python Client Library:
+
+* [Example scripts](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
+* [Example Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
+* [Official openEO Python Client Library Documentation](https://open-eo.github.io/openeo-python-client/)
+* [Repository on GitHub](https://github.com/Open-EO/openeo-python-client)
