@@ -62,9 +62,9 @@ with SNAP respectively FORCE. This may again result in additional costs for proc
 
 ## Processes
 
-The federation, being a openEO API compatible back-end, lists supported (predefined) processes
-(at the [`GET /processes` endpoint](https://openeo.org/documentation/1.0/developers/api/reference.html#operation/list-processes)).
-The federation's process listing is the _intersection_ 
+Each of the underlying back-end of the federation can define its own set of available processes,
+but there is in practice a very large common ground across these back-ends.
+As such, the federation's listing of available processes is the _intersection_
 of the process sets of each of the underlying back-ends.
 This is the most straightforward combination with the least surprise.
 
