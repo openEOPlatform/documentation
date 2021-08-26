@@ -1,12 +1,13 @@
 # Analysis-Ready Data for SAR (Sentinel-1)
 
-Data from synthetic aperture radar sensors requires significant preprocessing to be calibrated and normalized for terrain.
-This is referred to as backscatter computation, and supported by
+Data from synthetic aperture radar (SAR) sensors requires significant preprocessing to be calibrated and normalized for terrain.
+This is referred to as backscatter computation, and provider in openEO by
 - the [`sar_backscatter` process](https://processes.openeo.org/draft/#sar_backscatter) 
 - and its CARD4L compliant variant, the
 [`ard_normalized_radar_backscatter` process](https://processes.openeo.org/draft/#ard_normalized_radar_backscatter)
 
-The user should first load a datacube containing raw SAR data, such as "Sentinel-1 GRD" 
+The user should first load a datacube (with the `load_collection` process)
+containing raw SAR data, such as "Sentinel-1 GRD", 
 and apply one of these processes to it.
 
 ::: tip Python example
@@ -16,9 +17,10 @@ and [`DataCube.ard_normalized_radar_backscatter`](https://open-eo.github.io/open
 methods for this.
 :::
 
-These processes are tightly coupled to
-metadata from specific sensors, so it is not possible to apply other processes to the datacube first,
-with the exception of specifying filters in space and time.
+These preprocessing processes are tightly coupled to metadata from specific sensors, 
+so it is important they are applied immediately after the `load_collection` process.
+It is recommended to avoid any other operations in between
+except for other data loading related processes like `filter_temporal` and `filter_bbox`.
 
 This section shows a few working examples for these processes.
 
