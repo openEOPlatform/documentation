@@ -7,7 +7,7 @@ to train a model using techniques such as random forest or neural networks for c
 Concrete examples of such features include simple things such as the percentiles or standard deviation of a vegetation index or band value,
 the mean value for given month, or more advanced cases such as phenological or texture information.
 
-In general, data scientists like to explore the usefullness of a given feature set for a use case, or may even 
+In general, data scientists like to explore the usefulness of a given feature set for a use case, or may even
 define new features. In some cases, the openEO processes will allow computing them, and in others, a 'user defined 
 function' may be used to compute features that are not directly supported in openEO.
 
@@ -17,11 +17,22 @@ In this section, we will show how to combine openEO functionality into a basic f
  ## Data preparation
 
 To correctly compute and use statistics over a timeseries, gap-free composites
-at fixed timesteps are n
-The goal of temporal aggregation is to create gap-free composites, at equidistant temporal intervals. In the case of optical data, it is often cloudmasked before this step, which introduces a lot of ‘nodata’ values. 
+at fixed timesteps are necessary.
+The goal of temporal aggregation is to create gap-free composites, at equidistant temporal intervals.
+In the case of optical data, it is often cloudmasked before this step, which introduces a lot of gaps ("no-data" values).
+
+For example, with the openEO Python client library:
  ```python
-composite = sentinel2_cube.aggregate_temporal_period(period="month", reducer="mean")
-interpolated = composite.apply_dimension(dimension="t", process="array_interpolate_linear")
+# Create monthly composite
+composite = sentinel2_cube.aggregate_temporal_period(
+    period="month",
+    reducer="mean"
+)
+# Fill gaps with linear interpolation
+interpolated = composite.apply_dimension(
+    dimension="t",
+    process="array_interpolate_linear"
+)
 ```
 
 ## Computing statistics over time
@@ -36,15 +47,26 @@ The effect of specifying `target_dimension='bands'` is that the 'time' dimension
 dimension. 
 
  ```python
-
 from openeo.processes import ProcessBuilder, array_concat
-def compute_features(input_timeseries:ProcessBuilder):
-    return array_concat(input_timeseries.quantiles(probabilities=[0.1,0.5,0.9]),[input_timeseries.mean(), input_timeseries.sd()])
 
-features = interpolated.apply_dimension(dimension='t',target_dimension='bands', process=compute_features)
+def compute_features(input_timeseries: ProcessBuilder):
+    return array_concat(
+        input_timeseries.quantiles(probabilities=[0.1, 0.5, 0.9]),
+        [input_timeseries.mean(), input_timeseries.sd()],
+    )
 
-features = features.rename_labels('bands',[band + "_" + stat for band in interpolated.metadata.band_names for stat in ["p10","p50","p90","mean","sd"]])
+features = interpolated.apply_dimension(
+    dimension='t',
+    process=compute_features,
+    target_dimension='bands',
+)
 
+new_band_names = [
+    band + "_" + stat
+    for band in interpolated.metadata.band_names
+    for stat in ["p10", "p50", "p90", "mean", "sd"]
+]
+features = features.rename_labels('bands', new_band_names)
 ```
 
 Now, a complete datacube with features is available for further usage. To see a fully working example, you can check
