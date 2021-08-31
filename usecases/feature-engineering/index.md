@@ -13,27 +13,47 @@ function' may be used to compute features that are not directly supported in ope
 
 In this section, we will show how to combine openEO functionality into a basic feature engineering pipeline. 
  
- 
- ## Data preparation
+## Data preparation
 
 To correctly compute and use statistics over a timeseries, gap-free composites
 at fixed timesteps are necessary.
 The goal of temporal aggregation is to create gap-free composites, at equidistant temporal intervals.
 In the case of optical data, it is often cloudmasked before this step, which introduces a lot of gaps ("no-data" values).
 
-For example, with the openEO Python client library:
- ```python
+Example:
+
+<CodeSwitcher>
+<template v-slot:py>
+
+```python
 # Create monthly composite
 composite = sentinel2_cube.aggregate_temporal_period(
-    period="month",
-    reducer="mean"
+    period = "month",
+    reducer = "mean"
 )
 # Fill gaps with linear interpolation
 interpolated = composite.apply_dimension(
-    dimension="t",
-    process="array_interpolate_linear"
+    dimension = "t",
+    process = "array_interpolate_linear"
 )
 ```
+
+</template>
+
+<template v-slot:js>
+
+```js
+// Create monthly composite
+var mean = function(data) {
+    return this.mean(data)
+};
+var composite = builder.aggregate_temporal_period(sentinel2_cube, "month", mean));
+// Fill gaps with linear interpolation
+var interpolated = builder.apply_dimension(composite, "array_interpolate_linear", "t");
+```
+
+</template>
+</CodeSwitcher>
 
 ## Computing statistics over time
 
@@ -43,8 +63,11 @@ can be computed.
 In this example, we'll compute three quantiles, the mean and the standard deviation for each band.
 After computing the actual features, we also make sure to reset band names to meaningful values.
 
-The effect of specifying `target_dimension='bands'` is that the 'time' dimension is removed, and replaced by the 'bands' 
+The effect of setting `target_dimension` to `bands` is that the 'time' dimension is removed, and replaced by the 'bands' 
 dimension. 
+
+<CodeSwitcher>
+<template v-slot:py>
 
  ```python
 from openeo.processes import ProcessBuilder, array_concat
@@ -69,6 +92,35 @@ new_band_names = [
 features = features.rename_labels('bands', new_band_names)
 ```
 
-Now, a complete datacube with features is available for further usage. To see a fully working example, you can check
-out [this notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
+</template>
+
+<template v-slot:js>
+
+```js
+// Create monthly composite
+var computeFeatures = function(data) {
+    return this.array_concat([
+        this.quantiles(data, [0.1, 0.5, 0.9]),
+        [this.mean(data),  this.sd(data)]
+    ]);
+};
+var features = builder.apply_dimension(interpolated, computeFeatures, 't', 'bands');
+
+var collectionBands = ['B1', 'B2', ...]; // Fill this with the bands you've available in the data cube
+var stats = ["p10", "p50", "p90", "mean", "sd"];
+var newBandNames = [];
+for(let band of collectionBands) {
+    for(let stat of stats) {
+        newBandNames.push(band + "_" + stat);
+    }
+}
+features = features.rename_labels(features, 'bands', newBandNames);
+```
+
+</template>
+</CodeSwitcher>
+
+Now, a complete datacube with features is available for further usage.
+To see a fully working example, you can check out 
+[this Python notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
 

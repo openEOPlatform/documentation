@@ -19,7 +19,10 @@ To correctly find the right fitting for the harmonic function, we need cloud-fre
 
 ## Seasonal curve fitting
 
-Supposing that the training input data is a cloud-free Sentinel-2 timeseries we can write the following Python code using the openEO client to find the optimal function coefficients:
+Supposing that the training input data is a cloud-free Sentinel-2 timeseries we can write the following code using the openEO clients to find the optimal function coefficients:
+
+<CodeSwitcher>
+<template v-slot:py>
 
 ```python
 def fit_function(x:ProcessBuilder, parameters):
@@ -27,7 +30,7 @@ def fit_function(x:ProcessBuilder, parameters):
     a0 = array_element(parameters, 0)
     a1 = array_element(parameters, 1)
     a2 = array_element(parameters, 2)
-    return a0 +a1*cos(2*pi/31557600*x) + a2* sin(2*pi/31557600*x) # 31557600 are the seconds in one year
+    return a0 + a1*cos(2*pi/31557600*x) + a2*sin(2*pi/31557600*x) # 31557600 are the seconds in one year
 
 args_fit_curve = {
     "parameters": [1,1,1], # Initial guess of the parameters
@@ -38,9 +41,31 @@ args_fit_curve = {
 curve_fitting = l2a_bands.fit_curve(**args_fit_curve)
 ```
 
+</template>
+
+<template v-slot:js>
+
+```js
+// 31557600 are the seconds in one year
+let fitFunction = new Formula('$$0 + $$1*cos(2*pi()/31557600*x) + $$2*sin(2*pi()/31557600*x)');
+
+curve_fitting = builder.fit_curve(
+    l2a_bands,
+    [1,1,1], // Initial guess of the parameters
+    fitFunction,
+    't', // Fit the function along the temporal dimension
+);
+```
+
+</template>
+</CodeSwitcher>
+
 ## Predicting values
 
 With the seasonal function coefficients, we can predict the expected value for a particular time step. In the following case, we are computing the values following the seasonal trend for the training time steps:
+
+<CodeSwitcher>
+<template v-slot:py>
 
 ```python
 temporal_labels = l2a_bands.process("dimension_labels", {
@@ -56,5 +81,17 @@ curve_prediction = l2a_bands_clipped.process("predict_curve", {
     "labels": temporal_labels
 })
 ```
+
+</template>
+
+<template v-slot:js>
+
+```js
+temporal_labels = builder.dimension_labels(l2a_bands, "t");
+curve_prediction = builder.predict_curve(l2a_bands_clipped, curve_fitting_loaded, fitFunction, 't', temporal_labels);
+```
+
+</template>
+</CodeSwitcher>
 
 The difference between the training data and the predicted values following the seasonal model is a key information, which is used to perform the change detection with new data. Please have a look at the [reference notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC6%20-%20Forest%20Dynamics.ipynb) for the complete pipeline.
