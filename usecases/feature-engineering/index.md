@@ -70,5 +70,5 @@ features = features.rename_labels('bands', new_band_names)
 ```
 
 Now, a complete datacube with features is available for further usage. To see a fully working example, you can check
-out [this notebook](https://notebooks.terrascope.be/user/driesj/lab/tree/Public/openeo/SRR2_notebooks/UC3%20-%20Crop%20type%20feature%20engineering.ipynb).
+out [this notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
 
