@@ -53,7 +53,7 @@ module.exports = {
       'code-switcher',
       {
         groups: {
-          default: {py: 'Python', r: 'R', js: 'JavaScript'},
+          default: {py: 'Python', js: 'JavaScript'},
         }
       }
     ],

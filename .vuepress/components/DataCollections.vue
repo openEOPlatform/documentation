@@ -1,7 +1,9 @@
 <template>
 	<section>
 		<p v-if="!collections">Loading data...</p>
-		<Collections v-else :collections="collections" :showKeywords="true" :loadAdditionalData="loadCollection" />
+		<Collections v-else :collections="collections" :showKeywords="true" :searchTerm="searchTerm" :loadAdditionalData="loadCollection">
+
+		</Collections>
 	</section>
 </template>
 
@@ -16,10 +18,17 @@ export default {
 	},
 	data() {
 		return {
-			collections: null
+			collections: null,
+			searchTerm: null
 		};
 	},
 	async created() {
+		const urlParams = new URLSearchParams(window.location.search);
+		const q = urlParams.get('q');
+		if (typeof q === 'string' && q.length > 0) {
+			this.searchTerm = q;
+		}
+
 		let res = await axios('https://openeocloud.vito.be/openeo/1.0.0/collections');
 		this.collections = res.data.collections;
 	},
