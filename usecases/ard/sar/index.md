@@ -4,9 +4,9 @@
 
 Data from synthetic aperture radar (SAR) sensors requires significant preprocessing to be calibrated and normalized for terrain.
 This is referred to as backscatter computation, and provider in openEO Platform by
-- the [`sar_backscatter` process](/processes/#sar_backscatter) 
+- the [`sar_backscatter` process](../../../processes/index.md#sar_backscatter) 
 - and its CARD4L compliant variant, the
-[`ard_normalized_radar_backscatter` process](/processes/#ard_normalized_radar_backscatter)
+[`ard_normalized_radar_backscatter` process](../../../processes/index.md#ard_normalized_radar_backscatter)
 
 To perform a backscatter computation, the user has to load an
 [raw SAR data](/data-collections/?q=GRD) with the `load_collection` process

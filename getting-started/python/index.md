@@ -226,7 +226,7 @@ datacube = datacube.process(
 )
 ```
 
-This applies the [`ndvi` process](https://docs.openeo.cloud/processes/#ndvi) to the datacube with the arguments of "data", "nir" and "red" (This example assumes a datacube with bands `B8` and `B4`).
+This applies the [`ndvi` process](../../processes/index.md#ndvi) to the datacube with the arguments of "data", "nir" and "red" (This example assumes a datacube with bands `B8` and `B4`).
 
 
 ::: tip Note

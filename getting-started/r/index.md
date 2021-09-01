@@ -94,7 +94,7 @@ Each process list entry is a more complex list object (called 'ProcessInfo') and
 As for the collection, processes can also be rendered as a web page in the viewer panel, if RStudio is used. In order to open the viewer use `process_viewer()` with either a particular process (`process_viewer("load_collection")`) or you can pass on all processes (`process_viewer(processes)`). When all processes are chosen, there is also a search bar and a category tree.
 :::
 
-For other graphical overviews of the openEO processes, there is an [online documentation](../processes.md) for general process descriptions and the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions. 
+For other graphical overviews of the openEO processes, there is an [online documentation](../../processes/index.md) for general process descriptions and the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions. 
 
 ## Authentication 
 

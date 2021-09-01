@@ -2,12 +2,12 @@
 
 ## Atmospheric correction
 
-The [atmospheric correction](/processes/#atmospheric_correction) process can apply a chosen
+The [atmospheric correction](../../../processes/index.md#atmospheric_correction) process can apply a chosen
 method on raw 'L1C' data. The supported methods and input datasets depend on the back-end, because not every method is
 validated or works on any dataset, and different back-ends try to offer a variety of options. This gives you as a user
 more options to run and compare different methods, and select the most suitable one for your case.
 
-To perform an [atmospheric correction](/processes/#atmospheric_correction), the user has to load an
+To perform an [atmospheric correction](../../../processes/index.md#atmospheric_correction), the user has to load an
 [uncorrected L1C optical dataset](/data-collections/?q=L1C) with the `load_collection` process
 and immediately apply the `atmospheric_correction` process to it.
 
