@@ -25,6 +25,8 @@ Supposing that the training input data is a cloud-free Sentinel-2 timeseries we 
 <template v-slot:py>
 
 ```python
+import openeo
+from openeo.processes import cos, sin, array_element
 def fit_function(x:ProcessBuilder, parameters):
     pi = math.pi
     a0 = array_element(parameters, 0)
