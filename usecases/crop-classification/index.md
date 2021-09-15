@@ -1,5 +1,23 @@
-# Feature engineering
+# Crop classification
 
+The constantly increasing demand of food has resulted in a highly intensified agricultural production. This intensification on the one
+hand requires more planning and management, and on the other, threatens ecosystem services that need to be monitored by scientists
+and decision makers who rely on detailed spatial information of crop cover in agricultural areas. 
+
+Crop classification on a large scale is a challenging task, but with the recent advances in satellite sensor technology and the push 
+of a.o. the ESA for higher resolution open satellite data with a frequent revisit time this task has become possible.
+
+There are various approaches to crop classification. One can use basic rule-based classification, or use more sophisticated methods such
+as one of various machine learning models. In this example, we will show both of these approaches. 
+
+Generally, any classification task will contain the following steps:
+* (1) Preprocessing & feature engineering
+* (2) Training
+* (3) Classification & model evaluation
+
+We will have a more detailed look on all three of these steps, and provide code examples along the way.
+
+## 1. Preprocessing & feature engineering
 Feature engineering refers to extracting a number of discriminative features from a single pixel timeseries or even
 a time series of EO data tiles. These features then allow an expert rule-based decision approach to classify pixels, or 
 to train a model using techniques such as random forest or neural networks for classification.
@@ -13,7 +31,7 @@ function' may be used to compute features that are not directly supported in ope
 
 In this section, we will show how to combine openEO functionality into a basic feature engineering pipeline. 
  
-## Data preparation
+### 1.1. Data preparation
 
 To correctly compute and use statistics over a timeseries, gap-free composites
 at fixed timesteps are necessary.
@@ -55,7 +73,7 @@ var interpolated = builder.apply_dimension(composite, "array_interpolate_linear"
 </template>
 </CodeSwitcher>
 
-## Computing statistics over time
+### 1.2. Computing statistics over time
 
 When computing statistics over time, the time dimension is fully reduced per band, and for each band, a number of statistics
 can be computed.
