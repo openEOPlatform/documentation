@@ -1,47 +1,33 @@
 # Crop classification
 
-The constantly increasing demand of food has resulted in a highly intensified agricultural production. This intensification on the one
-hand requires more planning and management, and on the other, threatens ecosystem services that need to be monitored by scientists
-and decision makers who rely on detailed spatial information of crop cover in agricultural areas. 
+The goal of this section is to show how openEO functionality can be integrated into a basic feature engineering pipeline. We will do this using crop classification as an example.
 
-Crop classification on a large scale is a challenging task, but with the recent advances in satellite sensor technology and the push 
-of a.o. the ESA for higher resolution open satellite data with a frequent revisit time this task has become possible.
+The constantly increasing demand of food has resulted in a highly intensified agricultural production. This intensification on the one hand requires more planning and management, and on the other, threatens ecosystem services that need to be monitored by scientists and decision makers who rely on detailed spatial information of crop cover in agricultural areas. 
 
-There are various approaches to crop classification. One can use basic rule-based classification, or use more sophisticated methods such
-as one of various machine learning models. In this example, we will show both of these approaches. 
+Crop classification on a large scale is a challenging task, but with the recent advances in satellite sensor technology and the push of a.o. the ESA for higher resolution open satellite data with a frequent revisit time this task has become possible.
+
+There are various approaches to crop classification. One can use basic rule-based classification, or use more sophisticated methods such as one of various machine learning models. In this example, we will show both of these approaches.
 
 Generally, any classification task will contain the following steps:
 * (1) Preprocessing & feature engineering
 * (2) Training
 * (3) Classification & model evaluation
 
-We will have a more detailed look on all three of these steps, and provide code examples along the way.
+We will have a more detailed look at all three of these steps, and provide code examples along the way.
 
-To see a fully working example, you can check out 
-[this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
-or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
+To see a fully working example, you can check out [this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb) or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
 
 
 ## 1. Preprocessing & feature engineering
-Feature engineering refers to extracting a number of discriminative features from a single pixel timeseries or even
-a time series of EO data tiles. These features then allow an expert rule-based decision approach to classify pixels, or 
-to train a model using techniques such as random forest or neural networks for classification.
+Feature engineering refers to extracting a number of discriminative features from a single pixel timeseries or even a time series of EO data tiles. These features can in turn be used for any type of classification, ranging from an expert rule-based decision approach to regular machine learning techniques such as random forest or deep learning techniques based on neural networks.
 
-Concrete examples of such features include simple things such as the percentiles or standard deviation of a vegetation index or band value,
-the mean value for given month, or more advanced cases such as phenological or texture information.
+Concrete examples of such features include basic statistics such as the percentiles or standard deviation of a vegetation index or the mean band value for given month, but can also be more complex such as derivatives of phenology or texture.
 
-In general, data scientists like to explore the usefulness of a given feature set for a use case, or may even
-define new features. In some cases, the openEO processes will allow computing them, and in others, a 'user defined 
-function' may be used to compute features that are not directly supported in openEO.
-
-In this section, we will show how to combine openEO functionality into a basic feature engineering pipeline. 
+In general, data scientists like to explore the usefulness of a given feature set for a use case, or may even define new features. In some cases, the openEO processes will allow computing them, and in others, a 'user defined function' may be used to compute features that are not directly supported in openEO.
  
 ### 1.1. Data preparation
 
-To correctly compute and use statistics over a timeseries, gap-free composites
-at fixed timesteps are necessary.
-The goal of temporal aggregation is to create gap-free composites, at equidistant temporal intervals.
-In the case of optical data, it is often cloudmasked before this step, which introduces a lot of gaps ("no-data" values).
+To correctly compute and use statistics over a timeseries, we need gap-free composites at fixed timesteps. The goal of temporal aggregation is to create these gap-free composites at equidistant temporal intervals. This is especially true in the case of optical data, which is often cloudmasked before this step, introducing a lot of gaps ("no-data" values).
 
 Example:
 
@@ -80,14 +66,9 @@ var interpolated = builder.apply_dimension(composite, "array_interpolate_linear"
 
 ### 1.2. Computing temporal features
 
-When computing statistics over time, the time dimension is fully reduced per band, and for each band, a number of statistics
-can be computed.
+For this use case, we will fully reduce the temporal dimension per band by calculating a number of stastics. These stastics are three quantiles, the mean and the standard deviation for each band. After computing the actual features, we have to make sure to rename the bands to reflect what has been calculated.
 
-In this example, we'll compute three quantiles, the mean and the standard deviation for each band.
-After computing the actual features, we also make sure to reset band names to meaningful values.
-
-The effect of setting `target_dimension` to `bands` is that the 'time' dimension is removed, and replaced by the 'bands' 
-dimension. 
+The effect of setting `target_dimension` to `bands` is that the 'time' dimension is removed, and replaced by the 'bands' dimension. We will use this same procedure to do band math on temporal features in section 3.1.
 
 <CodeSwitcher>
 <template v-slot:py>
@@ -146,11 +127,9 @@ features = features.rename_labels(features, 'bands', newBandNames);
 Now, a complete datacube with features is available for further usage.
 
 ## 2. Model training
-Crop classification is generally tackled using a form of supervised learning, which requires a set of features with their 
-respective labels. These labels often come in the form of labeled field polygons, however these polygons do not contain any 
-of the features that your model might require.
+Crop classification is generally tackled using a form of supervised learning, which requires a set of features with their respective labels. These labels often come in the form of labeled field polygons, however these polygons do not contain any of the features that your model might require. They need to be extracted from the DataCube that you created in the previous section.
 
-In OpenEO, we can perform feature point/polygon extraction using the parameter *sample_by_feature=True*.
+In OpenEO, we can perform feature point/polygon extraction using the parameter `sample_by_feature=True`.
 
 <CodeSwitcher>
 <template v-slot:py>
@@ -169,19 +148,14 @@ In OpenEO, we can perform feature point/polygon extraction using the parameter *
 </template>
 </CodeSwitcher>
 
-This will write the features of DataCube *features* of every point in *barley_points* to a separate netCDF file.
-Next we can read in all of these features with their respective label in a pandas dataframe, which can subsequently 
-used for training. Training a model happens outside of openEO and will therefore not be explained in detail here,
-but you can have a look at the random forest notebook if that interests you.
+This will write the features of DataCube *features* of every point in *barley_points* to a separate netCDF file. Next we can read in all of these features with their respective label in a pandas dataframe, which can subsequently used for training. Training a model happens outside of openEO and will therefore not be explained in detail here,
+but you can have a look at the random forest notebook if that is something you need help with.
 
 ## 3. Classification
 ### 3.1. Rule-based classification
-A simple approach is to define rules based on your features to classify crops. For example, when looking at temporal profiles
-of corn, we can see that the NDVI of may is smaller than the NDVI of june. By creating and iteratively refining rules for each
-of these crop types, we can get a first classification result.
+A simple approach is to define rules based on your features to classify crops. For example, when looking at temporal profiles of corn, we can see that the NDVI of may is smaller than the NDVI of june. By creating and iteratively refining rules for each of these crop types, we can get a first classification result.
 
-However, to do this, we need to be able to do band math on the temporal dimension. Remember target_dimension="bands" that we used
-before to calculate the t-steps? We can use this again to stack the temporal dimension onto the band dimension.
+However, to do this, we need to be able to do band math on the temporal dimension. Remember `target_dimension="bands"` that we used before to calculate the statistics over the temporal dimension? We can use this again to stack the temporal dimension onto the band dimension.
 
 <CodeSwitcher>
 <template v-slot:py>
@@ -214,14 +188,11 @@ barley = (ndvi_apr < ndvi_may) + (ndvi_jun > ndvi_jul) == 2
 </template>
 </CodeSwitcher>
 
-Each of these rules results in a boolean that can be combined using geometric progression, to obtain a final cube containing all 
-crop type predictions.
+Each of these rules results in a boolean that can be combined using geometric progression, to obtain a final cube containing all crop type predictions.
 
 ### 3.2. Supervised classification using Random Forest 
-A more sophisticated approach is to use a machine learning model such as Random Forest. As mentioned before, training
-is done after feature extraction outside of openEO, and you can then pickle your model and store it on a repository.
-Next, you define a UDF that unpickles your model, predicts, and returns a new DataCube instance that contains the predicted
-values instead of the features.
+A more sophisticated approach is to use a machine learning model such as Random Forest. As mentioned before, training is done after feature extraction outside of openEO, and you can then pickle your model and store it on a repository.
+Next, you define a UDF that unpickles your model, predicts, and returns a new DataCube instance that contains the predicted values instead of the features.
 
 <CodeSwitcher>
 <template v-slot:py>
@@ -250,7 +221,6 @@ clf_results = features.apply_dimension(code=udf_rf, runtime="Python", dimension=
 </CodeSwitcher>
 
 Note that if your labels are strings, you will have to map them to integers.
+You can then download the classification results and plot it. Congratulations!
 
-To see a fully working example, you can check out 
-[this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
-or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
+To see a fully working example, you can check out [this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb) or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
