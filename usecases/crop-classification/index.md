@@ -17,6 +17,11 @@ Generally, any classification task will contain the following steps:
 
 We will have a more detailed look on all three of these steps, and provide code examples along the way.
 
+To see a fully working example, you can check out 
+[this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
+or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
+
+
 ## 1. Preprocessing & feature engineering
 Feature engineering refers to extracting a number of discriminative features from a single pixel timeseries or even
 a time series of EO data tiles. These features then allow an expert rule-based decision approach to classify pixels, or 
@@ -73,7 +78,7 @@ var interpolated = builder.apply_dimension(composite, "array_interpolate_linear"
 </template>
 </CodeSwitcher>
 
-### 1.2. Computing statistics over time
+### 1.2. Computing temporal features
 
 When computing statistics over time, the time dimension is fully reduced per band, and for each band, a number of statistics
 can be computed.
@@ -139,6 +144,113 @@ features = features.rename_labels(features, 'bands', newBandNames);
 </CodeSwitcher>
 
 Now, a complete datacube with features is available for further usage.
-To see a fully working example, you can check out 
-[this Python notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
 
+## 2. Model training
+Crop classification is generally tackled using a form of supervised learning, which requires a set of features with their 
+respective labels. These labels often come in the form of labeled field polygons, however these polygons do not contain any 
+of the features that your model might require.
+
+In OpenEO, we can perform feature point/polygon extraction using the parameter *sample_by_feature=True*.
+
+<CodeSwitcher>
+<template v-slot:py>
+
+ ```python
+ job = features.filter_spatial(barley_points).execute_batch(
+         title="Point feature extraction",
+         description="Feature extraction for p10,p50,p90,sd and tsteps",
+         out_format="netCDF",
+         sample_by_feature=True,
+         job_options=job_options)
+ results = job.get_results()
+ results.download_files("./data/barley_features")
+ ```
+
+</template>
+</CodeSwitcher>
+
+This will write the features of DataCube *features* of every point in *barley_points* to a separate netCDF file.
+Next we can read in all of these features with their respective label in a pandas dataframe, which can subsequently 
+used for training. Training a model happens outside of openEO and will therefore not be explained in detail here,
+but you can have a look at the random forest notebook if that interests you.
+
+## 3. Classification
+### 3.1. Rule-based classification
+A simple approach is to define rules based on your features to classify crops. For example, when looking at temporal profiles
+of corn, we can see that the NDVI of may is smaller than the NDVI of june. By creating and iteratively refining rules for each
+of these crop types, we can get a first classification result.
+
+However, to do this, we need to be able to do band math on the temporal dimension. Remember target_dimension="bands" that we used
+before to calculate the t-steps? We can use this again to stack the temporal dimension onto the band dimension.
+
+<CodeSwitcher>
+<template v-slot:py>
+
+ ```python
+all_bands = features.apply_dimension(dimension='t', target_dimension='bands', process=lambda x: x*1)
+bandnames = [band + "_" + stat for band in all_bands.metadata.band_names for stat in ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]]
+all_bands = all_bands.rename_labels('bands', target=bandnames) 
+ ```
+
+</template>
+</CodeSwitcher>
+
+Next, we can do boolean comparison of features and see whether any given pixel matches the rules you determined.
+
+<CodeSwitcher>
+<template v-slot:py>
+
+ ```python
+ndvi_may = all_bands.band("NDVI_may")
+ndvi_jun = all_bands.band("NDVI_jun")
+ndvi_jul = all_bands.band("NDVI_jul")
+ndvi_aug = all_bands.band("NDVI_aug")
+
+corn = (ndvi_may < ndvi_jun)
+barley = (ndvi_apr < ndvi_may) + (ndvi_jun > ndvi_jul) == 2
+...
+ ```
+
+</template>
+</CodeSwitcher>
+
+Each of these rules results in a boolean that can be combined using geometric progression, to obtain a final cube containing all 
+crop type predictions.
+
+### 3.2. Supervised classification using Random Forest 
+A more sophisticated approach is to use a machine learning model such as Random Forest. As mentioned before, training
+is done after feature extraction outside of openEO, and you can then pickle your model and store it on a repository.
+Next, you define a UDF that unpickles your model, predicts, and returns a new DataCube instance that contains the predicted
+values instead of the features.
+
+<CodeSwitcher>
+<template v-slot:py>
+
+ ```python
+udf_rf = """
+from openeo_udf.api.datacube import DataCube
+import pickle
+import urllib.request
+import xarray
+from openeo.udf.xarraydatacube import XarrayDataCube
+
+def apply_datacube(cube: XarrayDataCube, context: dict) -> XarrayDataCube:
+    array = cube.get_array()
+    stacked_array = array.stack(pixel=("x","y"))
+    stacked_array = stacked_array.transpose()
+    clf = pickle.load(urllib.request.urlopen("https://artifactory.vgt.vito.be:443/auxdata-public/openeo/rf_model.pkl"))
+    pred_array = clf.predict(stacked_array)
+    return DataCube(xarray.DataArray(pred_array.reshape(1,*array.shape[1:]), dims=["bands","y","x"]))
+"""
+
+clf_results = features.apply_dimension(code=udf_rf, runtime="Python", dimension="bands").rename_labels("bands",["pixel"])
+ ```
+
+</template>
+</CodeSwitcher>
+
+Note that if your labels are strings, you will have to map them to integers.
+
+To see a fully working example, you can check out 
+[this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb).
+or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
