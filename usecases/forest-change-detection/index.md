@@ -27,20 +27,15 @@ Supposing that the training input data is a cloud-free Sentinel-2 timeseries we 
 ```python
 import openeo
 from openeo.processes import cos, sin, array_element
-def fit_function(x:ProcessBuilder, parameters):
-    pi = math.pi
-    a0 = array_element(parameters, 0)
-    a1 = array_element(parameters, 1)
-    a2 = array_element(parameters, 2)
-    return a0 + a1*cos(2*pi/31557600*x) + a2*sin(2*pi/31557600*x) # 31557600 are the seconds in one year
+def fitFunction(x:ProcessBuilder, parameters:ProcessBuilder):
+    t = 2 * math.pi / 31557600 * x
+    return parameters[0] + parameters[1] * cos(t) + parameters[2] * sin(t)
 
-args_fit_curve = {
-    "parameters": [1,1,1], # Initial guess of the parameters
-    "dimension": "t",      # Fit the function along the temporal dimension
-    "function": l2a_bands._get_callback(fit_function, parent_parameters=["data","parameters"])
-}
-
-curve_fitting = l2a_bands.fit_curve(**args_fit_curve)
+curve_fitting = l2a_bands.fit_curve(
+    parameters=[1,1,1], # Initial guess of the parameters
+    dimension="t",      # Fit the function along the temporal dimension
+    function=fitFunction
+)
 ```
 
 </template>
@@ -70,18 +65,8 @@ With the seasonal function coefficients, we can predict the expected value for a
 <template v-slot:py>
 
 ```python
-temporal_labels = l2a_bands.process("dimension_labels", {
-    "data": THIS,
-    "dimension": "t"
-})
-
-curve_prediction = l2a_bands_clipped.process("predict_curve", {
-    "data": THIS,
-    "parameters": curve_fitting_loaded,
-    "dimension": "t",
-    "function": l2a_bands_clipped._get_callback(fit_function, parent_parameters = ["data", "parameters"]),
-    "labels": temporal_labels
-})
+temporal_labels = l2a_bands.dimension_labels('t')
+curve_prediction = l2a_bands.predict_curve(parameters=curve_fitting,dimension='t',function=fitFunction,labels=temporal_labels)
 ```
 
 </template>
@@ -90,7 +75,7 @@ curve_prediction = l2a_bands_clipped.process("predict_curve", {
 
 ```js
 temporal_labels = builder.dimension_labels(l2a_bands, "t");
-curve_prediction = builder.predict_curve(l2a_bands_clipped, curve_fitting_loaded, fitFunction, 't', temporal_labels);
+curve_prediction = builder.predict_curve(l2a_bands, curve_fitting, fitFunction, 't', temporal_labels);
 ```
 
 </template>
