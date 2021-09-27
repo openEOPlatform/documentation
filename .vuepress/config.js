@@ -6,6 +6,10 @@ module.exports = {
     editLinks: true,
     docsRepo: 'openEOPlatform/documentation',
     docsBranch: 'main',
+    algolia: {
+      apiKey: 'd6d10a2aa56307e3800f48b3b8852f2d',
+      indexName: 'openeo-cloud'
+    },
     nav: [
       { text: 'Start', link: '/' },
       { text: 'Data Collections', link: '/data-collections/' },
