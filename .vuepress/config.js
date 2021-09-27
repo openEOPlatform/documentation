@@ -34,7 +34,7 @@ module.exports = {
           { text: 'SAR (Sentinel-1)', link: '/usecases/ard/sar/' },
           { text: 'Multi-Spectral Imagery', link: '/usecases/ard/msi/' },
         ] },
-        { text: 'Crop classification', link: '/usecases/crop-classification/' },
+        { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
       ] },
       { text: 'Processes', link: '/processes/' },
