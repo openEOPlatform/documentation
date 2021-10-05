@@ -59,6 +59,11 @@ products processed with FORCE are provided.
 If available pre-processed collections are not sufficient, there is the possibility to perform ARD processing on demand
 with SNAP respectively FORCE. This may again result in additional costs for processing and storage.
 
+Currently most processes are only available for Level-2 data. Only the ARD processes can be executed on Level-1 data. Also
+only either ARD processes **or** "standard" processes can be used in one process graph. Combining both types of processes
+is not yet supported. One option to nevertheless achieve a combination of process types is to run ARD on Level-1 data
+save the results of the job, and then in a second job load results and perform additional computations.
+
 
 ## Processes
 
