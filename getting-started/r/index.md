@@ -11,26 +11,27 @@ Before you install the R client module into your R environment, please make sure
 Stable releases can be installed from the master branch or one of the releases of the [Github repository](https://github.com/Open-EO/openeo-r-client) using `install_github` from the devtools package using the following command:
 
 ```r
-devtools::install_github(repo="Open-EO/openeo-r-client",dependencies=TRUE)
+devtools::install_github(repo="Open-EO/openeo-r-client", dependencies=TRUE)
 ```
 
 ::: tip Note
 Please make sure to have the package 'devtools' installed. If it is not installed use `install.packages("devtools")`.
 :::
 
-If you want to install the development version, please use the `ref="develop"` in the prior installation command.
+If you want to install the development version, please use `devtools::install_github(repo="Open-EO/openeo-r-client", ref="develop", dependencies=TRUE)`.
 It may contain more features, but may also be unstable.
 
 If this gives you an error, something went wrong with the installation so please check the requirements again. 
 
 If you have still troubles installing the package, feel free to leave an issue at the [GitHub project](https://github.com/Open-EO/openeo-r-client/issues).
 
-Now that the installation was successfully finished, we can load the package and connect to openEO compliant back-ends. 
+Now that the installation was successfully finished, we can load the package and connect to openEO Platform. 
 In the following chapters we quickly walk through the main features of the R client.
 
-## Connecting to openEO Platform
+## Connect to openEO Platform and explore
 
-First we need to establish a connection to the openEO Platform back-end, which is available at `https://openeo.cloud`.
+First we need to establish a connection to the openEO Platform back-end, 
+which is available at connection URL `https://openeo.cloud`, or just in short:
 
 ```r
 library(openeo)
@@ -43,13 +44,19 @@ The capabilities of the back-end and the collections are generally publicly avai
 
 ### Collections
 
-Collections represent the basic data the back-end provides (e.g. Sentinel 1 collection) and are therefore often used as input data for job executions ([more info on collections](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections)).
-With the following code snippet you can get all available collection names and their description. The collection list and its entries have their own implementations of the `print` function. The collection list object is coerced into a `data.frame` only for printing purposes and the collection for the collection some key information are printed. 
+The EO data available at a back-end is organised in so-called collections.
+For example, a back-end might provide fundamental satellite collections like "Sentinel 1" or "Sentinel 2",
+or preprocessed collections like "NDVI".
+Collections are used as input data for your openEO jobs.
+
+::: tip Note
+More information on how openEO "collections" relate to terminology used in other systems can be found in
+[the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#eo-data-collections).
+:::
 
 To get the collection list can be indexed by the collections ID to get the more details about the overview information. With the `describe_collection` function you can get an even more detailed information about the collection.
 
 ```r
-# get the collection list
 collections = list_collections()
 
 # print an overview of the available collections (printed as data.frame or tibble)
@@ -71,10 +78,18 @@ If the package is used with RStudio the metadata can also be nicely rendered as 
 
 ### Processes
 
-Processes in openEO are tasks that can be applied to (EO) data.
-The input of a process might be the output of another process, so that several connected processes form a new (user-defined) process itself.
-Therefore, a process resembles the smallest unit of task descriptions in openEO ([more details on processes](https://openeo.org/documentation/1.0/glossary.html#processes)).
-The following code snippet shows how to get the available processes.
+Processes in openEO are operations that can be applied on (EO) data
+(e.g. calculate the mean of an array, or mask out observations outside a given polygon).
+The output of one process can be used as the input of another process,
+and by doing so, multiple processes can be connected that way in a larger "process graph":
+a new (user-defined) processes that implements a certain algorithm.
+
+::: tip Note
+Check [the openEO glossary](https://openeo.org/documentation/1.0/glossary.html#processes)
+for more details on pre-defined, user-defined processes and process graphs.
+:::
+
+The following code snippet shows how to get the available processes:
 
 ```r
 # List of available openEO processes with full metadata
@@ -94,16 +109,18 @@ Each process list entry is a more complex list object (called 'ProcessInfo') and
 As for the collection, processes can also be rendered as a web page in the viewer panel, if RStudio is used. In order to open the viewer use `process_viewer()` with either a particular process (`process_viewer("load_collection")`) or you can pass on all processes (`process_viewer(processes)`). When all processes are chosen, there is also a search bar and a category tree.
 :::
 
-For other graphical overviews of the openEO processes, there is an [online documentation](../../processes/index.md) for general process descriptions and the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions. 
 
-## Authentication 
+## Authentication
 
-TODO (WWU/EURAC)
+In the code snippets above we did not need to log in
+since we just queried publicly available back-end information.
+However, to run non-trivial processing queries one has to authenticate
+so that permissions, resource usage, etc. can be managed properly.
 
-In the code snippets above, authentication is usually not necessary, since we only fetch general information about the back-end.
-To run your own jobs at the back-end or to access job results, you need to authenticate at the back-end.
-
-[OpenID Connect (OIDC)](https://openid.net/connect/) authentication can be used to authenticate with openEO Platform.
+To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
+It offers some interesting features (e.g. a user can securely reuse an existing account),
+but is a fairly complex topic, discussed in more depth in the general 
+[authentication documentation for openEO Platform](../../authentication/index.md).
 
 The following code snippet shows how to log in via OIDC authentication:
 
@@ -113,18 +130,16 @@ Once you have received the *Client ID* and a *Client Secret*, you can can contin
 :::
 
 ```r
-# get supported OIDC providers which the back-end supports
-oidc_providers = list_oidc_providers()
-
-login(login_type="oidc",
-      provider = oidc_providers$some_provider,
+login(login_type = "oidc",
+      provider = "egi",
       config = list(
         client_id= "...",
-        secret = "..."))
+        secret = "..."),
+        scopes = c("openid", "email", "offline_access", "eduperson_entitlement")))
 ```
 
 Calling this method opens your system web browser, with which you can authenticate yourself on the back-end authentication system. 
-After that the website will give you the instructions to go back to the python client, where your connection has logged your account in. 
+After that the website will give you the instructions to go back to the R client, where your connection has logged your account in. 
 This means, that every call that comes after that via the connection variable is executed by your user account.
 
 As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
@@ -244,4 +259,4 @@ The printing behavior and the actual data structure might differ!
 
 * [Examples](https://github.com/Open-EO/openeo-r-client/tree/master/examples)
 * [Repository](https://github.com/Open-EO/openeo-r-client)
-* for function documentation, use R's `?` function
+* for function documentation, use R's `?` function or see the [online documentation](https://open-eo.github.io/openeo-r-client/index.html)
