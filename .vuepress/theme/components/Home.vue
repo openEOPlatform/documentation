@@ -17,7 +17,7 @@
         <NavLink class="action-button" :item="{link: '/getting-started/javascript/', text: 'JavaScript'}"/>
         <NavLink class="action-button" :item="{link: '/getting-started/jupyterlab/', text: 'JupyterLab'}"/>
         <NavLink class="action-button" :item="{link: '/getting-started/python/', text: 'Python'}"/>
-        <!-- <NavLink class="action-button" :item="{link: '/getting-started/r/', text: 'R'}"/> -->
+        <NavLink class="action-button" :item="{link: '/getting-started/r/', text: 'R'}"/>
       </p>
 
       <p class="description">
