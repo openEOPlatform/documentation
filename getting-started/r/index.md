@@ -135,8 +135,7 @@ login(login_type = "oidc",
       provider = "egi",
       config = list(
         client_id= "...",
-        secret = "..."),
-        scopes = c("openid", "email", "offline_access", "eduperson_entitlement")))
+        secret = "...")))
 ```
 
 Calling this method opens your system web browser, with which you can authenticate yourself on the back-end authentication system. 
