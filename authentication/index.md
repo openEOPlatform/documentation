@@ -1,6 +1,5 @@
 # Authentication
 
-
 To log in to the openEO platform or related services,
 you do not need to pick a username and invent a new password.
 Instead, we rely on an authentication service provided by the [European Open Science Cloud 'EOSC'](https://aai.eosc-portal.eu), 
@@ -19,7 +18,6 @@ If you are the first member of your institution to log in to EOSC,
 such problems may occur and sometimes  require your institution's IT team 
 to properly support EOSC login through EduGain.
 :::
-
 
 ### Security & Privacy
 
@@ -62,31 +60,17 @@ to log in.
 After a one time registration process you should have access to all Terrascope services
 using your institution or social media credentials.
 
-
-
 ## Connect to the openEO platform
 
 After one time account setup describe above, 
-you should be able to create an authenticated connection,
-e.g. from your Python code, like this:
+you should be able to create an authenticated connection.
 
-```python
-import openeo
-connection = openeo.connect("openeo.cloud").authenticate_oidc()
-```
+See the getting started guides to find out more about the authentication procedures:
 
-The `authenticate_oidc()` call will show a link to a website, and a short "device" code.
-Go to that website in your preferred web browser, log in (if necessary), and
-enter the "device" code when asked for it.
-After doing this, you should have an authenticated connection in your Python script or application.
-
-On top of that, a so-called "refresh token" will be stored on the machine that executes 
-that Python code. 
-As long as this refresh token hasn't expired, the `authenticate_oidc()` call
-will work directly without having to visit that website and enter the device code.
-
-More detailed information on authentication can be found
-[here](https://open-eo.github.io/openeo-python-client/auth.html#openid-connect-based-authentication).
- 
+* [Editor](../getting-started/editor/index.md)
+* [JavaScript](../getting-started/javascript/index.md#authentication)
+* [JupyterLab](../getting-started/jupyterlab/index.md)
+* [Python](../getting-started/python/index.md#authentication)
+* [R](../getting-started/r/index.md#authentication)
  
  

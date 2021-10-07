@@ -153,8 +153,6 @@ For a graphical overview of the openEO processes, please see our [online documen
 
 ## Authentication
 
-TODO (WWU)
-
 In the code snippets above, authentication is usually not necessary, since we only fetch general information about the back-end.
 To run your own jobs at the back-end or to access job results, you need to authenticate at the back-end.
 
@@ -175,8 +173,7 @@ If you have included the library using HTML `script` tags, then you need to incl
 No further action is required, if you have installed the client via npm.
 ::: 
 
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) and the [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/2.0.0/OidcProvider.html) for more information.
-
+As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in (e.g. Browser or Node), please refer to the  [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/2.0.0/OidcProvider.html) and the [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
 
 ## Creating a (user-defined) process
 

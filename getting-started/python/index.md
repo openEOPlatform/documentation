@@ -120,7 +120,6 @@ Like with collections, instead of programmatic exploration you'll probably prefe
 You can also use the [openEO Hub](https://hub.openeo.org/) for back-end specific process descriptions
 or browse the [reference specifications of openEO processes](https://processes.openeo.org/).
 
-
 ## Authentication
 
 In the code snippets above we did not need to log in
@@ -148,6 +147,13 @@ the connection in the script will also be authenticated.
 This means that subsequent requests from the `connection` object will 
 be properly identified by the back-end as coming from your user.
 
+```python
+import openeo
+connection = openeo.connect("openeo.cloud").authenticate_oidc()
+```
+
+More detailed information on authentication can be found
+[here](https://open-eo.github.io/openeo-python-client/auth.html#openid-connect-based-authentication).
 
 ## Working with Datacubes
 
