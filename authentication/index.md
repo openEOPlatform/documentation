@@ -87,9 +87,8 @@ please [contact us](https://openeo.cloud/contact/).
 
 Due to the federated nature of openEO Platform, you may still need to also register
 with the individual service provider.
-This depends on which data sets and processes you need to use.
-
-If you plan to use any data set that are '*provided by Terrascope*' or '*provided by SentinelHub*',
+This depends on which [data sets](../data-collections/index.md) and [processes](../processes/index.md) you need to use.
+If you plan to use any [data set](../data-collections/index.md) that is '*provided by Terrascope*' or '*provided by SentinelHub*',
 you need to follow the steps below to setup a *Terrascope account*.
 This allows to get optimal access to the processing resources of Terrascope,
 but it is only required temporarily and this requirement will go away in the future.
