@@ -83,16 +83,17 @@ You will receive an e-mail notification once your account is fully set up and re
 If you have any questions about the enrollment to openEO Platform or the Early Adopter program,
 please [contact us](https://openeo.cloud/contact/).
 
-### Register with Terrascope and EODC
+### Register with Terrascope
 
-Due to the federated nature of openEO Platform, you still need to also register
-with Terrascope and EODC, depending on which data sets and processes you need to use.
-This is only required temporarily and this requirement will go away in the future.
+Due to the federated nature of openEO Platform, you may still need to also register
+with the individual service provider.
+This depends on which data sets and processes you need to use.
 
-#### Terrascope registration
+If you plan to use any data set that are '*provided by Terrascope*' or '*provided by SentinelHub*',
+you need to follow the steps below to setup a *Terrascope account*.
+This allows to get optimal access to the processing resources of Terrascope,
+but it is only required temporarily and this requirement will go away in the future.
 
-To get optimal access to the processing resources of the Terrascope back-end,
-you have to setup a *Terrascope account*.
 Luckily, Terrascope also uses the EGI check-in as authentication service,
 so you can quickly use your existing account to bootstrap a new Terrascope account.
 
@@ -105,11 +106,6 @@ Go to the [Terrascope portal](https://terrascope.be) to set up the Terrascope ac
 click the '*sign in*' menu item at the top, and pick the '*EduGAIN and social logins*' to log in.
 After a one time registration process you should have access to all Terrascope services
 using your institution or social media credentials.
-
-#### EODC registration
-
-You need to be white-listed to use EODC services.
-Please [contact EODC](https://openeo.cloud/contact/) for being white-listed.
 
 ## Working with openEO platform
 
