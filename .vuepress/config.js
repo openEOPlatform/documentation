@@ -24,7 +24,7 @@ module.exports = {
           { text: 'JupyterLab (Python)', link: '/getting-started/jupyterlab/' },
           { text: 'Editor', link: '/getting-started/editor/' }
         ] },
-        { text: 'Authentication', link: '/authentication/' },
+        { text: 'Registration / Login', link: '/authentication/' },
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
       ] },
       { text: 'Use Cases', items: [
