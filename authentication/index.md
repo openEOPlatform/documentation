@@ -46,9 +46,8 @@ Once you have connected your existing account with EGI check-in, you'll need to
 become part of the openEO Platform virtual organization.
 
 ::: danger Testing phase
-openEO Platform is still in an early stage and is open only to a limited number of users.
-For now, you need to be an Early Adopter to join openEO Platform.
-Please read the [information page for Early Adopters](https://openeo.cloud/early-adopters/) first.
+Currently, openEO Platform is only open for Early Adopters.
+Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
 :::
 
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
