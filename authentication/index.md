@@ -26,7 +26,7 @@ continue with [joining openEO Platform](#join-openeo-platform).
 Otherwise, please go to <https://aai.egi.eu/signup> and select '*SIGN UP*'.
 In the next step, select the institution (recommended) or service you want to login with in the future.
 
-::: warn Recommendation
+::: warning Recommendation
 We recommend to use your institutional account whenever possible.
 Nevertheless, if you are the first member of your institution to work with EGI check-in, 
 problems may occur and sometimes require your institution's IT team to properly
@@ -45,7 +45,8 @@ If problems occur during this process, you will want to send a support request t
 Once you have connected your existing account with EGI check-in, you'll need to
 become part of the openEO Platform virtual organization.
 
-::: warning
+::: danger Testing phase
+openEO Platform is still in an early stage and is open only to a limited number of users.
 For now, you need to be an Early Adopter to join openEO Platform.
 Please read the [information page for Early Adopters](https://openeo.cloud/early-adopters/) first.
 :::
@@ -53,7 +54,7 @@ Please read the [information page for Early Adopters](https://openeo.cloud/early
 To get started, please [apply for in the openEO platform organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
 You may be asked to log in again with the account you've previously connected to EGI check-in.
 
-::: tip
+::: tip Note
 The instructions below are available in English, but may be localized to your preferred language.
 :::
 
