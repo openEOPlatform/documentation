@@ -94,6 +94,10 @@ If you have any questions about the enrollment to openEO Platform or the Early A
 please [contact us](https://openeo.cloud/contact/).
 
 
+Optionally, you may want to [register with individual service providers](../federation/index.md#registration) 
+in the federation for better support or performance.
+
+
 ## Working with openEO platform
 
 After you've been approved to join openEO Platform, you can start working with
