@@ -23,13 +23,6 @@ This procedure has important advantages for our users:
 
 The first step is to connect your existing account with EGI check-in
 and become a member of the *EGI User community*.
-If you already have done this in the past, you can skip this step and 
-continue with [joining openEO Platform](#join-openeo-platform).
-
-To get an idea of ​​what this step will require from you,
-you can consult the [EGI Documentation](https://docs.egi.eu/documentation/333/users/check-in/signup/)
-(a step-by-step guide with pictures).
-If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
 
 To get started, please go to <https://aai.egi.eu/signup>. You will have to select the
 institution (recommended) or the (social) platform you want to log in with in the future
@@ -49,9 +42,17 @@ In this case you can simply select *'SIGN UP'*.
 Afterward, you will have to complete a small registration procedure to connect your account.
 You may have to fill any missing personal information: *Name*, *Email*, *Affiliation* and/or *Organisation*.
 
+The whole process is also documented as step-by-step guide with pictures in the [EGI Documentation](https://docs.egi.eu/documentation/333/users/check-in/signup/).
+If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
+
+::: tip You have already connected your account in the past?
+If you have already connected your existing account with EGI check-in in the past, you do not need to do so again and can 
+continue with [joining openEO Platform](#join-openeo-platform). If you do not remember if you have already connect your account, you can try to connect it again. If it is already connected you will get a warning at the end of the process ("The identifier is already in use"). Otherwise connect it as  described above. 
+:::
+
 ## Join openEO Platform
 
-Once you have connected your existing account with EGI check-in, you'll need to
+Once you have connected your existing account with EGI check-in, you will need to
 become part of the openEO Platform virtual organization.
 
 ::: danger Testing phase
