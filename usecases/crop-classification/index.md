@@ -247,4 +247,5 @@ You can then download the classification results and plot it. Congratulations!
 To see a fully working example, you can check out [this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb) or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
 
 We ran the code in that notebook for ~120 MGRS tiles to end up with a crop cover map for 5 countries in Europe, which looks like this:
+
 ![cropcover_5_countries](https://user-images.githubusercontent.com/10434651/138342824-32d38fbe-7931-497c-8da3-47bbab7a3870.png)
