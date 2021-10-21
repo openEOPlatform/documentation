@@ -17,6 +17,7 @@ We will have a more detailed look at all three of these steps, and provide code 
 
 To see a fully working example, you can check out [this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb) or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
 
+![cropcover_closeup](https://user-images.githubusercontent.com/10434651/138343588-951f9b24-e039-4598-bd31-2d771ce5a615.png)
 
 ## Preprocessing & feature engineering
 Feature engineering refers to extracting a number of discriminative features from a single pixel timeseries or even a time series of EO data tiles. These features can in turn be used for any type of classification, ranging from an expert rule-based decision approach to regular machine learning techniques such as random forest or deep learning techniques based on neural networks.
@@ -244,3 +245,6 @@ Note that if your labels are strings, you will have to map them to integers.
 You can then download the classification results and plot it. Congratulations!
 
 To see a fully working example, you can check out [this Python notebook on rule-based classification](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20(rule-based).ipynb) or [this Python notebook on classification using Random Forest](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb).
+
+We ran the code in that notebook for ~120 MGRS tiles to end up with a crop cover map for 5 countries in Europe, which looks like this:
+![cropcover_5_countries](https://user-images.githubusercontent.com/10434651/138342824-32d38fbe-7931-497c-8da3-47bbab7a3870.png)
