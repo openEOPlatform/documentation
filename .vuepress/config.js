@@ -40,7 +40,15 @@ module.exports = {
       { text: 'Processes', link: '/processes/' },
       { text: 'File Formats', link: '/file-formats/' },
       { text: 'Advanced', items: [
-        { text: 'Federation Aspects', link: '/federation/' },
+        { text: 'Federation Aspects', link: '/federation/index.html'},
+        { text: 'Federation Contract', link: '/federation/backends/index.html' },
+/*      { text: 'Federation Contract', items: [
+          { text: 'Introduction', link: '/federation/backends/' },
+          { text: 'Collections', link: '/federation/backends/collections.html' },
+          { text: 'Processes', link: '/federation/backends/processes.html' },
+          { text: 'File Formats', link: '/federation/backends/fileformats.html' },
+          { text: 'API', link: '/federation/backends/api.html' },
+        ] }, */
         { text: 'HTTP API', link: '/api/' },
       ] },
       { text: 'Contact', link: 'https://openeo.cloud/contact/' },

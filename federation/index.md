@@ -1,4 +1,4 @@
-# Federation Aspects
+# Federation Aspects amd Known Issues
 
 openEO Platform is a federated platform. This means that multiple independent 'back-ends', 
 which all support the openEO interface, are combined into a single instance. From the outside, 
@@ -16,7 +16,6 @@ separate components:
 - Some processes are not (fully) supported on all back-ends.
 - When a back-end requires data from an external source, bandwidth limitations may result in slower processing.
 
-
 ## Data Collections
 
 The federation exposes the _union_ of the data collections of each of the underlying back-ends.
@@ -28,7 +27,6 @@ the actual processing work should be delegated to.
 For the technical discussion on collection federation, see [Open-EO/openeo-aggregator#5](https://github.com/Open-EO/openeo-aggregator/issues/5)
 :::
 
-
 ### Terrascope
 
 Terrascope hosts a number of collections itself.
@@ -37,7 +35,6 @@ while for medium resolution (Sentinel 1, 2) data is only offered for selected ar
 
 Additional data can be processed upon request, if it is not available from another provider. 
 This may result in an additional cost for processing and storage.
-
 
 ### SentinelHub
 
@@ -48,7 +45,6 @@ This works very well for small areas, or a 100x100km MGRS tile in batch mode,
 but is not yet recommended for processing medium size to large countries or continents. 
 
 The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by SentinelHub.
-
 
 ### EODC
 
@@ -63,7 +59,6 @@ Currently most processes are only available for Level-2 data. Only the ARD proce
 only either ARD processes **or** "standard" processes can be used in one process graph. Combining both types of processes
 is not yet supported. One option to nevertheless achieve a combination of process types is to run ARD on Level-1 data
 save the results of the job, and then in a second job load results and perform additional computations.
-
 
 ## Processes
 
@@ -92,7 +87,6 @@ at each of the underlying back-ends.
 ::: tip Note
 For the technical discussion on file format federation, see [Open-EO/openeo-aggregator#1](https://github.com/Open-EO/openeo-aggregator/issues/1)
 :::
-
 
 ## Registration
 
