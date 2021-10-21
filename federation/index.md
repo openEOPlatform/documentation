@@ -92,3 +92,31 @@ at each of the underlying back-ends.
 ::: tip Note
 For the technical discussion on file format federation, see [Open-EO/openeo-aggregator#1](https://github.com/Open-EO/openeo-aggregator/issues/1)
 :::
+
+
+## Registration
+
+Due to the federated nature of openEO Platform, 
+you may still want to register with an individual service provider,
+for example to get direct support or better resource prioritization.
+This depends on which [data sets](../data-collections/index.md) and [processes](../processes/index.md) you need to use.
+
+### Terrascope Registration
+
+If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by SentinelHub'*,
+you can follow the steps below to set up a *Terrascope account*,
+which helps to prioritize and speed up the processing requests.
+
+Luckily, Terrascope also uses the EGI check-in as authentication service,
+so you can quickly use your [existing EGI account](../authentication/index.md)
+to bootstrap a new Terrascope account.
+
+::: tip Note
+If you already have an existing Terrascope account, you can also link your EGI account to it,
+which should happen automatically (based on a common email address) if you follow the procedure below.
+:::
+
+Go to the [Terrascope portal](https://terrascope.be) to set up the Terrascope account,
+click the '*sign in*' menu item at the top, and pick the *'EduGAIN and social logins'* to log in.
+After a one time registration process you should have access to all Terrascope services
+using your institution or (social) platform credentials.

@@ -107,27 +107,10 @@ and is part of the openEO Platform virtual organization.
 If you have any questions about the enrollment to openEO Platform or the Early Adopter program,
 please [contact us](https://openeo.cloud/contact/).
 
-### Register with Terrascope (optional)
 
-Due to the federated nature of openEO Platform, you may still want to register
-with the individual service provider.
-This depends on which [data sets](../data-collections/index.md) and [processes](../processes/index.md) you need to use.
-If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by SentinelHub'*,
-you can follow the steps below to setup a *Terrascope account*,
-which helps to prioritize and speed up the processing requests.
+Optionally, you may want to [register with individual service providers](../federation/index.md#registration) 
+in the federation for better support or performance.
 
-Luckily, Terrascope also uses the EGI check-in as authentication service,
-so you can quickly use your existing account to bootstrap a new Terrascope account.
-
-::: tip Note
-If you already have an existing Terrascope account, you can also link your account to it,
-which should happen automatically (based on a common email address) if you follow the procedure below.
-:::
-
-Go to the [Terrascope portal](https://terrascope.be) to set up the Terrascope account,
-click the '*sign in*' menu item at the top, and pick the *'EduGAIN and social logins'* to log in.
-After a one time registration process you should have access to all Terrascope services
-using your institution or (social) platform credentials.
 
 ## Working with openEO platform
 
