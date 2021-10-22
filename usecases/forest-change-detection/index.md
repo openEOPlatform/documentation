@@ -17,6 +17,8 @@ In this section, we will show how to combine openEO functionality into a basic c
 
 To correctly find the right fitting for the harmonic function, we need cloud-free data if using optical data, or shadow masked data if using radar data, over a timeseries of at least two years (but more is better!). Pixels covered by clouds or shadows deviate from the expected trend of the vegetation and therefore we must start with pre-processed data.
 
+The current implementation of the ``fit_curve()`` / ``predict_curve()`` process and available processing and memory resources limit the spatio-temporal extent of data which can be processed in a single job. If a large extent should be processed, the extent has to be split into multiple parts and can be processed in multiple jobs.
+
 ## Seasonal curve fitting
 
 Supposing that the training input data is a cloud-free Sentinel-2 timeseries we can write the following code using the openEO clients to find the optimal function coefficients:
