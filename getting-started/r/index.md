@@ -8,21 +8,24 @@ You need to [become part of the openEO Platform "early adopter" program](https:/
 
 Before you install the R client module into your R environment, please make sure that you have at least R version 3.6. Older versions might also work, but were not tested.
 
-Stable releases can be installed from the master branch or one of the releases of the [Github repository](https://github.com/Open-EO/openeo-r-client) using `install_github` from the devtools package using the following command:
+Stable releases can be installed from CRAN:
 
 ```r
-devtools::install_github(repo="Open-EO/openeo-r-client", dependencies=TRUE)
+install.packages("openeo")
 ```
 
-::: tip Note
-Please make sure to have the package 'devtools' installed. If it is not installed use `install.packages("devtools")`.
+::: tip Installing the development version
+If you want to install the development version, you can install from GitHub. It may contain more features, but may also be unstable.
+
+You need to have the package 'devtools' installed. If it is not installed use `install.packages("devtools")`.
+
+Now you can use `install_github` from the devtools package to install the development version:
+```r
+devtools::install_github(repo="Open-EO/openeo-r-client", dependencies=TRUE, ref="develop")
+```
+
+If this gives you an error, something went wrong with the installation so please check the requirements again.
 :::
-
-If you want to install the development version, please use:
-`devtools::install_github(repo="Open-EO/openeo-r-client", ref="develop", dependencies=TRUE)`
-It may contain more features, but may also be unstable.
-
-If this gives you an error, something went wrong with the installation so please check the requirements again. 
 
 If you have still troubles installing the package, feel free to leave an issue at the [GitHub project](https://github.com/Open-EO/openeo-r-client/issues).
 
