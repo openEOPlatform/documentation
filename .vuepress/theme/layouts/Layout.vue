@@ -27,7 +27,7 @@
       </template>
     </Sidebar>
 
-    <Home v-if="$page.frontmatter.home" :defaultVersion="defaultVersion" />
+    <Home v-if="$page.frontmatter.home" />
 
     <main v-else-if="$page.frontmatter.news" class="page">
       <div class="theme-default-content news">

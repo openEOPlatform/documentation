@@ -24,30 +24,6 @@
         If you can't find what you are looking for, please submit a request to our <a href="https://forums.openeo.cloud" target="_blank">community forums</a> or <a href="https://openeo.cloud/contact/" target="_blank">contact us</a> directly.
       </p>
     </header>
-<!--
-    <div class="features">
-      <div class="feature">
-        <h2>Get started</h2>
-        <ul>
-          <li>ToDo</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h2>Service Offerings</h2>
-        <ul>
-          <li>ToDo</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h2>
-          Use Cases
-        </h2>
-        <ul>
-          <li>ToDo</li>
-        </ul>
-      </div>
-    </div>
--->
     <Content class="theme-default-content custom"/>
   </main>
 </template>
@@ -60,7 +36,7 @@ export default {
 
   components: { NavLink },
 
-  props: ['blog', 'defaultVersion'],
+  props: ['blog'],
 
   computed: {
     data () {
