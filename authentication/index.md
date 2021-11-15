@@ -1,4 +1,18 @@
-# Registration and Login (Authentication)
+# How to join OpenEO Platform (3 Steps)
+::: danger Testing phase
+Currently, openEO Platform is only open for Early Adopters.
+Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
+:::
+
+
+To express your interest in becoming an Early Adopter you need to follow 3 steps:
+1. Registration and Login (Authentication) for EGI check-in
+2. Connect an existing account to EGI check-in
+3. Apply to the openEO Platform virtual organization 
+
+The 3 steps are described in detail below.
+
+## Step 1: Registration and Login (Authentication)
 
 To register for openEO platform,
 you usually do not need to pick a username and invent a new password. 
@@ -19,7 +33,7 @@ This procedure has important advantages for our users:
 - No need to set up and remember yet another username and password.
 :::
 
-## Connect an existing account
+## Step 2: Connect an existing account
 
 The first step is to connect your existing account with EGI check-in
 and become a member of the *EGI User community*.
@@ -62,7 +76,7 @@ Within the process, EGI will mention that you got a personal EGI Check-in ID ass
 You don't need to remember this ID as it's not needed in the following steps.
 :::
 
-## Join openEO Platform
+## Step 3: Join openEO Platform virtual organization
 
 Once you have connected your existing account with EGI check-in, you will need to
 become part of the openEO Platform virtual organization.
