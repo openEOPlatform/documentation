@@ -1,5 +1,7 @@
 # Analysis-Ready Data for SAR (Sentinel-1)
 
+Executable code for this guide can be found in a [dedicated notebook](https://github.com/openEOPlatform/sample-notebooks/blob/main/openEO%20Platform%20-%20Radar%20ARD.ipynb).
+
 ## Backscatter computation
 
 Data from synthetic aperture radar (SAR) sensors requires significant preprocessing to be calibrated and normalized for terrain.
