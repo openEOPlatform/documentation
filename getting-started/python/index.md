@@ -297,6 +297,7 @@ or [more detailed batch job (result) management](https://open-eo.github.io/opene
 
 Additional information and resources about the openEO Python Client Library:
 
+* [Official openeo.cloud sample notebooks](https://github.com/openEOPlatform/sample-notebooks)
 * [Example scripts](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
 * [Example Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
 * [Official openEO Python Client Library Documentation](https://open-eo.github.io/openeo-python-client/)
