@@ -248,8 +248,6 @@ After applying all processes you want to execute, we need to tell the back-end t
 result = datacube.save_result("GTiff")
 ```
 
-
-
 ## Execution
 
 It's important to note that all the datacube processes we applied up to this point
@@ -272,6 +270,12 @@ We can now just send this description to the back-end to create a batch job with
 # Creating a new job at the back-end by sending the datacube information.
 job = result.send_job()
 ```
+
+::: tip
+It can be annoying to manage and monitor batch jobs via code.
+If you want to use an interface for your batch jobs (or other resources) that is easier to use, you can also open the [openEO Platform Editor](https://editor.openeo.cloud).
+After login, you'll be able to manage and monitor your batch jobs in a near-realtime interactive environment; Look out for the "Data Processing" tab. 
+:::
 
 The batch job, which is referenced by the returned `job` object, is just created at the back-end, 
 it is not started yet.

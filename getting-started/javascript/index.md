@@ -242,6 +242,12 @@ Therefore, we need to create a job at the back-end using our datacube, giving it
 var job = await con.createJob(result, "Example Title");
 ```
 
+::: tip
+It can be annoying to manage and monitor batch jobs via code.
+If you want to use an interface for your batch jobs (or other resources) that is easier to use, you can also open the [openEO Platform Editor](https://editor.openeo.cloud).
+After login, you'll be able to manage and monitor your batch jobs in a near-realtime interactive environment; Look out for the "Data Processing" tab. 
+:::
+
 The `createJob` method sends all necessary information to the back-end and creates a new job, which gets returned.
 After this, the job is just created, but has not started the execution at the back-end yet.
 It needs to be queued for processing explicitly:

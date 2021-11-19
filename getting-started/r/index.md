@@ -231,6 +231,12 @@ It needs to be queued for processing explicitly:
 start_job(job = job)
 ```
 
+::: tip
+It can be annoying to manage and monitor batch jobs via code.
+If you want to use an interface for your batch jobs (or other resources) that is easier to use, you can also open the [openEO Platform Editor](https://editor.openeo.cloud).
+After login, you'll be able to manage and monitor your batch jobs in a near-realtime interactive environment; Look out for the "Data Processing" tab. 
+:::
+
 After the job was executed, status updates can be fetched by using the `list_jobs()` function. This function returns a list of job descriptions, which can be indexed with the jobs ID to limit the search results. But remember that only `list_jobs()` refreshes this list. So, to monitor a job you have to iteratively call the job (`describe_job()`) or the job list `list_jobs()`.
 
 ```r
