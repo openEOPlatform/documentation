@@ -28,7 +28,7 @@ export default {
 			searchTerm: null
 		};
 	},
-	async created() {
+	async mounted() {
 		const urlParams = new URLSearchParams(window.location.search);
 		const q = urlParams.get('q');
 		if (typeof q === 'string' && q.length > 0) {
