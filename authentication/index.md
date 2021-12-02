@@ -68,6 +68,15 @@ In this case you can simply select *'SIGN UP'*.
 Afterward, you will have to complete a small registration procedure to connect your account.
 You may have to fill any missing personal information: *Name*, *Email*, *Affiliation* and/or *Organisation*.
 
+::: danger Patience required!
+Please Wait until your registration is processed and you see the following Banner on top of your screen:
+<figure>
+    <img src="./join0.png" alt="Join EGI user community - process end">
+    <figcaption>Join EGI user community - Screen when the process is finished</figcaption>
+</figure>
+:::
+
+
 After submitting the registration form, you will receive a verification e-mail.
 The e-mail verification needs to be completed before you can contine with the next steps.
 
