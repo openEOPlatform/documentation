@@ -25,6 +25,7 @@ module.exports = {
           { text: 'Editor', link: '/getting-started/editor/' }
         ] },
         { text: 'Registration / Login', link: '/authentication/' },
+        /*{ text: 'Registration / Login', link: '/free_trial/' }, */
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
       ] },
       { text: 'Use Cases', items: [
