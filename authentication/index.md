@@ -5,7 +5,7 @@ Read more about the Early Adopters program on the [information page](https://ope
 :::
 
 
-To express your interest in becoming an Early Adopter you need to follow 3 steps:
+To express your interest in becoming an Early Adopter you need to follow 2 steps:
 
 1. Connect an existing account to EGI check-in
 2. Apply to the openEO Platform virtual organization 
