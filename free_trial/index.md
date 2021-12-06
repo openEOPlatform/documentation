@@ -1,11 +1,15 @@
-# How to join OpenEO Platform (2 Steps)
+UNDER CONSTRUCTION!
+
+
+# 30 Day free Trial of openEO Platform 
 ::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters.
+The free trial is for interested users who want to test the platform on a non-regular, playful basis.
+If you have detailed intentions, usecases or a project you are working on we would like to invite you to apply as Early Adopter.  
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
 :::
 
 
-To express your interest in becoming an Early Adopter you need to follow 3 steps:
+To get the free trial period you need to follow 2 simple steps:
 
 1. Connect an existing account to EGI check-in
 2. Apply to the openEO Platform virtual organization 
@@ -90,13 +94,17 @@ You don't need to remember this ID as it's not needed in the following steps.
 Once you have connected your existing account with EGI check-in, you will need to
 become part of the openEO Platform virtual organization.
 
-::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters.
-Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
-:::
 
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
 You may be asked to log in again with the account you have previously connected to EGI check-in.
+
+
+
+
+
+
+
+Your 30 day trial is starting right away with the 
 
 ::: tip Note
 The instructions below are available in English, but may be localized to your preferred language.
@@ -111,7 +119,7 @@ which you can start by clicking *'BEGIN'*.
 </figure>
 
 In the next step, you will only be required to fill in two fields:
-- *Justification for this access request*: Please provide your brief motivation in this field (1).
+- *Justification for this access request*: Please state: "30 day trial starting on DD/MM/YYYY" and fill DD/MM/YYYY with the date you want to start your trial period (1).
 - *Agree to Acceptable Use Policy and Conditions of Use (AUP)*: You will need to read (2) and accept (3) the AUP.
 
 You can finalize the registration form by clicking *'SUBMIT'* (4).
