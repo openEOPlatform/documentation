@@ -1,5 +1,5 @@
 
-# 30 Day free Trial of openEO Platform 
+# 30 Day free trial of openEO Platform 
 ::: danger Testing phase
 The free trial is for interested users who want to test the platform on a non-regular, playful basis.
 If you have detailed intentions, usecases or a project you are working on, we would like to invite you to apply as Early Adopter.  
