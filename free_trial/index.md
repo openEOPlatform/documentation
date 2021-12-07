@@ -119,11 +119,11 @@ You can finalize the registration form by clicking *'SUBMIT'* (4).
     <figcaption>Joining openEO Platform: Step 2</figcaption>
 </figure>
 
-After enrollment (you will likely have seen a message "Petition confirmed"),
-a manual approval will take place and if possible, you will be granted access to the platform.
+After enrollment (you will likely have seen a message "Petition Submitted. Awaiting Review"),
+a manual approval will take place and you will be granted access to the platform.
 This process may take a few days, especially if there is high demand.
 You will receive an e-mail notification once your account has been approved by us
-and is part of the openEO Platform virtual organization. 
+and is part of the openEO Platform virtual organization. Your account will be removed from the Virtual Organization after 30 days. 
 
 If you have any questions about the enrollment to openEO Platform or the free trial period or the Early Adopter program,
 please [contact us](https://openeo.cloud/contact/).
