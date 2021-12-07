@@ -1,10 +1,8 @@
-UNDER CONSTRUCTION!
-
 
 # 30 Day free Trial of openEO Platform 
 ::: danger Testing phase
 The free trial is for interested users who want to test the platform on a non-regular, playful basis.
-If you have detailed intentions, usecases or a project you are working on we would like to invite you to apply as Early Adopter.  
+If you have detailed intentions, usecases or a project you are working on, we would like to invite you to apply as Early Adopter.  
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
 :::
 
@@ -98,14 +96,6 @@ become part of the openEO Platform virtual organization.
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
 You may be asked to log in again with the account you have previously connected to EGI check-in.
 
-
-
-
-
-
-
-Your 30 day trial is starting right away with the 
-
 ::: tip Note
 The instructions below are available in English, but may be localized to your preferred language.
 :::
@@ -135,7 +125,7 @@ This process may take a few days, especially if there is high demand.
 You will receive an e-mail notification once your account has been approved by us
 and is part of the openEO Platform virtual organization. 
 
-If you have any questions about the enrollment to openEO Platform or the Early Adopter program,
+If you have any questions about the enrollment to openEO Platform or the free trial period or the Early Adopter program,
 please [contact us](https://openeo.cloud/contact/).
 
 
