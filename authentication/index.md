@@ -1,7 +1,8 @@
 # How to join OpenEO Platform (2 Steps)
 ::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters.
+Currently, openEO Platform is only open for Early Adopters or within a free 30 day trial period.
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
+Read more about the 30 day trial period on the [documentation page](https://docs.openeo.cloud/free_trial/)
 :::
 
 
