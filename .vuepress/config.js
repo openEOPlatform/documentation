@@ -72,6 +72,7 @@ module.exports = {
     ],
     ['vuepress-plugin-code-copy', true]
   ],
+  patterns: ['**/*.md', '**/*.vue', '!DEVELOPMENT.md'],
   serviceWorker: true,
   chainWebpack: (config, isServer) => {
     config.module
