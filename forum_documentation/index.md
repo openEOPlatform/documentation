@@ -78,7 +78,7 @@ You may have to fill any missing personal information: *Name*, *Email*, *Affilia
 ::: danger Patience required!
 Please Wait until your registration is processed and you see the following Banner on top of your screen:
 <figure>
-    <img src="./join0.png" alt="Join EGI user community - process end">
+    <img src="../authentication/join0.png" alt="Join EGI user community - process end">
     <figcaption>Join EGI user community - Screen when the process is finished</figcaption>
 </figure>
 :::
@@ -109,7 +109,7 @@ Once you are logged in, a registration form with the title *'Join openEO Platfor
 which you can start by clicking *'BEGIN'*.
 
 <figure>
-    <img src="./join1.png" alt="Join openEO Platform - Step 1">
+    <img src="../authentication/join1.png" alt="Join openEO Platform - Step 1">
     <figcaption>Joining openEO Platform: Step 1</figcaption>
 </figure>
 
@@ -120,7 +120,7 @@ In the next step, you will only be required to fill in two fields:
 You can finalize the registration form by clicking *'SUBMIT'* (4).
 
 <figure>
-    <img src="./join2.png" alt="Join openEO Platform - Step 2">
+    <img src="../authentication/join2.png" alt="Join openEO Platform - Step 2">
     <figcaption>Joining openEO Platform: Step 2</figcaption>
 </figure>
 
