@@ -1,12 +1,14 @@
-# How to join OpenEO Platform (2 Steps)
+
+# 30 Day free trial of openEO Platform 
+
 ::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters or within a free 30 day trial period.
+The free trial is for interested users who want to test the platform on a non-regular, playful basis.
+If you have detailed intentions, usecases or a project you are working on, we would like to invite you to apply as Early Adopter.  
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
-Read more about the 30 day trial period on the [documentation page](https://docs.openeo.cloud/free_trial/)
 :::
 
 
-To express your interest in becoming an Early Adopter you need to follow 2 steps:
+To get the free trial period you need to follow 2 simple steps:
 
 1. Connect an existing account to EGI check-in
 2. Apply to the openEO Platform virtual organization 
@@ -91,10 +93,6 @@ You don't need to remember this ID as it's not needed in the following steps.
 Once you have connected your existing account with EGI check-in, you will need to
 become part of the openEO Platform virtual organization.
 
-::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters.
-Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
-:::
 
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
 You may be asked to log in again with the account you have previously connected to EGI check-in.
@@ -112,7 +110,7 @@ which you can start by clicking *'BEGIN'*.
 </figure>
 
 In the next step, you will only be required to fill in two fields:
-- *Justification for this access request*: Please provide your brief motivation in this field (1).
+- *Justification for this access request*: Please state: "30 day trial starting on DD/MM/YYYY" and fill DD/MM/YYYY with the date you want to start your trial period (1).
 - *Agree to Acceptable Use Policy and Conditions of Use (AUP)*: You will need to read (2) and accept (3) the AUP.
 
 You can finalize the registration form by clicking *'SUBMIT'* (4).
@@ -122,13 +120,13 @@ You can finalize the registration form by clicking *'SUBMIT'* (4).
     <figcaption>Joining openEO Platform: Step 2</figcaption>
 </figure>
 
-After enrollment (you will likely have seen a message "Petition confirmed"),
-a manual approval will take place and if possible, you will be granted access to the platform.
+After enrollment (you will likely have seen a message "Petition Submitted. Awaiting Review"),
+a manual approval will take place and you will be granted access to the platform.
 This process may take a few days, especially if there is high demand.
 You will receive an e-mail notification once your account has been approved by us
-and is part of the openEO Platform virtual organization. 
+and is part of the openEO Platform virtual organization. Your account will be removed from the Virtual Organization after 30 days. 
 
-If you have any questions about the enrollment to openEO Platform or the Early Adopter program,
+If you have any questions about the enrollment to openEO Platform or the free trial period or the Early Adopter program,
 please [contact us](https://openeo.cloud/contact/).
 
 

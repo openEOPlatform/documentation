@@ -8,7 +8,7 @@ The *openEO Platform Editor* (also called *Web Editor*) is a browser-based graph
 
 The Editor is available at <https://editor.openeo.cloud> and loads up in "Discovery mode" by default, which means you can explore the service offerings without being logged in. On the left side you can find the service offerings like data collections and processes, in the middle the process editor is shown and on the right side you can use the map to for previewing data collections.
 
-To enable more functionality, e.g. to compute something in a batch job, you have to login. Hover over the button with the text "Guest" in the top right corner and it will show you a "Login" button. Once you clicked on it, the login screen shows up. Here you can simply click the "Log in with EGI Check-in" button and the login procedure will start. See the chapter [Authentication](../../authentication/index.md) for more details.
+To enable more functionality, e.g. to compute something in a batch job, you have to login. Hover over the button with the text "Guest" in the top right corner and it will show you a "Login" button. Once you clicked on it, the login screen shows up. Here you can simply click the "Log in with EGI Check-in" button and the login procedure will start. See the chapters on the [Free Tier](../../join/free_tier.md) or the [Early Adopter program](../../join/early_adopter.md) for more details on the procedure to register and log in.
 
 After you've completed this the login procedure, the Editor shows up again and you'll notice that a new area in the lower middle part of the Editor aprears. This is the user workspace, where you can see all your stored data, e.g. batch jobs or uploaded files.
 

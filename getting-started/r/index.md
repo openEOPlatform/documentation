@@ -123,8 +123,8 @@ so that permissions, resource usage, etc. can be managed properly.
 
 To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
 It offers some interesting features (e.g. a user can securely reuse an existing account),
-but is a fairly complex topic, discussed in more depth in the general 
-[authentication documentation for openEO Platform](../../authentication/index.md).
+but is a fairly complex topic, discussed in more depth in the general for the
+[Free Tier](../../join/free_tier.md) and the [Early Adopter program](../../join/early_adopter.md).
 
 The following code snippet shows how to log in via OIDC authentication:
 
@@ -144,8 +144,6 @@ login(login_type = "oidc",
 Calling this method opens your system web browser, with which you can authenticate yourself on the back-end authentication system. 
 After that the website will give you the instructions to go back to the R client, where your connection has logged your account in. 
 This means, that every call that comes after that via the connection variable is executed by your user account.
-
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in, please refer to the general [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
 
 ## Creating a (user-defined) process
 

@@ -102,7 +102,8 @@ you can follow the steps below to set up a *Terrascope account*,
 which helps to prioritize and speed up the processing requests.
 
 Luckily, Terrascope also uses the EGI check-in as authentication service,
-so you can quickly use your [existing EGI account](../authentication/index.md)
+so you can quickly use your existing EGI account from the 
+[Free Tier](../../join/free_tier.md) or the [Early Adopter program](../../join/early_adopter.md)
 to bootstrap a new Terrascope account.
 
 ::: tip Note

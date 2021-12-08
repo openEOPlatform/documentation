@@ -173,7 +173,7 @@ If you have included the library using HTML `script` tags, then you need to incl
 No further action is required, if you have installed the client via npm.
 ::: 
 
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in (e.g. Browser or Node), please refer to the  [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/latest/OidcProvider.html) and the [Authentication documentation for openEO Platform](../../authentication/index.md) for more information.
+As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in (e.g. Browser or Node), please refer to the  [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/latest/OidcProvider.html) and the documentation to join the [Free Tier](../../join/free_tier.md) or the [Early Adopter program](../../join/early_adopter.md).
 
 ## Creating a (user-defined) process
 

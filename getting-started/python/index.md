@@ -129,8 +129,8 @@ so that permissions, resource usage, etc. can be managed properly.
 
 To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
 It offers some interesting features (e.g. a user can securely reuse an existing account),
-but is a fairly complex topic, discussed in more depth in the general 
-[authentication documentation for openEO Platform](../../authentication/index.md).
+but is a fairly complex topic, discussed in more depth in the general for the
+[Free Tier](../../join/free_tier.md) and the [Early Adopter program](../../join/early_adopter.md).
 
 The openEO Python client library tries to make authentication as streamlined as possible.
 For example, the following snippet illustrates how you can authenticate
