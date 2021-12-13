@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<p v-if="!collections">Loading data...</p>
-		<Collections v-else :collections="collections" :showKeywords="true" :searchTerm="searchTerm" :loadAdditionalData="loadCollection">
+		<Collections v-else :collections="collections" :showKeywords="true" :searchTerm="searchTerm" :loadAdditionalData="loadCollection" :mapOptions="mapOptions">
 			<template #collection-before-description="slot">
 				<form class="editor-preview" v-if="hasPreview(slot.data)" target="_blank" action="https://editor.openeo.cloud">
 					<input type="hidden" name="preview-collection" :value="slot.data.id" />
@@ -25,7 +25,11 @@ export default {
 	data() {
 		return {
 			collections: null,
-			searchTerm: null
+			searchTerm: null,
+			mapOptions: {
+				basemap: `https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib3BlbmVvLXBsYXRmb3JtLXd3dSIsImEiOiJja3g0emUzdHIyZ2hpMnVwOGJ2ZmE1OWpoIn0.7IBhFVs-X2Glb0QHUq8riA`,
+				attribution: `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`
+			}
 		};
 	},
 	async mounted() {
