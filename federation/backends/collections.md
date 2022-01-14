@@ -1,6 +1,16 @@
 # Collections
 
-If back-ends offer/mirror the same datasets, it is required to align the metadata.
+If back-ends offer/mirror the same datasets, it is required to align names and metadata.
+
+The following standardized names have been agreed upon:
+
+- SENTINEL2_L1C
+- SENTINEL2_L2A
+- SENTINEL1_GRD
+- SENTINEL3_OLCI_L1B
+
+These are all Copernicus Missions, and the standard names refer to the archives prepared and distributed by ESA. When it is not possible/desirable to use this name as collection id, a 'common_name' can be added next to the 'id' property that identifies the collection as a standard archive.
+
 For the following datasets an agreement has been achieved:
 
 ## Sentinel L2A
