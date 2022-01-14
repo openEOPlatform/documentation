@@ -32,7 +32,7 @@ We list a number of common properties here, that can be relevant for multiple co
 
 ### Common
 
-- sat:orbit_state, aka orbit direction defined by https://github.com/stac-extensions/sat#satorbit_state
+- sat:orbit_state, defined by https://github.com/stac-extensions/sat#satorbit_state
 - sat:relative_orbit https://github.com/stac-extensions/sat#satrelative_orbit
 
 ### Optical instruments
