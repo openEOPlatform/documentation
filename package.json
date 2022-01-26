@@ -18,6 +18,8 @@
 		"@vuepress/plugin-active-header-links": "^1.5.2",
 		"axios": "^0.21.1",
 		"dayjs": "^1.8.30",
+		"sass": "^1.35.2",
+		"sass-loader": "^10.2.0",
 		"vuepress": "^1.5.2",
 		"vuepress-plugin-check-md": "0.0.2",
 		"vuepress-plugin-code-copy": "^1.0.6",
