@@ -7,7 +7,8 @@ module.exports = {
     docsRepo: 'openEOPlatform/documentation',
     docsBranch: 'main',
     algolia: {
-      apiKey: 'd6d10a2aa56307e3800f48b3b8852f2d',
+      appId: 'AH1DCGL38F',
+      apiKey: '3d026b8a9c3950be6d136a6d0f934029',
       indexName: 'openeo-cloud'
     },
     nav: [
