@@ -5,7 +5,7 @@ If back-ends offer/mirror the same datasets, it is required to align names and m
 
 - SENTINEL1_GRD
 - SENTINEL2_L1C
-- [SENTINEL2_L2A]( ./collections#Sentinel2-L2A)
+- [SENTINEL2_L2A](#sentinel2-l2a)
 - SENTINEL3_OLCI_L1B
 
 ## Sentinel2-L2A
@@ -28,9 +28,9 @@ We list a number of common properties here, that can be relevant for multiple co
 
 ### Common
 
-- sat:orbit_state, defined by https://github.com/stac-extensions/sat#satorbit_state
-- sat:relative_orbit https://github.com/stac-extensions/sat#satrelative_orbit
+- [sat:orbit_state](https://github.com/stac-extensions/sat#satorbit_state)
+- [sat:relative_orbit](https://github.com/stac-extensions/sat#satrelative_orbit)t
 
 ### Optical instruments
 
-- eo:cloud_cover as defined by: https://github.com/stac-extensions/eo#eocloud_cover
+- [eo:cloud_cover](https://github.com/stac-extensions/eo#eocloud_cover)
