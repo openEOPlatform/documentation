@@ -113,3 +113,40 @@ Go to the [Terrascope portal](https://terrascope.be) to set up the Terrascope ac
 click the '*sign in*' menu item at the top, and pick the *'EduGAIN and social logins'* to log in.
 After a one-time registration process, you should have access to all Terrascope services
 using your institution or (social) platform credentials.
+
+
+## Batch jobs
+
+As discussed above, when the federated platform receives a processing request, such as a batch job,
+it will automatically determine to which back-end this request should be delegated for actual processing.
+
+
+### Managed job splitting
+
+In addition to this basic delegation feature, the federation also provides more advanced (pre)processing capabilities.
+For instance, the federation platform can be instructed to split up a single batch job in multiple sub-jobs
+and distribute these across one or more processing back-ends.
+The federation platform will automatically create, start and keep track of these sub-jobs
+while the user just have to interact with a single job: e.g. check the overall processing status,
+download the combined result assets, ...
+
+Currently, spatial tile-based splitting is supported as splitting strategy
+and it can be enabled by providing a specific job option when submitting the batch job.
+For example, using the openEO Python Client, instruct the federation platform to
+split up datacube processing in UTM based tiles of 20km by 20km:
+
+
+```python
+job = datacube.send_job(
+    job_options={"tile_grid": "utm-20km"}
+)
+```
+
+This creates a virtual master job on the level of the federation platform and real batch jobs
+on the appropriate processing back-ends.
+Subsequent interaction (starting the jobs, polling their status, requesting the result assets, ...)
+can be done through the "master" `job` object created above, in the same way as with normal batch jobs.
+
+
+
+
