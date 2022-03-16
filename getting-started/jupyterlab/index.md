@@ -21,7 +21,7 @@ You need to authenticate before you can use it:
 
 
 ::: tip Note
-If you require any additional packages to be installed into your JupyterLab environment please refrain installing them via pip and install them via conda.
+If you require any additional packages to be installed into your JupyterLab environment please refrain from installing them via pip and install them via conda.
 [Anaconda documentation](https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/)
 :::
 
