@@ -19,4 +19,10 @@ You need to authenticate before you can use it:
     You can skip the "Installation" section in the Getting Started Guide, but unfortunately you need to authenticate with the Python client again! We'll try to remove this annoyance in the future.
     :::
 
+
+::: tip Note
+If you require any additional packages to installed into your jupyterlab environment please refrain installing them via pip and install them via conda.
+[Anaconda documentation](https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/)
+:::
+
 Please also refer to the the official documentation for the [openEO Python Client](https://open-eo.github.io/openeo-python-client/) and [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) for more details.
