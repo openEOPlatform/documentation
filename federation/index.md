@@ -49,8 +49,8 @@ The collection metadata of the Terrascope back-end tries to clearly identify whi
 openEO Platform provides direct access to commercial data. Currently, data must be purchased directly through Sentinel Hub (see Sentinel Hub documentation on purchasing commercial data [here](https://docs.sentinel-hub.com/api/latest/api/data-import/)), but we are working to support ordering commercial data directly from the platform in the future. 
 
 Data is accessed as part of the load_collection process and via a 'featureflag' argument. To access the data, you must:
-- select the commercial data provider in `collection_id` (e.g. collection_id="PLANETSCOPE")
-- set the Sentinel Hub BYOC collection ID (byoc-{id}) as featureflag argument (e.g. datacube._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id})
+- select the commercial data provider in `collection_id` (e.g. `collection_id="PLANETSCOPE"`)
+- set the Sentinel Hub BYOC collection ID (`byoc-{id}`) as `featureflag` argument (e.g. `datacube._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}`)
 
 Full example of loading a commercial data collection:
 
@@ -66,7 +66,7 @@ toc._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}
 ```
 
 List of currently supported commercial data providers:
-- PlanetScope (ID: PLANETSCOPE)
+- PlanetScope (ID: [PLANETSCOPE](https://openeo-dev.vito.be/openeo/1.0/collections/PLANETSCOPE))
 
 ### EODC
 
