@@ -66,7 +66,7 @@ toc._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}
 ```
 
 List of currently supported commercial data providers:
-- PlanetScope (ID: [PLANETSCOPE](https://openeo-dev.vito.be/openeo/1.0/collections/PLANETSCOPE))
+- PlanetScope (ID: [PLANETSCOPE](https://openeo.cloud/data-collections/view/?id=PLANETSCOPE))
 
 ### EODC
 
