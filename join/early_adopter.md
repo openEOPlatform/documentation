@@ -60,7 +60,7 @@ and follow the login procedure.
 We recommend using your institutional account whenever possible.
 Nevertheless, if you are the first member of your institution to work with EGI check-in, 
 problems may occur and sometimes require your institution's IT team to properly
-support EGI check-in through EduGain. For any question ragrding this procedure,
+support EGI check-in through EduGain. For any question regarding this procedure,
 please contact `check-in <at> egi.eu`.
 :::
 
