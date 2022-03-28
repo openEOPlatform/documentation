@@ -143,8 +143,8 @@ the platform through any of the clients. With all clients you will need to conne
 `https://openeo.cloud` and then authenticate through EGI check-in with the 
 account used above.
 
-::: warning Recommendation
-We recommend that you always use the same identity provider that you originally signed up with when identifying yourself through EGI Check-in. If you want to use a different provider than the one you originally signed up with, you must first link the new account to your existing EGI account. Read more about how to link different identity providers to your EGI account in the EGI documentation [here](https://docs.egi.eu/users/aai/check-in/linking/).
+::: tip Tip
+We advise you to always use the same identity provider  you originally signed up with when identifying yourself through EGI Check-in (as this is the one associated with your EGI account authorized by the platform). If you want to use a different provider than the one you originally signed up with, you must first link the new account to your existing EGI account. Read more about how to link different identity providers to your EGI account in the EGI documentation [here](https://docs.egi.eu/users/aai/check-in/linking/).
 :::
 
 See the getting started guides to find out more about how to use the clients for this:
