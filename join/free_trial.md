@@ -142,7 +142,7 @@ the platform through any of the clients. With all clients you will need to conne
 account used above.
 
 ::: warning Recommendation
-We recommend that you always use the same identity provider that you originally signed up with when identifying yourself through EGI Check-in. This is the only account that is authorized by and has access to openEO Platfrom. However, it is possible to link several identiy providers with your EGI account. Read more about this in the EGI documentation [here](https://docs.egi.eu/users/aai/check-in/linking/).
+We recommend that you always use the same identity provider that you originally signed up with when identifying yourself through EGI Check-in. If you want to use a different provider than the one you originally signed up with, you must first link the new account to your existing EGI account. Read more about how to link different identity providers to your EGI account in the EGI documentation [here](https://docs.egi.eu/users/aai/check-in/linking/).
 :::
 
 See the getting started guides to find out more about how to use the clients for this:
