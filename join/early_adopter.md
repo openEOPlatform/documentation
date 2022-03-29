@@ -144,7 +144,8 @@ the platform through any of the clients. With all clients you will need to conne
 account used above.
 
 ::: tip Tip
-We advise you to always use the same identity provider  you originally signed up with when identifying yourself through EGI Check-in (as this is the one associated with your EGI account authorized by the platform). If you want to use a different provider than the one you originally signed up with, you must first link the new account to your existing EGI account. Read more about how to link different identity providers to your EGI account in the EGI documentation [here](https://docs.egi.eu/users/aai/check-in/linking/).
+For your own convenience, we advise you to always log in with the same identity provider you originally registered with. Otherwise, you run the risk of creating a separate new EGI account, which in turn will have to go through the openEO Platform virtual organization acceptance process again.
+It is possible to link multiple accounts from multiple identity providers to the same EGI account. However, this must be done before you use these accounts to log in, as explained in the [EGI documentation](https://docs.egi.eu/users/aai/check-in/linking/).
 :::
 
 See the getting started guides to find out more about how to use the clients for this:
