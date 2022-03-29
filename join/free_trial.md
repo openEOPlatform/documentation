@@ -141,6 +141,11 @@ the platform through any of the clients. With all clients you will need to conne
 `https://openeo.cloud` and then authenticate through EGI check-in with the 
 account used above.
 
+::: tip Tip
+For your own convenience, we advise you to always log in with the same identity provider you originally registered with. Otherwise, you run the risk of creating a separate new EGI account, which in turn will have to go through the openEO Platform virtual organization acceptance process again.
+It is possible to link multiple accounts from multiple identity providers to the same EGI account. However, this must be done before you use these accounts to log in, as explained in the [EGI documentation](https://docs.egi.eu/users/aai/check-in/linking/).
+:::
+
 See the getting started guides to find out more about how to use the clients for this:
 
 * [Editor](../getting-started/editor/index.md)
