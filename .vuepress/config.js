@@ -42,6 +42,7 @@ module.exports = {
       { text: 'Processes', link: '/processes/' },
       { text: 'File Formats', link: '/file-formats/' },
       { text: 'Advanced', items: [
+        { text: 'Accounting', link: '/federation/accounting.html'},
         { text: 'Federation Aspects', link: '/federation/index.html'},
         { text: 'Federation Contract', link: '/federation/backends/index.html' },
 /*      { text: 'Federation Contract', items: [
