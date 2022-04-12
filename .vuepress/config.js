@@ -38,7 +38,7 @@ module.exports = {
         ] },
         { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
-        { text: 'Land Use Classification', link: '/usecases/landcover/' },
+        { text: 'Land Cover Classification', link: '/usecases/landcover/' },
       ] },
       { text: 'Processes', link: '/processes/' },
       { text: 'File Formats', link: '/file-formats/' },
