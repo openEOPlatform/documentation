@@ -6,6 +6,8 @@ With this variety in application fields comes a variety of user needs. Depending
 
 In this notebook, helper functionality from [this repository](https://github.com/openEOPlatform/openeo-classification) is used. It contains amongst others the entire feature building engineering workflow, so if you are interested in knowing how to do that or if you want to make more customizations towards your own use case, have a look at it. Note that the repository is not finalized, as it is a general repository also used for other purposes.
 
+A full notebook for this use case can be found [here](https://github.com/openEOPlatform/sample-notebooks/blob/main/Dynamic%20land%20cover%20mapping.ipynb).
+
 ![heelbelgie](https://user-images.githubusercontent.com/10434651/162210357-48389c4a-d58c-46da-972d-14f6ade2312e.png)
 
 ## Methodology
@@ -109,16 +111,15 @@ gdf, final_res = calculate_validation_metrics(
 </template>
 </CodeSwitcher>
 
-After inspecting the metrics and possibly further finetuning the model or dataset, we can do inference on an area of choice and write the result out to a netCDF or GTiff. Happy mapping!
+After inspecting the metrics and possibly further finetuning the model or dataset, we can do inference on an area of choice and write the result. Happy mapping!
 
 
 <CodeSwitcher>
 <template v-slot:py>
 
  ```python
-features, feature_list = load_lc_features("terrascope", "both", datetime.date(2018, 3, 1), datetime.date(2018, 10, 31), processing_opts=dict(tile_size=256))
+features, feature_list = load_lc_features("terrascope", "both", datetime.date(2018, 3, 1), datetime.date(2018, 10, 31))
 
-cube = features.filter_spatial(json.loads(aoi_inference.data[0]))
 cube = features.filter_bbox({
     'west':5.1,'east':5.2,'south':50.7,'north':50.8
 })
