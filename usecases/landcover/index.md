@@ -6,6 +6,8 @@ With this variety in application fields comes a variety of user needs. Depending
 
 To see the most basic version of the dynamic land cover service, you can check out [this Python notebook](https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb). If you'd like to have a look at some more advanced use cases, such as the use of stratification and the incorporation of extra datasets, have a look at [this Python notebook](https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9%20with%20stratification.ipynb). This last notebook will show features that we will not show in this tutorial.
 
+In this notebook, helper functionality from [this repository](https://github.com/openEOPlatform/openeo-classification) is used. It contains amongst others the entire feature building engineering workflow, so if you are interested in knowing how to do that or if you want to make more customizations towards your own use case, have a look at it. Note that the repository is not finalized, as it is a general repository also used for other purposes.
+
 ![heelbelgie](https://user-images.githubusercontent.com/10434651/162210357-48389c4a-d58c-46da-972d-14f6ade2312e.png)
 
 ## Methodology
@@ -38,6 +40,13 @@ First, we load in a dataset with target labels. In order for the model to work, 
 <template v-slot:py>
 
  ```python
+import openeo
+import geopandas as gpd
+from openeo_classification.landuse_classification import *
+from sklearn.model_selection import train_test_split
+import json
+from pathlib import Path
+
 mask = box(4.4, 50.2, 5.6, 51.2)
 y = gpd.read_file("https://artifactory.vgt.vito.be/auxdata-public/openeo/LUCAS_2018_Copernicus.gpkg",mask=mask)
 y["geometry"] = y["geometry"].apply(lambda x: x.centroid)
@@ -111,14 +120,17 @@ After inspecting the metrics and possibly further finetuning the model or datase
 <template v-slot:py>
 
  ```python
-features, feature_list = load_lc_features("terrascope", "both", start_date.value, end_date.value, processing_opts=dict(tile_size=256))
+features, feature_list = load_lc_features("terrascope", "both", datetime.date(2018, 3, 1), datetime.date(2018, 10, 31), processing_opts=dict(tile_size=256))
 
 cube = features.filter_spatial(json.loads(aoi_inference.data[0]))
+cube = features.filter_bbox({
+    'west':5.1,'east':5.2,'south':50.7,'north':50.8
+})
 predicted = cube.predict_random_forest(
     model=training_job,
     dimension="bands"
 ).linear_scale_range(0,255,0,255)
-inf_job = predicted.execute_batch(out_format="netCDF")
+inf_job = predicted.execute_batch(out_format="GTiff")
 inf_job.get_results().download_files(str(base_path / "prediction"))
  ```
 
