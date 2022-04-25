@@ -44,6 +44,34 @@ but is not yet recommended for processing medium size to large countries or cont
 
 The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by SentinelHub.
 
+#### Commercial Data
+
+openEO Platform provides direct access to commercial data. Currently, data must be purchased directly through Sentinel Hub (see Sentinel Hub documentation on purchasing commercial data [here](https://docs.sentinel-hub.com/api/latest/api/data-import/)), but we are working to support ordering commercial data directly from the platform in the future. 
+
+::: tip Advanced/experimental usage
+The below described way of how to connect to commercial data is currently only supported by the pyhton client and experimental. As such the behavior might still change in the future.
+:::
+
+Data is accessed as part of the load_collection process and via a `featureflags` argument. To access the data, you must:
+- select the commercial data provider in `collection_id` (e.g. `collection_id="PLANETSCOPE"`)
+- set the Sentinel Hub BYOC collection ID (`byoc-{id}`) as `featureflags` argument (e.g. `datacube._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}`)
+
+Full example of loading a commercial data collection:
+
+```python
+toc = connection.load_collection(
+    collection_id="PLANETSCOPE",
+    spatial_extent={"west": 104.86, "south": 8.85, "east": 106.11, "north": 10.37},
+    temporal_extent=["2019-03-01", "2020-12-31"],
+    bands=["B3"]
+)
+
+toc._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}
+```
+
+List of currently supported commercial data providers:
+- PlanetScope (ID: [PLANETSCOPE](https://openeo.cloud/data-collections/view/?id=PLANETSCOPE))
+
 ### EODC
 
 EODC provides Sentinel-1 (GRH), Sentinel-2 and Sentinel-3 Level-1 globally. On top, pre-processed Level-2 data is
@@ -146,7 +174,3 @@ This creates a virtual master job on the level of the federation platform and re
 on the appropriate processing back-ends.
 Subsequent interaction (starting the jobs, polling their status, requesting the result assets, ...)
 can be done through the "master" `job` object created above, in the same way as with normal batch jobs.
-
-
-
-
