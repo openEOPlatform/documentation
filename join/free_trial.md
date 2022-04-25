@@ -61,7 +61,7 @@ and follow the login procedure.
 We recommend using your institutional account whenever possible.
 Nevertheless, if you are the first member of your institution to work with EGI check-in, 
 problems may occur and sometimes require your institution's IT team to properly
-support EGI check-in through EduGain. For any question ragrding this procedure,
+support EGI check-in through EduGain. For any question regarding this procedure,
 please contact `check-in <at> egi.eu`.
 :::
 
@@ -140,6 +140,11 @@ After you've been approved to join openEO Platform, you can start working with
 the platform through any of the clients. With all clients you will need to connect to
 `https://openeo.cloud` and then authenticate through EGI check-in with the 
 account used above.
+
+::: tip Tip
+For your own convenience, we advise you to always log in with the same identity provider you originally registered with. Otherwise, you run the risk of creating a separate new EGI account, which in turn will have to go through the openEO Platform virtual organization acceptance process again.
+It is possible to link multiple accounts from multiple identity providers to the same EGI account. However, this must be done before you use these accounts to log in, as explained in the [EGI documentation](https://docs.egi.eu/users/aai/check-in/linking/).
+:::
 
 See the getting started guides to find out more about how to use the clients for this:
 

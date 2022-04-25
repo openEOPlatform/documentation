@@ -38,10 +38,12 @@ module.exports = {
         ] },
         { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
+        { text: 'Land Cover Classification', link: '/usecases/landcover/' },
       ] },
       { text: 'Processes', link: '/processes/' },
       { text: 'File Formats', link: '/file-formats/' },
       { text: 'Advanced', items: [
+        { text: 'Accounting', link: '/federation/accounting.html'},
         { text: 'Federation Aspects', link: '/federation/index.html'},
         { text: 'Federation Contract', link: '/federation/backends/index.html' },
 /*      { text: 'Federation Contract', items: [
