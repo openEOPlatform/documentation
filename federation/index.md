@@ -49,7 +49,7 @@ The collection metadata of the Terrascope back-end tries to clearly identify whi
 openEO Platform provides direct access to commercial data. Currently, data must be purchased directly through Sentinel Hub (see Sentinel Hub documentation on purchasing commercial data [here](https://docs.sentinel-hub.com/api/latest/api/data-import/)), but we are working to support ordering commercial data directly from the platform in the future. 
 
 ::: tip Advanced/experimental usage
-The  described way how to connect to commercial data is experimental and the behavior might still change in the future.
+The below described way of how to connect to commercial data is currently only supported by the pyhton client and experimental. As such the behavior might still change in the future.
 :::
 
 Data is accessed as part of the load_collection process and via a `featureflags` argument. To access the data, you must:
