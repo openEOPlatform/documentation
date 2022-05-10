@@ -165,7 +165,7 @@ split up datacube processing in UTM based tiles of 20km by 20km:
 
 
 ```python
-job = datacube.send_job(
+job = datacube.create_job(
     job_options={"tile_grid": "utm-20km"}
 )
 ```
