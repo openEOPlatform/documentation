@@ -128,17 +128,8 @@ but is a fairly complex topic, discussed in more depth in the general for the
 
 The following code snippet shows how to log in via OIDC authentication:
 
-::: tip Action required
-**Unfortunately, you need to request a *Client ID* and a *Client Secret* for this from the openEO Platform support due to the R client not being officially supported by openEO Platform!**
-Once you have received the *Client ID* and a *Client Secret*, you can can continue with the instructions below.
-:::
-
 ```r
-login(login_type = "oidc",
-      provider = "egi",
-      config = list(
-        client_id= "...",
-        secret = "...")))
+login()
 ```
 
 Calling this method opens your system web browser, with which you can authenticate yourself on the back-end authentication system. 
