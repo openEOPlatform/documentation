@@ -16,7 +16,7 @@ Defaults:
 - All datacube bands are stored in the same geotiff
 - The full spatial extent is written to the same geotiff
 - Cloud optimized
-
+- For ideal support in the Web Editor (and other tools), the following guide is recommended to be followed: <https://github.com/Open-EO/openeo-web-editor/blob/master/docs/geotiff.md>
 
 ## netCDF
 Defaults: 
