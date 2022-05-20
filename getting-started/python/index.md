@@ -264,11 +264,11 @@ but for this introduction we'll focus on batch jobs, which is a good default cho
 ### Batch job execution
 
 The `result` datacube object we built above describes the desired input collections, processing steps and output format.
-We can now just send this description to the back-end to create a batch job with the [`send_job` method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.send_job) like this:
+We can now just send this description to the back-end to create a batch job with the [`create_job` method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.create_job) like this:
 
 ```python
 # Creating a new job at the back-end by sending the datacube information.
-job = result.send_job()
+job = result.create_job()
 ```
 
 ::: tip
