@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<p v-if="!collections">Loading data...</p>
-		<Collections v-else :collections="collections" :showKeywords="true" :searchTerm="searchTerm" :loadAdditionalData="loadCollection" :mapOptions="mapOptions">
+		<Collections v-else :collections="collections" :showKeywords="true" :searchTerm="searchTerm" :loadAdditionalData="loadCollection" :mapOptions="mapOptions" heading="Data Collections">
 			<template #collection-before-description="slot">
 				<form class="editor-preview" v-if="hasPreview(slot.data)" target="_blank" action="https://editor.openeo.cloud">
 					<input type="hidden" name="preview-collection" :value="slot.data.id" />

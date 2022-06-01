@@ -12,7 +12,7 @@ module.exports = {
       indexName: 'openeo-cloud'
     },
     nav: [
-      { text: 'Data Collections', link: '/data-collections/' },
+      { text: 'Datasets', link: '/data-collections/' },
       { text: 'Get Started', items: [
         { text: 'Data Cubes', link: 'https://openeo.org/documentation/1.0/datacubes.html' },
         { text: 'Client Libraries', items: [
@@ -47,7 +47,7 @@ module.exports = {
       {text: 'Processes', items: [
         {text: 'JavaScript & R', link: '/processes/'},
         {text: 'Python', link: 'https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube'},
-      ]}, 
+      ]},
       { text: 'File Formats', link: '/file-formats/' },
       { text: 'Advanced', items: [
         { text: 'Accounting', link: '/federation/accounting.html'},
@@ -62,8 +62,7 @@ module.exports = {
         ] }, */
         { text: 'HTTP API', link: '/api/' },
       ] },
-      { text: 'Contact', link: 'https://openeo.cloud/contact/' },
-      { text: 'openeo.cloud', link: 'https://openeo.cloud' }
+      { text: 'Contact', link: 'https://openeo.cloud/contact/' }
     ],
     sidebar: 'auto'
   },
