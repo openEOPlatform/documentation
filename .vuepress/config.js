@@ -12,7 +12,6 @@ module.exports = {
       indexName: 'openeo-cloud'
     },
     nav: [
-      { text: 'Start', link: '/' },
       { text: 'Data Collections', link: '/data-collections/' },
       { text: 'Get Started', items: [
         { text: 'Data Cubes', link: 'https://openeo.org/documentation/1.0/datacubes.html' },
@@ -29,6 +28,11 @@ module.exports = {
         { text: 'Free Trial Registration', link: '/join/free_trial.html' }, 
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
       ] },
+      { text: 'Clients', items: [
+          { text: 'JavaScript', link: 'https://open-eo.github.io/openeo-js-client/latest/' },
+          { text: 'Python', link: 'https://open-eo.github.io/openeo-python-client/' },
+          { text: 'R', link: 'https://open-eo.github.io/openeo-r-client/' }
+      ] },
       { text: 'Use Cases', items: [
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
         { text: 'Analysis-Ready Data (ARD)', items: [
@@ -39,8 +43,11 @@ module.exports = {
         { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
         { text: 'Land Cover Classification', link: '/usecases/landcover/' },
-      ] },
-      { text: 'Processes', link: '/processes/' },
+      ] },      
+      {text: 'Processes', items: [
+        {text: 'JavaScript & R', link: '/processes/'},
+        {text: 'Python', link: 'https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube'},
+      ]}, 
       { text: 'File Formats', link: '/file-formats/' },
       { text: 'Advanced', items: [
         { text: 'Accounting', link: '/federation/accounting.html'},
