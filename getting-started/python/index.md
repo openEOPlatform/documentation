@@ -72,7 +72,7 @@ or [`describe_collection`](https://open-eo.github.io/openeo-python-client/api.ht
 [{'id': 'AGERA5', 'title': 'ECMWF AGERA5 meteo dataset ...', 'description': ...
 
 >>> # Get metadata of a single collection
->>> print(connection.describe_collection())
+>>> print(connection.describe_collection("SENTINEL2_L2A"))
 {'id': 'SENTINEL2_L2A', 'title': 'Sentinel-2 top of canopy ...', 'stac_version': '0.9.0', ...
 ```
 
