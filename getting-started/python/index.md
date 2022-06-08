@@ -1,11 +1,14 @@
 # Python Client
 
-::: tip Note
+::: danger Important
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+
+This Getting Started guide will simply give you an overview of the capabilities of the openEO Python client library.
+More in-depth information and documentation can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/) website.
+
 :::
 
-This Getting Started guide will give you just a simple overview of the capabilities of the openEO Python client library.
-More in-depth information can be found in its [official documentation](https://open-eo.github.io/openeo-python-client/).
+
 
 ## Installation
 
