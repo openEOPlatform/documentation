@@ -6,6 +6,8 @@ You need to [become part of the openEO Platform "early adopter" program](https:/
 This Getting Started guide will simply give you an overview of the capabilities of the openEO Python client library.
 More in-depth information and documentation can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/) website.
 
+The [High level Interface](https://open-eo.github.io/openeo-python-client/api.html) of the Python client is designed to provide an opinionated, Pythonic, API to interact with openEO Platform. 
+
 :::
 
 
