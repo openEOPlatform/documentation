@@ -5,6 +5,8 @@
 The free trial is for interested users who want to test the platform on a non-regular, playful basis.
 If you have detailed intentions, usecases or a project you are working on, we would like to invite you to apply as Early Adopter.  
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
+
+Approval time: We approve accounts traditionally on Monday evenings. Please be a bit patient if your account is not directly approved.
 :::
 
 
