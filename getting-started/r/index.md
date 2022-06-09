@@ -255,6 +255,7 @@ The printing behavior and the actual data structure might differ!
 
 ## Additional Information
 
-* [Examples](https://github.com/Open-EO/openeo-r-client/tree/master/examples)
+* [Vignettes](https://open-eo.github.io/openeo-r-client/articles/)
 * [Repository](https://github.com/Open-EO/openeo-r-client)
+* [R-Client Homepage](https://open-eo.github.io/openeo-r-client/index.html)
 * for function documentation, use R's `?` function or see the [online documentation](https://open-eo.github.io/openeo-r-client/index.html)
