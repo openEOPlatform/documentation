@@ -1,4 +1,4 @@
-# Get started with openEO Python Client
+# Get started with the openEO Python Client
 
 ::: tip Note
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
@@ -56,25 +56,29 @@ More information on how openEO "collections" relate to terminology used in other
 
 While it's recommended to browse the available EO collections on the  
 [openEO Platform collections overview webpage](../../data-collections/index.md),
-it's possible to list and inspect them programmatically, 
-as very simple example of openEO Python client usage,
-using methods on the `connection` object we just created 
-(like [`list_collection_ids`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_collection_ids))
-or [`describe_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.describe_collection)):
+it's possible to list and inspect them programmatically.
+As a very simple usage example of openEO Python client,
+let's use the
+[`list_collection_ids`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.list_collection_ids)
+and [`describe_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.describe_collection)
+methods on the `connection` object we just created: 
 
 ```
 >>> # Get all collection ids
 >>> print(connection.list_collection_ids())
 ['AGERA5', 'SENTINEL1_GRD', 'SENTINEL2_L2A', ...
 
->>> # Get a listing of all collections with metadata
->>> print(connection.list_collections())
-[{'id': 'AGERA5', 'title': 'ECMWF AGERA5 meteo dataset ...', 'description': ...
-
 >>> # Get metadata of a single collection
 >>> print(connection.describe_collection("SENTINEL2_L2A"))
 {'id': 'SENTINEL2_L2A', 'title': 'Sentinel-2 top of canopy ...', 'stac_version': '0.9.0', ...
 ```
+
+::: tip
+The openEO Python client library comes with Jupyter (notebook) integration in a couple of places.
+For example, put `connection.describe_collection("SENTINEL2_L2A")` (without `print()`)
+as last statement in a notebook cell 
+and you'll get a nice graphical rendering of the collection metadata.
+:::
 
 
 ::: tip
@@ -108,8 +112,10 @@ with [`list_processes`](https://open-eo.github.io/openeo-python-client/api.html#
  ...
 ```
 
-Like with collections, instead of programmatic exploration you'll probably prefer a 
-[web-based overview of the available processes on openEO Platform](../../processes/index.md).
+Like with collections, instead of programmatic exploration you'll probably prefer a
+more graphical, interactive interface.
+Use the Jupyter notebook integration (put `connection.list_processes()` without `print()` as last statement in a notebook cell)
+or visit a [web-based overview of the available processes on openEO Platform](../../processes/index.md).
 
 ::: tip
 Find out more about process discovery and usage
@@ -143,7 +149,7 @@ Otherwise, e.g. the first time you do this, some user interaction is required
 and it will print a web link and a short _user code_.
 Visit this web page in a browser, log in there with an existing account and enter the user code.
 If everything goes well, the `connection` object in the script will be authenticated
-and the back-end will be able to identify you from subsequent requests.
+and the back-end will be able to identify you in subsequent requests.
 
 More detailed information on authentication can be found
 [in the openEO Python client documentation](https://open-eo.github.io/openeo-python-client/auth.html).

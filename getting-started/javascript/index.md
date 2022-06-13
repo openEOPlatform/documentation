@@ -1,4 +1,4 @@
-# JavaScript Client
+# Get started with the openEO JavaScript Client
 
 ::: tip Note
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.

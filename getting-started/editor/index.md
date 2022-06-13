@@ -1,4 +1,4 @@
-# openEO Platform Editor
+# Get started with the openEO Platform Editor
 
 ::: tip Note
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
