@@ -4,6 +4,13 @@
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
 :::
 
+::: tip Note
+* [Vignettes](https://open-eo.github.io/openeo-r-client/articles/)
+* [Repository](https://github.com/Open-EO/openeo-r-client)
+* [R-Client Homepage](https://open-eo.github.io/openeo-r-client/index.html)
+* for function documentation, use R's `?` function or see the [online documentation](https://open-eo.github.io/openeo-r-client/index.html)
+:::
+
 ## Installation
 
 Before you install the R client module into your R environment, please make sure that you have at least R version 3.6. Older versions might also work, but were not tested.
@@ -252,10 +259,3 @@ download_results(job = job, folder = "/some/folder/on/filesystem")
 ::: tip Note
 The printing behavior and the actual data structure might differ!
 :::
-
-## Additional Information
-
-* [Vignettes](https://open-eo.github.io/openeo-r-client/articles/)
-* [Repository](https://github.com/Open-EO/openeo-r-client)
-* [R-Client Homepage](https://open-eo.github.io/openeo-r-client/index.html)
-* for function documentation, use R's `?` function or see the [online documentation](https://open-eo.github.io/openeo-r-client/index.html)
