@@ -284,8 +284,7 @@ in a folder "output".
 
 ::: tip
 The official openEO Python Client documentation has more information
-on [batch job basics](https://open-eo.github.io/openeo-python-client/basics.html#managing-jobs-in-openeo) 
-or [more detailed batch job (result) management](https://open-eo.github.io/openeo-python-client/batch_jobs.html)
+on [batch job management and downloading results](https://open-eo.github.io/openeo-python-client/batch_jobs.html)
 :::
 
 ## Additional Information
