@@ -1,4 +1,4 @@
-# JupyterLab (Python)
+# Get started with openEO Platform in JupyterLab (Python)
 
 ::: tip Note
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
