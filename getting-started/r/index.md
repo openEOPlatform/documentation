@@ -4,12 +4,12 @@
 You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
 :::
 
-::: tip Additional Information
+## Useful links
+
+* [Documentation](https://open-eo.github.io/openeo-r-client/index.html)
 * [Vignettes](https://open-eo.github.io/openeo-r-client/articles/)
-* [Repository](https://github.com/Open-EO/openeo-r-client)
-* [R-Client Homepage](https://open-eo.github.io/openeo-r-client/index.html)
+* [Code Repository](https://github.com/Open-EO/openeo-r-client)
 * for function documentation, use R's `?` function or see the [online documentation](https://open-eo.github.io/openeo-r-client/index.html)
-:::
 
 ## Installation
 
