@@ -29,14 +29,14 @@ Supposing that the training input data is a cloud-free Sentinel-2 timeseries we 
 ```python
 import openeo
 from openeo.processes import cos, sin, array_element
-def fitFunction(x:ProcessBuilder, parameters:ProcessBuilder):
+def fit_function(x:ProcessBuilder, parameters:ProcessBuilder):
     t = 2 * math.pi / 31557600 * x
     return parameters[0] + parameters[1] * cos(t) + parameters[2] * sin(t)
 
 curve_fitting = l2a_bands.fit_curve(
     parameters=[1,1,1], # Initial guess of the parameters
     dimension="t",      # Fit the function along the temporal dimension
-    function=fitFunction
+    function=fit_function
 )
 ```
 
