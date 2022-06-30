@@ -168,7 +168,7 @@ This results in a process node that represents a [datacube](https://openeo.org/d
 
 ::: tip Sample Data Retrieval
 In order to get a better understanding about the processing mechanisms and the data structures used in openEO Platform, it helps to check the actual data from time to time.
-The function [`get_sample`](https://open-eo.github.io/openeo-r-client/reference/get_sample.html) aids the user in downloading data for a very small spatial extent. It is automatrically loaded into R so that you can directly inspect it with `stars`.
+The function [`get_sample`](https://open-eo.github.io/openeo-r-client/reference/get_sample.html) aids the user in downloading data for a very small spatial extent. It is automatically loaded into R so that you can directly inspect it with `stars`.
 Read the vignette on "[Sample Data Retrieval](https://open-eo.github.io/openeo-r-client/articles/sample_data.html)" for more details.
 :::
 
