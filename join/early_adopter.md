@@ -5,7 +5,10 @@ Currently, openEO Platform is only open for Early Adopters or within a free 30 d
 Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
 Read more about the 30 day trial period on the [documentation page](./free_trial.md)
 
-Approval time: We approve accounts traditionally on Monday evenings. Please be a bit patient if your account is not directly approved.
+Approval time:
+Currently the approval will be delayed due to the holiday period. We are sorry for the inconvenience and thank you for your understanding.
+We will approve your accounts as soon as possible.
+We approve accounts traditionally on Monday evenings. Please be a bit patient if your account is not directly approved.
 
 :::
 
