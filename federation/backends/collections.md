@@ -1,4 +1,5 @@
 # Collections
+This page describes requirements on STAC collection metadata for backend providers in the openEO platform federation. These requirements should be considered an addition to what is already required by the [openEO API](https://api.openeo.org/#tag/EO-Data-Discovery/operation/describe-collection).
 
 When back-ends offer/mirror the same datasets, it is required to align names and metadata. For the following collections and metadata an agreement has been achieved. These are all Copernicus Missions, and the standard names refer to the archives prepared and distributed by ESA. If it is not possible/desirable to use this name as collection id, a 'common_name' can be added next to the 'id' property to identify the collection as a standard archive.
 
