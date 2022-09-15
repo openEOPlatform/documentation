@@ -145,9 +145,8 @@ using your institution or (social) platform credentials.
 
 ## Batch jobs
 
-As discussed above, when the federated platform receives a processing request, such as a batch job,
+As discussed above, when the federated platform receives a processing request, such as a batch job, 
 it will automatically determine to which back-end this request should be delegated for actual processing.
-
 
 ### Managed job splitting
 
@@ -174,3 +173,10 @@ This creates a virtual master job on the level of the federation platform and re
 on the appropriate processing back-ends.
 Subsequent interaction (starting the jobs, polling their status, requesting the result assets, ...)
 can be done through the "master" `job` object created above, in the same way as with normal batch jobs.
+
+### Validity signer URLs (Batch job results)
+
+Batch job results are accessible to the user via signed URLs stored in the result assets. Within the platform, 
+these URLs have a validity (expiry time) of 7 days. Within these 7 days, the results of a batch job can be accessed 
+by any person with the URL. Each time a user requests the results from the job endpoint (/jobs/{job_id}/results), 
+a freshly signed URL (valid for 7 days) is created for the result assets.
