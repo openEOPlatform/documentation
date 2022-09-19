@@ -43,8 +43,11 @@ We list here a set of common properties, that can be relevant for multiple colle
 
 - [sat:orbit_state](https://github.com/stac-extensions/sat#satorbit_state)
 - [sat:relative_orbit](https://github.com/stac-extensions/sat#satrelative_orbit)
-- [sar:instrument_mode](https://github.com/stac-extensions/sar#item-properties-or-asset-fields)
 
 ### Optical instruments
 
 - [eo:cloud_cover](https://github.com/stac-extensions/eo#eocloud_cover)
+
+### SAR instruments
+
+- [sar:instrument_mode](https://github.com/stac-extensions/sar#item-properties-or-asset-fields)
