@@ -178,5 +178,5 @@ can be done through the "master" `job` object created above, in the same way as 
 
 Batch job results are accessible to the user via signed URLs stored in the result assets. Within the platform, 
 these URLs have a validity (expiry time) of 7 days. Within these 7 days, the results of a batch job can be accessed 
-by any person with the URL. Each time a user requests the results from the job endpoint (/jobs/{job_id}/results), 
+by any person with the URL. Each time a user requests the results from the job endpoint (`GET /jobs/{job_id}/results`), 
 a freshly signed URL (valid for 7 days) is created for the result assets.
