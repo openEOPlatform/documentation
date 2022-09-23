@@ -54,7 +54,9 @@ The below described way of how to connect to commercial data is currently only s
 
 Data is accessed as part of the load_collection process and via a `featureflags` argument. To access the data, you must:
 - select the commercial data provider in `collection_id` (e.g. `collection_id="PLANETSCOPE"`)
-- set the Sentinel Hub BYOC collection ID (`byoc-{id}`) as `featureflags` argument (e.g. `datacube._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}`)
+- set the Sentinel Hub BYOC collection ID (`byoc-{id}`) as `featureflags` argument 
+  (e.g. with openEO Python client version 0.10.1 or higher: 
+  `datacube.result_node().update_arguments(featureflags={"byoc_collection_id": byoc_collection_id})`)
 
 Full example of loading a commercial data collection:
 
@@ -66,7 +68,7 @@ toc = connection.load_collection(
     bands=["B3"]
 )
 
-toc._pg.arguments['featureflags'] = {'byoc_collection_id': byoc_collection_id}
+toc.result_node().update_arguments(featureflags={"byoc_collection_id": byoc_collection_id})
 ```
 
 List of currently supported commercial data providers:
