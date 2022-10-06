@@ -34,15 +34,15 @@ while for medium resolution (Sentinel 1, 2) data is only offered for selected ar
 Additional data can be processed upon request, if it is not available from another provider. 
 This may result in an additional cost for processing and storage.
 
-### SentinelHub
+### Sentinel Hub
 
-The Terrascope back-end also integrates with SentinelHub (part of Euro Data Cube) to give you
+The Terrascope back-end also integrates with Sentinel Hub (part of Euro Data Cube) to give you
 access to additional collections. 
-This practically means that data needs to be transferred from SentinelHub to the Terrascope data center before it can be processed.
+This practically means that data needs to be transferred from Sentinel Hub to the Terrascope data center before it can be processed.
 This works very well for small areas, or a 100x100km MGRS tile in batch mode, 
 but is not yet recommended for processing medium size to large countries or continents. 
 
-The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by SentinelHub.
+The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by Sentinel Hub.
 
 #### Commercial Data
 
@@ -125,7 +125,7 @@ This depends on which [data sets](../data-collections/index.md) and [processes](
 
 ### Terrascope Registration
 
-If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by SentinelHub'*,
+If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by Sentinel Hub'*,
 you can follow the steps below to set up a *Terrascope account*,
 which helps to prioritize and speed up the processing requests.
 
@@ -147,9 +147,8 @@ using your institution or (social) platform credentials.
 
 ## Batch jobs
 
-As discussed above, when the federated platform receives a processing request, such as a batch job,
+As discussed above, when the federated platform receives a processing request, such as a batch job, 
 it will automatically determine to which back-end this request should be delegated for actual processing.
-
 
 ### Managed job splitting
 
@@ -176,3 +175,14 @@ This creates a virtual master job on the level of the federation platform and re
 on the appropriate processing back-ends.
 Subsequent interaction (starting the jobs, polling their status, requesting the result assets, ...)
 can be done through the "master" `job` object created above, in the same way as with normal batch jobs.
+
+### Validity signer URLs (Batch job results)
+
+Batch job results are accessible to the user via signed URLs stored in the result assets. Within the platform, 
+these URLs have a validity (expiry time) of 7 days. Within these 7 days, the results of a batch job can be accessed 
+by any person with the URL. Each time a user requests the results from the job endpoint (`GET /jobs/{job_id}/results`), 
+a freshly signed URL (valid for 7 days) is created for the result assets.
+
+### Batch job results on Sentinel Hub
+
+If you are processing data and the underlying back-end is Sentinel Hub, the output extent of your batch job results is currently larger than your input extent because Sentinel Hub processes whole tiles (this may change in the future and the data will be cropped to your input extent).

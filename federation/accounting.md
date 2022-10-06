@@ -8,7 +8,7 @@ Currently, credits can be deducted based on:
 - CPU usage (cores/second)
 - Memory usage (GB/second)
 - Storage (GB/day)
-- Data access to specific layers (e.g. SentinelHub or commercial)
+- Data access to specific layers (e.g. Sentinel Hub or commercial)
 - Usage of services contributed by third parties, through an 'added value' cost (e.g. per hectare)
 
 For example, let's say we compute a Sentinel-2 based NDWI for an area of 10 hectares to a series of GeoTiffs (one per observation). 
