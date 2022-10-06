@@ -34,15 +34,15 @@ while for medium resolution (Sentinel 1, 2) data is only offered for selected ar
 Additional data can be processed upon request, if it is not available from another provider. 
 This may result in an additional cost for processing and storage.
 
-### SentinelHub
+### Sentinel Hub
 
-The Terrascope back-end also integrates with SentinelHub (part of Euro Data Cube) to give you
+The Terrascope back-end also integrates with Sentinel Hub (part of Euro Data Cube) to give you
 access to additional collections. 
-This practically means that data needs to be transferred from SentinelHub to the Terrascope data center before it can be processed.
+This practically means that data needs to be transferred from Sentinel Hub to the Terrascope data center before it can be processed.
 This works very well for small areas, or a 100x100km MGRS tile in batch mode, 
 but is not yet recommended for processing medium size to large countries or continents. 
 
-The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by SentinelHub.
+The collection metadata of the Terrascope back-end tries to clearly identify which collections are served by Sentinel Hub.
 
 #### Commercial Data
 
@@ -123,7 +123,7 @@ This depends on which [data sets](../data-collections/index.md) and [processes](
 
 ### Terrascope Registration
 
-If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by SentinelHub'*,
+If you plan to use any [data set](../data-collections/index.md) that is *'provided by Terrascope'* or *'provided by Sentinel Hub'*,
 you can follow the steps below to set up a *Terrascope account*,
 which helps to prioritize and speed up the processing requests.
 
