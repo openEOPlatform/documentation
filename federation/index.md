@@ -180,3 +180,7 @@ Batch job results are accessible to the user via signed URLs stored in the resul
 these URLs have a validity (expiry time) of 7 days. Within these 7 days, the results of a batch job can be accessed 
 by any person with the URL. Each time a user requests the results from the job endpoint (`GET /jobs/{job_id}/results`), 
 a freshly signed URL (valid for 7 days) is created for the result assets.
+
+### Batch job results on Sentinel Hub
+
+If you are processing data and the underlying back-end is Sentinel Hub, the output extent of your batch job results is currently larger than your input extent because Sentinel Hub processes whole tiles (this may change in the future and the data will be cropped to your input extent).
