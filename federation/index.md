@@ -148,7 +148,7 @@ using your institution or (social) platform credentials.
 
 Sometimes there is the need for a quick inspections of the results from a process graph on the map without running the whole graph first and having to wait for results to be computed and returned. This `on-demand-preview` is both available in the openEO Platform Editor as well as in the openEO Python Client.
 
-In the Editor you can find the functionality in the `Web Services` tab. Use the button `Show on Map`. To use this functionaliy in the Python Client you can call `.preview()` on your datacube and display it in an Ipyleaflet widget via `preview, service = datacube.preview`.
+In the Editor you can find the functionality in the `Web Services` tab. Use the button `Show on Map`. To use this functionaliy in the Python Client you can call `.preview()` on your datacube and display it in an Ipyleaflet widget via `preview, service = datacube.preview()`.
 
 ::: tip Note
 This functionallity currently only works with collections that are also on the Sentinel Hub backend. In order for the map to be able to display meaningful results your process graph should:
