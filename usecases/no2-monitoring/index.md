@@ -1,6 +1,6 @@
 # NO₂ monitoring
 
-TROPOMI is the name of a sensor on board of the Sentinel-5 Precursor (S5P) satellite, developed to monitor atmospheric chemistry.
+[TROPOMI (**TROPO**spheric **M**onitoring **I**nstrument)](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-5p/instrumental-payload) is the name of a sensor on board of the [Sentinel-5 Precursor (S5P) satellite](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-5p), developed to monitor atmospheric chemistry.
 
 This use case analyses Sentinel 5P imagery, focusing in particular on NO₂ measurements. Compared to other variables measured by TROPOMI, NO₂ is of high interest not only because of its direct relation with environmental health, but also because the main sources are typically known, because it is not transported over long distances and because the total column values measured by TROPOMI are strong indication of the ground level values.
 
@@ -12,7 +12,7 @@ Additionally, we've prepared a basic Jupyter Notebook for Python and a much more
 
 ## R Shiny app
 
-In the R Shiny app the NO₂ values can be analysed globally over a full year. The analysis allows the user to set threshold values for the cloud cover. Gaps due to the cloud removal are filled by a linear interpolation. Noise will be removed by computing 30-day smoothed values, using kernel smoothing of the time series.
+In the R Shiny app the NO₂ values can be analysed globally over a full year. The analysis allows the user to set threshold values for the cloud cover. Gaps due to the cloud removal are filled by a linear interpolation. Noise gets removed by computing 30-day smoothed values, using kernel smoothing of the time series.
 
 The R Shiny app allows for three different modes:
 - Time series analysis (min/max/smooted mean) and a comparison against locally measured data (for selected areas only)
@@ -146,8 +146,9 @@ datacube = p$apply_dimension(data = datacube, dimension = "t", process = interpo
 
 If you want to smoothen the values to get rid of noise for example, we can run a moving average over a certain amount of days over the temporal dimension.
 If you want to work on the raw values, you can also omit this step.
-You can choose the value of the `moving_average_window` variable, but it needs to be at least 3 and an odd integer.
-In the example below we chose 31 for a full month.
+The `moving_average_window` variable specifies the smoothing in number of days.
+You can choose it freely, but it needs to be an odd integer >= 3.
+In the example below 31 was chosen to smooth the timeseries with a moving average of a full month.
 
 <CodeSwitcher :languages="{py: 'Python', js: 'JavaScript', r: 'R'}">
 <template v-slot:py>
