@@ -43,6 +43,7 @@ module.exports = {
         { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
         { text: 'Land Cover Classification', link: '/usecases/landcover/' },
+        { text: 'NO₂ monitoring', link: '/usecases/no2-monitoring/' },
       ] },      
       {text: 'Processes', items: [
         {text: 'JavaScript & R', link: '/processes/'},
