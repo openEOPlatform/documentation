@@ -25,11 +25,6 @@ For more details please [visit the homepage of the R Shiny app](https://github.c
 
 ## Basic NO₂ analysis in Python, R and JavaScript
 
-::: warning Attention
-This tutorial assumes you have completed the Getting Started guides and are connected and logged in to openEO Platform.
-Your connection object should be stored in a variable named `connection`.
-:::
-
 openEO Platform has multiple collections that offer Sentinel-5P data, e.g. for NO₂:
 - [TERRASCOPE_S5P_L3_NO2_TD_V1](https://openeo.cloud/data-collections/view/?id=TERRASCOPE_S5P_L3_NO2_TD_V1) - daily, hosted by VITO, pre-processed to remove clouds etc.
 - [TERRASCOPE_S5P_L3_NO2_TD_V1](https://openeo.cloud/data-collections/view/?id=TERRASCOPE_S5P_L3_NO2_TM_V1) - monthly, hosted by VITO, pre-processed to remove clouds etc.
@@ -41,6 +36,11 @@ openEO Platform has multiple collections that offer Sentinel-5P data, e.g. for N
 In this example we'll use the daily composites from the `TERRASCOPE_S5P_L3_NO2_TD_V1` collection, which is available starting from end of April 2018.
 
 ### 1. Load a data cube
+
+::: warning Attention
+This tutorial assumes you have completed the Getting Started guides and are connected and logged in to openEO Platform.
+Your connection object should be stored in a variable named `connection`.
+:::
 
 First of all, we need to load the data into a datacube. We set the temporal extent to the year 2019 and choose spatial extent, here an area over Münster, Germany.
 
@@ -59,7 +59,11 @@ extent = { # Münster
         [7.737228350528245,51.86687168604513]
     ]]
 }
-datacube = connection.load_collection("TERRASCOPE_S5P_L3_NO2_TD_V1", spatial_extent = extent, temporal_extent = [f"{year}-01-01", f"{year}-12-31"])
+datacube = connection.load_collection(
+    "TERRASCOPE_S5P_L3_NO2_TD_V1",
+    spatial_extent = extent,
+    temporal_extent = [f"{year}-01-01", f"{year}-12-31"]
+)
 ```
 
 </template>
@@ -79,7 +83,9 @@ let extent = { // Münster
         [7.737228350528245,51.86687168604513]
     ]]
 }
-let datacube = builder.load_collection("TERRASCOPE_S5P_L3_NO2_TD_V1", extent, [`${year}-01-01`, `${year}-12-31`]);
+let datacube = builder.load_collection(
+  "TERRASCOPE_S5P_L3_NO2_TD_V1", extent, [`${year}-01-01`, `${year}-12-31`]
+);
 ```
 
 </template>
@@ -192,7 +198,7 @@ import numpy as np
 
 def apply_timeseries(series: Series, context: dict) -> Series:
   return np.convolve(series, np.ones(NN)/NN, mode='same')
-";
+"
 run = function(data, context) {
   p$run_udf(data = data, runtime = "Python", udf = gsub("NN", moving_average_window, udf))
 }
