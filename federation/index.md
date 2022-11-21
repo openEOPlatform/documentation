@@ -176,7 +176,7 @@ on the appropriate processing back-ends.
 Subsequent interaction (starting the jobs, polling their status, requesting the result assets, ...)
 can be done through the "master" `job` object created above, in the same way as with normal batch jobs.
 
-### Validity signed URLs (Batch job results)
+### Validity of signed URLs in batch job results
 
 Batch job results are accessible to the user via signed URLs stored in the result assets. Within the platform, 
 these URLs have a validity (expiry time) of 7 days. Within these 7 days, the results of a batch job can be accessed 
@@ -185,7 +185,7 @@ a freshly signed URL (valid for 7 days) is created for the result assets.
 
 ### Customizing batch job resources on Terrascope
 
-Jobs running on the (Terrascope) cluster get assigned a default amount of cpu and memory resources. This
+Jobs running on the (Terrascope) cluster get assigned a default amount of CPU and memory resources. This
 may not always be enough for your job, for instance when using UDF's. Also for very large jobs, you may want
 to tune your resource settings to optimize for cost.
 
@@ -196,24 +196,24 @@ that default settings are subject to change by the backend whenever needed.
 job_options = {        
         "executor-memory": "2G",
         "executor-memoryOverhead": "3G",
-        "executor-cores": "2",
-        "task-cpus": "1",
+        "executor-cores": 2,
+        "task-cpus": 1,
         "executor-request-cores": "400m",
         "max-executors": "100",
         "driver-memory": "8G",
         "driver-memoryOverhead": "2G",
-        "driver-cores": "5"
+        "driver-cores": 5,
     }
-cube.execute_batch( job_options=job_options)
+cube.execute_batch(job_options=job_options)
 ```
 
 This is a short overview of the various options:
 
 - executor-memory: memory assigned to your workers, for the JVM that executes most predefined processes 
 - executor-memoryOverhead: memory assigned on top of the JVM, for instance to run UDF's
-- executor-cores: number of cpu's per worker (executor). The number of parallel tasks is executor-cores/task-cpus
-- task-cpus: cpus assigned to a single task. UDF's using libraries like Tensorflow can benefit from further parallellization on the level of individual tasks.
-- executor-request-cores: this settings is only relevant for Kubernetes based backends, allows to overcommit cpu
+- executor-cores: number of CPUs per worker (executor). The number of parallel tasks is executor-cores/task-cpus
+- task-cpus: CPUs assigned to a single task. UDF's using libraries like Tensorflow can benefit from further parallellization on the level of individual tasks.
+- executor-request-cores: this settings is only relevant for Kubernetes based backends, allows to overcommit CPU
 - max-executors: the maximum number of workers assigned to your job. Maximum number of parallel tasks is `max-executors*executor-cores/task-cpus`. Increasing this can inflate your costs, while not necessarily improving performance!
 - driver-memory: memory assigned to the spark 'driver' JVM that controls execution of your batch job
 - driver-memoryOverhead: memory assigned to the spark 'driver' on top of JVM memory, for Python processes.
