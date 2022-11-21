@@ -225,7 +225,7 @@ details from the user, but we realize that advanced users sometimes want to have
 
 To learn more about these options, we point to the piece of code that handles this:
 
-https://github.com/Open-EO/openeo-geopyspark-driver/blob/master/openeogeotrellis/backend.py#L1213
+https://github.com/Open-EO/openeo-geopyspark-driver/blob/faf5d5364a82e870e42efd2a8aee9742f305da9f/openeogeotrellis/backend.py#L1213
 
 Most memory related options are translated to Apache Spark configuration settings, which are documented here:
 
