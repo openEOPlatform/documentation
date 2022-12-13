@@ -146,15 +146,15 @@ using your institution or (social) platform credentials.
 
 ## On-demand-preview
 
-Sometimes there is the need for a quick inspections of the results from a process graph on the map without running the whole graph first and having to wait for results to be computed and returned. This `on-demand-preview` is available in the [openEO Platform Editor](https://editor.openeo.cloud/).
+Sometimes there is the need to quickly inspect results of a process graph on the map without having to run the entire graph first and having to wait for the results to be computed and returned. This `on-demand-preview` is available in the [openEO Platform Editor](https://editor.openeo.cloud/).
 
-In the Editor you can find the functionality in the `Web Services` tab. Use the button `Show on Map`.
+In the Editor you can find the functionality in the `Web Services` tab. Use the `Show on Map` button.
 
 ::: tip Note
-This functionallity currently only works with collections that are also on the Sentinel Hub backend (Provider > Backend > sentinelhub). In order for the map to be able to display meaningful results your process graph should:
+This functionallity currently only works with collections that are also on the Sentinel Hub backend (Provider > Backend > sentinelhub). In order for the map to display meaningful results, your process graph should:
 - return one or three bands, 
-- one single temporal extent,
-- and scale the data to a range so the output format can adequately save it.
+- a single temporal extent,
+- and scale the data to a range so that the output format can adequately save it.
 :::
 
 ## Batch jobs
