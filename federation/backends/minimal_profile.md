@@ -105,7 +105,7 @@ This backend mandates support for batch jobs over the synchronous jobs via the /
 Both are very relevant, but batch jobs are not constrained in processing time.
 
 ## File formats
-GeoTiff is the only mandatory output format: https://docs.openeo.cloud/federation/backends/fileformats.html#geotiff
+[GeoTiff](./fileformats.md#geotiff) is the only mandatory output format.
 
 ## Collections
 A minimal backend shall have at least one raster collection, allowing to build raster data cubes. 
