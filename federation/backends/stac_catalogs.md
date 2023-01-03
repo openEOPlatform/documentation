@@ -45,8 +45,8 @@ setup would be to make the login depend on the user making the openEO request.
 1. The STAC API itself should preferably be publicly accessible, avoiding the need for login.
 2. Asset links may require authentication.
 3. One of the following authentication schemes should be supported:
-3.1 Basic authentication
-3.2 S3 authentication headers
+      1. Basic authentication
+      2. S3 authentication headers
 
 ## STAC metadata
 
