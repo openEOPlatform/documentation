@@ -16,11 +16,17 @@ Requirements in this profile are not sufficient for backends in the openEO platf
 ## Mandatory endpoints
 
 In the openEO API, all endpoints are optional and discoverable, except for the basic capabilities and versioning endpoints:
+
 https://api.openeo.org/#tag/Capabilities
+
 https://api.openeo.org/#tag/Capabilities/operation/connect
 
-These are the endpoints that are required by this profile:
+[Authentication](https://api.openeo.org/#section/Authentication) is also mandatory, but this profile does not define a specific method. We highlight that openID connect + PKCE is one of the only standardized and secure methods that are available.
+ 
 
+
+
+Next to those elements, these are the endpoints that are required by this profile:
 
 
 ```
