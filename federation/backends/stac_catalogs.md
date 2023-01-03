@@ -51,7 +51,7 @@ setup would be to make the login depend on the user making the openEO request.
 ## STAC metadata
 
 ### Data cube extension
-https://github.com/stac-extensions/datacube
+Please see <https://github.com/stac-extensions/datacube>
 
 
 ### Projection information
