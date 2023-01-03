@@ -15,7 +15,11 @@ Requirements in this profile are not sufficient for backends in the openEO platf
 
 ## Mandatory endpoints
 
-In the openEO API, all endpoints are optional and discoverable. These are the endpoints that are required by this profile:
+In the openEO API, all endpoints are optional and discoverable, except for the basic capabilities and versioning endpoints:
+https://api.openeo.org/#tag/Capabilities
+https://api.openeo.org/#tag/Capabilities/operation/connect
+
+These are the endpoints that are required by this profile:
 
 
 
@@ -66,43 +70,14 @@ In the openEO API, all endpoints are optional and discoverable. These are the en
         "DELETE"
       ],
       "path": "/jobs/{job_id}/results"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "path": "/jobs/{job_id}/results/{user_base64}/{secure_key}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "path": "/jobs/{job_id}/results/items/{user_base64}/{secure_key}/{item_id}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "path": "/jobs/{job_id}/results/items/{item_id}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "path": "/jobs/{job_id}/results/assets/{filename}"
-    },
-    {
-      "methods": [
-        "GET"
-      ],
-      "path": "/jobs/{job_id}/results/assets/{user_base64}/{secure_key}/{filename}"
     }
   ],
 ```
 
 ## Batch job support
-This backend mandates support for batch jobs over the synchronous jobs via the /result endpoint.
-Both are very relevant, but batch jobs are not constrained in processing time.
+
+Support for openEO batch jobs is mandatory, but certain specific elements can be ommitted. The previous section indicates the exact endpoints and HTTP requests that need to be supported.
+
 
 ## File formats
 [GeoTiff](./fileformats.md#geotiff) is the only mandatory output format.
