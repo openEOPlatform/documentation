@@ -1,12 +1,13 @@
-# How to join OpenEO Platform as Early Adopter (2 Steps)
+# How to join the OpenEO Platform Virtual Organization (2 Steps)
 
-::: danger Testing phase
-Currently, openEO Platform is only open for Early Adopters or within a free 30 day trial period.
-Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
+::: danger Available Options
+Currently, openEO Platform is only open within a free 30 day trial period or via Network of Resources sponsoring.
+
 Read more about the 30 day trial period on the [documentation page](./free_trial.md)
+Read more about the Network of Resources sponsoring on the [Step-by-Step guide](https://openeo.cloud/esa-network-of-resources-funding/)
 
 Approval time:
-We approve accounts traditionally on Monday evenings. Please be a bit patient if your account is not directly approved.
+We approve accounts traditionally on Monday evenings. Please be a bit patient specifically during holiday periods if your account is not directly approved.
 
 :::
 
@@ -96,9 +97,6 @@ You don't need to remember this ID as it's not needed in the following steps.
 Once you have connected your existing account with EGI check-in, you will need to
 become part of the openEO Platform virtual organization.
 
-::: danger Testing phase
-Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
-:::
 
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
 You may be asked to log in again with the account you have previously connected to EGI check-in.
