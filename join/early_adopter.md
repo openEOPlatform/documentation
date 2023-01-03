@@ -1,10 +1,9 @@
 # How to join the OpenEO Platform Virtual Organization (2 Steps)
 
 ::: danger Available Options
-Currently, openEO Platform is only open within a free 30 day trial period or via Network of Resources sponsoring.
+Currently, openEO Platform is only available within a free 30 day trial period or via Network of Resources sponsoring.
 
-Read more about the 30 day trial period on the [documentation page](./free_trial.md)
-Read more about the Network of Resources sponsoring on the [Step-by-Step guide](https://openeo.cloud/esa-network-of-resources-funding/)
+Read more about the 30 day trial period on the [documentation page](./free_trial.md) or the Network of Resources sponsoring on the [Step-by-Step guide](https://openeo.cloud/esa-network-of-resources-funding/)
 
 Approval time:
 We approve accounts traditionally on Monday evenings. Please be a bit patient specifically during holiday periods if your account is not directly approved.
@@ -12,7 +11,7 @@ We approve accounts traditionally on Monday evenings. Please be a bit patient sp
 :::
 
 
-To express your interest in becoming an Early Adopter you need to follow 2 steps:
+To become part of the OpenEO Platform Virtual Organization you need to follow 2 steps:
 
 1. Connect an existing account to EGI check-in
 2. Apply to the openEO Platform virtual organization 
@@ -130,7 +129,7 @@ This process may take a few days, especially if there is high demand.
 You will receive an e-mail notification once your account has been approved by us
 and is part of the openEO Platform virtual organization. 
 
-If you have any questions about the enrollment to openEO Platform or the Early Adopter program,
+If you have any questions about the enrollment to openEO Platform,
 please [contact us](https://openeo.cloud/contact/).
 
 
