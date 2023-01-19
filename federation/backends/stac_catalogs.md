@@ -51,6 +51,8 @@ setup would be to make the login depend on the user making the openEO request.
 ## STAC metadata
 
 ### Data cube extension
+
+For collection-level metadata, the datacube extension needs to be used to define the dimensions:
 Please see <https://github.com/stac-extensions/datacube>
 
 
