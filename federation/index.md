@@ -88,6 +88,45 @@ only either ARD processes **or** "standard" processes can be used in one process
 is not yet supported. One option to nevertheless achieve a combination of process types is to run ARD on Level-1 data,
 save the results of the job, and then in a second job load results and perform additional computations.
 
+### Enforce back-end selection for common collections
+
+Some collections are provided by multiple underlying back-ends,
+possibly with differences in spatial or temporal coverage.
+This is exposed in the collection metadata with `federation:backends` summary, e.g.:
+
+```json
+{
+    "id": "WATER_BODIES",
+    "type": "Collection",
+    ...
+    "summaries": {
+        "federation:backends": ["vito", "sentinelhub"],
+        ...
+    }
+}
+```
+
+When a user submits a processing request,
+the federated platform will try, by default, to automatically determine
+which underlying back-end is best choice for the actual processing,
+based for example on the requested spatial extent.
+
+You can however also enforce the selection of a certain back-end
+by using the metadata property filtering feature
+of the `load_collection` process.
+For example, with the Python client, to enforce the selection of
+the "sentinelhub" back-end:
+
+```python
+cube = connection.load_collection(
+    "WATER_BODIES",
+    ...
+    properties: {
+        "federation:backends": lambda v: v == "sentinelhub"
+    }
+)
+```
+
 ## Processes
 
 Each of the underlying back-ends of the federation can define its own set of available processes,
