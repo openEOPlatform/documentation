@@ -117,6 +117,8 @@ of the `load_collection` process.
 For example, with the Python client, to enforce the selection of
 the "sentinelhub" back-end:
 
+<CodeSwitcher :languages="{py: 'Python', r: 'R'}">
+<template v-slot:py>
 ```python
 cube = connection.load_collection(
     "WATER_BODIES",
@@ -126,6 +128,17 @@ cube = connection.load_collection(
     }
 )
 ```
+</template>
+<template v-slot:r>
+```r
+cube = p$load_collection(
+    id = "WATER_BODIES",
+    ...
+    properties = list("federation:backends" = function(x) x == "sentinelhub")
+)
+```
+</template>
+</CodeSwitcher>
 
 ## Processes
 
