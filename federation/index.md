@@ -119,6 +119,7 @@ the "sentinelhub" back-end:
 
 <CodeSwitcher :languages="{py: 'Python', r: 'R'}">
 <template v-slot:py>
+
 ```python
 cube = connection.load_collection(
     "WATER_BODIES",
@@ -128,8 +129,10 @@ cube = connection.load_collection(
     }
 )
 ```
+
 </template>
 <template v-slot:r>
+
 ```r
 cube = p$load_collection(
     id = "WATER_BODIES",
@@ -137,6 +140,7 @@ cube = p$load_collection(
     properties = list("federation:backends" = function(x) x == "sentinelhub")
 )
 ```
+
 </template>
 </CodeSwitcher>
 
