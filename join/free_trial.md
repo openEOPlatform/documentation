@@ -1,21 +1,12 @@
 
 # 30 Day free trial of openEO Platform 
 
-::: danger Testing phase
-The free trial is for interested users who want to test the platform on a non-regular, playful basis.
-If you have detailed intentions, usecases or a project you are working on, we would like to invite you to apply as Early Adopter.  
-Read more about the Early Adopters program on the [information page](https://openeo.cloud/early-adopters/).
+Registration to the platform and management of your user account happens via the [EOPlaza](https://portal.terrascope.be) portal. 
+You will receive a free trial upon first registration which can be started via [this link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) 
 
-Approval time: We approve accounts traditionally on Monday evenings. Please be a bit patient if your account is not directly approved.
-:::
+EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO platform, credits will be deducted. You can increase the number of credits by a Network of Resources request, or acquiring them directly on EOPlaza.
 
-
-To get the free trial period you need to follow 2 simple steps:
-
-1. Connect an existing account to EGI check-in
-2. Apply to the openEO Platform virtual organization 
-
-The 2 steps are described in detail below.
+The registration link takes you through 2 steps that are described in detail below.
 
 ## Preamble: Registration and Login (Authentication)
 
@@ -33,9 +24,11 @@ This procedure has important advantages for our users:
 - Neither openEO platform nor the EGI Foundation see, handle or store your password.
   That information is only exchanged directly with your institution or the selected (social) platforms, 
   to minimize the risk of leaking sensitive credentials.
-- openEO platform only retains minimal information about its users,
-  such as an email address and a few more general attributes.
+- openEO platform and EOPlaza only retain minimal information about its users,
+  such as an email address and a few more general attributes. 
 - No need to set up and remember yet another username and password.
+
+For further details, you can check the privacy policy of [openEO platform](https://openeo.cloud/privacy-policy) and [EOPlaza](https://vito.be/en/privacy-policy).
 :::
 
 ## Step 1: Connect an existing account
@@ -54,10 +47,6 @@ you do not need to do so again and can continue with [joining openEO Platform](#
 If you do not remember if you have already connected your account, you can simply try to follow the steps below.
 If it is already connected you will get a warning at the end of the process: "The identifier is already in use".
 :::
-
-To get started, please go to <https://aai.egi.eu/signup>. You will have to select the
-institution (recommended) or the (social) platform you want to log in with in the future
-and follow the login procedure.
 
 ::: warning Recommendation
 We recommend using your institutional account whenever possible.
@@ -92,53 +81,15 @@ You don't need to remember this ID as it's not needed in the following steps.
 
 ## Step 2: Join openEO Platform virtual organization
 
-Once you have connected your existing account with EGI check-in, you will need to
-become part of the openEO Platform virtual organization.
+Once you have connected your existing account with EGI check-in, the EOPlaza [registration link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) allows you to easily configure your openEO platform account on EOPlaza, and get started.
 
-
-To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
-You may be asked to log in again with the account you have previously connected to EGI check-in.
-
-::: tip Note
-The instructions below are available in English, but may be localized to your preferred language.
-:::
-
-Once you are logged in, a registration form with the title *'Join openEO Platform'* will show up,
-which you can start by clicking *'BEGIN'*.
-
-<figure>
-    <img src="./join1.png" alt="Join openEO Platform - Step 1">
-    <figcaption>Joining openEO Platform: Step 1</figcaption>
-</figure>
-
-In the next step, you will only be required to fill in two fields:
-- *Justification for this access request*: Please state: "30 day trial starting on DD/MM/YYYY" and fill DD/MM/YYYY with the date you want to start your trial period (1).
-- *Agree to Acceptable Use Policy and Conditions of Use (AUP)*: You will need to read (2) and accept (3) the AUP.
-
-You can finalize the registration form by clicking *'SUBMIT'* (4).
-
-<figure>
-    <img src="./join2.png" alt="Join openEO Platform - Step 2">
-    <figcaption>Joining openEO Platform: Step 2</figcaption>
-</figure>
-
-After enrollment (you will likely have seen a message "Petition Submitted. Awaiting Review"),
-a manual approval will take place and you will be granted access to the platform.
-This process may take a few days, especially if there is high demand.
-You will receive an e-mail notification once your account has been approved by us
-and is part of the openEO Platform virtual organization. Your account will be removed from the Virtual Organization after 30 days. 
-
-If you have any questions about the enrollment to openEO Platform or the free trial period or the Early Adopter program,
+If you have any questions about the enrollment to openEO Platform or the free trial period,
 please [contact us](https://openeo.cloud/contact/).
-
-
-Optionally, you may want to [register with individual service providers](../federation/index.md#registration) 
-in the federation for better support or performance.
 
 
 ## Working with openEO platform
 
-After you've been approved to join openEO Platform, you can start working with
+After you've been registered on openEO Platform, you can start working with
 the platform through any of the clients. With all clients you will need to connect to
 `https://openeo.cloud` and then authenticate through EGI check-in with the 
 account used above.
