@@ -2,7 +2,7 @@
 # 30 Day free trial of openEO Platform 
 
 Registration to the platform and management of your user account happens via the [EOPlaza](https://portal.terrascope.be) portal. 
-You will receive a free trial upon first registration which can be started via [this link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) 
+You will receive a free trial upon first registration which can be started via [this link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) 
 
 EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO platform, credits will be deducted. You can increase the number of credits by a Network of Resources request, or acquiring them directly on EOPlaza.
 
@@ -81,7 +81,7 @@ You don't need to remember this ID as it's not needed in the following steps.
 
 ## Step 2: Join openEO Platform virtual organization
 
-Once you have connected your existing account with EGI check-in, the EOPlaza [registration link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) allows you to easily configure your openEO platform account on EOPlaza, and get started.
+Once you have connected your existing account with EGI check-in, the EOPlaza [registration link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) allows you to easily configure your openEO platform account on EOPlaza, and get started.
 
 If you have any questions about the enrollment to openEO Platform or the free trial period,
 please [contact us](https://openeo.cloud/contact/).
