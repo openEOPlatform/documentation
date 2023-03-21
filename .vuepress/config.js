@@ -49,7 +49,10 @@ module.exports = {
         {text: 'JavaScript & R', link: '/processes/'},
         {text: 'Python', link: 'https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube'},
       ]},
-      { text: 'File Formats', link: '/file-formats/' },
+      { text: 'File Formats', items: [
+        { text: 'Best practices', link: '/file-formats/bestpractices.html'},
+        { text: 'Available File Formats', link: '/file-formats/' },
+      ]},
       { text: 'Advanced', items: [
         { text: 'Accounting', link: '/federation/accounting.html'},
         { text: 'Federation Aspects', link: '/federation/index.html'},
