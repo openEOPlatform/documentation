@@ -2,15 +2,15 @@
 # 30 Day free trial of openEO Platform 
 
 Registration to the platform and management of your user account happens via the [EOPlaza](https://portal.terrascope.be) portal. 
-You will receive a free trial upon first registration which can be started via [this link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) 
+You will receive a free trial upon first registration which can be started via [this link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid).
 
-EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO platform, credits will be deducted. You can increase the number of credits by a Network of Resources request, or acquiring them directly on EOPlaza.
+EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO Platform, credits will be deducted. You can increase the number of credits by a [Network of Resources](https://openeo.cloud/esa-network-of-resources-funding/) request, or acquiring them directly on EOPlaza.
 
 The registration link takes you through 2 steps that are described in detail below.
 
 ## Preamble: Registration and Login (Authentication)
 
-To register for openEO platform,
+To register for openEO Platform,
 you usually do not need to pick a username and invent a new password. 
 Instead, we rely on the authentication and authorization service
 [EGI check-in](https://www.egi.eu/services/check-in/),
@@ -21,14 +21,14 @@ or other commonly used (social) platforms such as Google, GitHub, Facebook or Li
 ::: tip Some background on Security & Privacy
 This procedure has important advantages for our users:
 
-- Neither openEO platform nor the EGI Foundation see, handle or store your password.
+- Neither openEO Platform nor the EGI Foundation see, handle or store your password.
   That information is only exchanged directly with your institution or the selected (social) platforms, 
   to minimize the risk of leaking sensitive credentials.
-- openEO platform and EOPlaza only retain minimal information about its users,
-  such as an email address and a few more general attributes. 
+- openEO Platform and EOPlaza only retain minimal information about its users,
+  such as an email address and a few more general attributes.
 - No need to set up and remember yet another username and password.
 
-For further details, you can check the privacy policy of [openEO platform](https://openeo.cloud/privacy-policy) and [EOPlaza](https://vito.be/en/privacy-policy).
+For further details, you can check the privacy policy of [openEO Platform](https://openeo.cloud/privacy-policy) and [EOPlaza](https://vito.be/en/privacy-policy).
 :::
 
 ## Step 1: Connect an existing account
@@ -87,7 +87,7 @@ If you have any questions about the enrollment to openEO Platform or the free tr
 please [contact us](https://openeo.cloud/contact/).
 
 
-## Working with openEO platform
+## Working with openEO Platform
 
 After you've been registered on openEO Platform, you can start working with
 the platform through any of the clients. With all clients you will need to connect to
