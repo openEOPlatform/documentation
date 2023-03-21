@@ -1,7 +1,7 @@
 # Get started with the openEO Python Client
 
 ::: danger Important
-You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+To access the processing infrastructure you need an openEO Platform account. Read all about the service offering including our free trial offer [here](https://openeo.cloud/#plans).
 
 This Getting Started guide will simply give you an overview of the capabilities of the openEO Python client library.
 More in-depth information and documentation can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/) website.
@@ -138,9 +138,8 @@ However, to run non-trivial processing queries one has to authenticate
 so that permissions, resource usage, etc. can be managed properly.
 
 To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
-It offers some interesting features (e.g. a user can securely reuse an existing account),
-but is a fairly complex topic, discussed in more depth in the general for the
-[Free Tier](../../join/free_trial.md) and the [Early Adopter program](../../join/early_adopter.md).
+It offers some interesting features (e.g., a user can securely reuse an existing account),
+but is a fairly complex topic, discussed in more depth on the [Free Trial](../../join/free_trial.md) page.
 
 The openEO Python client library tries to make authentication as streamlined as possible.
 In most cases for example, the following snippet is enough to obtain an authenticated connection:

@@ -1,7 +1,7 @@
 # Get started with the openEO JavaScript Client
 
 ::: tip Note
-You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+To access the processing infrastructure you need an openEO Platform account. Read all about the service offering including our free trial offer [here](https://openeo.cloud/#plans).
 :::
 
 ## Installation
@@ -173,7 +173,7 @@ If you have included the library using HTML `script` tags, then you need to incl
 No further action is required, if you have installed the client via npm.
 ::: 
 
-As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in (e.g. Browser or Node), please refer to the  [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/latest/OidcProvider.html) and the documentation to join the [Free Tier](../../join/free_tier.md) or the [Early Adopter program](../../join/early_adopter.md).
+As OpenID Connect authentication is a bit more complex and depends on the environment your are using it in (e.g. Browser or Node), please refer to the  [JavaScript client documentation](https://open-eo.github.io/openeo-js-client/latest/OidcProvider.html) and the documentation to join the [Free Trial](../../join/free_trial.md).
 
 ## Creating a (user-defined) process
 

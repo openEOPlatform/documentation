@@ -1,7 +1,7 @@
 # Get started with the openEO R Client
 
 ::: tip Note
-You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+To access the processing infrastructure you need an openEO Platform account. Read all about the service offering including our free trial offer [here](https://openeo.cloud/#plans).
 :::
 
 ## Useful links
@@ -129,9 +129,8 @@ However, to run non-trivial processing queries one has to authenticate
 so that permissions, resource usage, etc. can be managed properly.
 
 To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
-It offers some interesting features (e.g. a user can securely reuse an existing account),
-but is a fairly complex topic, discussed in more depth in the general for the
-[Free Tier](../../join/free_tier.md) and the [Early Adopter program](../../join/early_adopter.md).
+It offers some interesting features (e.g., a user can securely reuse an existing account),
+but is a fairly complex topic, discussed in more depth on the [Free Trial](../../join/free_trial.md) page.
 
 The following code snippet shows how to log in via OIDC authentication:
 
