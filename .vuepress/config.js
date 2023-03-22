@@ -24,7 +24,6 @@ module.exports = {
           { text: 'JupyterLab (Python)', link: '/getting-started/jupyterlab/' },
           { text: 'Editor', link: '/getting-started/editor/' }
         ] },
-        { text: 'Early Adopter Registration', link: '/join/early_adopter.html' },
         { text: 'Free Trial Registration', link: '/join/free_trial.html' }, 
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
       ] },
