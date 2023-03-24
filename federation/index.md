@@ -244,6 +244,8 @@ job_options = {
         "driver-memory": "8G",
         "driver-memoryOverhead": "2G",
         "driver-cores": 5,
+        "udf-dependency-archives":[],
+        "logging-threshold": "info"
     }
 cube.execute_batch(job_options=job_options)
 ```
@@ -258,6 +260,31 @@ This is a short overview of the various options:
 - max-executors: the maximum number of workers assigned to your job. Maximum number of parallel tasks is `max-executors*executor-cores/task-cpus`. Increasing this can inflate your costs, while not necessarily improving performance!
 - driver-memory: memory assigned to the spark 'driver' JVM that controls execution of your batch job
 - driver-memoryOverhead: memory assigned to the spark 'driver' on top of JVM memory, for Python processes.
+- logging-threshold: the threshold for logging, set to 'info' by default, can be set to 'debug' to generate much more logging
+- udf-dependency-archives: an array of urls pointing to zip files with extra dependencies, see below
+
+#### Custom UDF dependencies
+
+User defined functions often depend on (specific versions of) libraries or require small auxiliary data files. The UDF specifications do not yet
+define a standardized manner to provide this other than having the ability of selecting from a predefined set of 'runtimes' that than again have a predefined configuration.
+
+The Terrascope/Geotrellis backends solve this via the udf-dependency-archives job option, that allows to specify a list of zip files that should be included in the working directory of the UDF.
+
+This enables the following example workflow for Python UDF's:
+
+1. Create a Python 'virtualenv' with your dependencies
+2. Based on the 'site-packages' directory of the virtualenv, create a zip file with all dependencies
+3. Upload the zip to a url that can be reached by the backend. 
+4. In job options, add  `"udf-dependency-archives": ['https://yourhost.com/myEnv.zip#tmp/mydir'] ` The `#tmp/mydir` suffix indicates where you want to unzip your files, relative to the working directory.
+5. In your UDF, before trying to import libraries, add your directory to the Python path: `sys.path.insert(0, 'tmp/mydir')`
+6. Now your libraries should be loaded before anything else!
+
+Known limitations:
+
+- Your dependencies need to be compatible with the Python version of the backend, currently 3.8.
+- Your dependencies need to be compatible with the OS of the backend, currently AlmaLinux 8.
+- The backend has a limited set of Python dependences that are preloaded, and cannot be changed, such as numpy.
+
 
 #### Learning more
 
