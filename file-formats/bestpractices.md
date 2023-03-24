@@ -1,6 +1,6 @@
 # Best practices
 
-openEO Platform offers different [file formats](/file-formats) for importing and exporting of data. Depending on the data cube that your process graph creates and on your later use case, some file formats are more suitable than others.
+openEO Platform offers different [file formats](/file-formats) for importing and exporting of data. Depending on the data cube that your process graph creates and on your later use case, some file formats are more suitable to export your data (`save_result`) in than others.
 
 This page provides a brief overview of the most common use cases:
 
@@ -14,10 +14,10 @@ This page provides a brief overview of the most common use cases:
   - can store multiple bands (band dimension)
   - can store multiple timestamps (time dimension)
   - self-describing, portable and scalable
-- GeoTiff: 
+- GeoTiff: ideal for storing several bands in one file in cloud optimized format
   - georeferenced
   - can store multiple bands
-  - usually describes data for one timestamp
+  - a single GeoTiff corresponts to one timestamp (in combination with STAC, multitemporal collections can be supported - not yet supported by the `save_result` process in any backend)
   - cloud optimized
 
 For more information on federation agreements on file formats, see [here](../federation/#file-formats) and [here](../federation/backends/fileformats.md).
