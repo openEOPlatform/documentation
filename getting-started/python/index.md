@@ -1,7 +1,7 @@
 # Get started with the openEO Python Client
 
 ::: danger Important
-You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+You need to [get an openEO Platform account](https://openeo.cloud/#plans) to access the processing infrastructure.
 
 This Getting Started guide will simply give you an overview of the capabilities of the openEO Python client library.
 More in-depth information and documentation can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/) website.
@@ -173,6 +173,10 @@ as [discussed in great detail here](https://openeo.org/documentation/1.0/datacub
 
 ### Creating a Datacube
 
+::: tip Note
+Please note that the following code only creates a process graph representation of your EO analysis and does not take major processing power from you device.
+:::
+
 The first step is loading the desired slice of a data collection
 with [`Connection.load_collection`](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.connection.Connection.load_collection):
 
@@ -241,6 +245,8 @@ After applying all processes you want to execute, we need to tell the back-end t
 result = datacube.save_result("GTiff")
 ```
 
+
+
 ## Execution
 
 It's important to note that all the datacube processes we applied up to this point
@@ -268,6 +274,7 @@ job = result.create_job()
 It can be annoying to manage and monitor batch jobs via code.
 If you want to use an interface for your batch jobs (or other resources) that is easier to use, you can also open the [openEO Platform Editor](https://editor.openeo.cloud).
 After login, you'll be able to manage and monitor your batch jobs in a near-realtime interactive environment; Look out for the "Data Processing" tab. 
+
 :::
 
 The batch job, which is referenced by the returned `job` object, is only _created_ at the back-end, 
@@ -285,6 +292,9 @@ When everything completes successfully, the processing result will be downloaded
 in a folder "output".
 
 ::: tip
+
+You may shut down your device or log out during the job runs on the backend. You can retrieve the status and results later and from any client.
+
 The official openEO Python Client documentation has more information
 on [batch job management and downloading results](https://open-eo.github.io/openeo-python-client/batch_jobs.html)
 :::

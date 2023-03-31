@@ -1,7 +1,7 @@
 # Get started with the openEO R Client
 
 ::: tip Note
-You need to [become part of the openEO Platform "early adopter" program](https://openeo.cloud/#adopters) to access the processing infrastructure.
+You need to [get an openEO Platform account](https://openeo.cloud/#plans) to access the processing infrastructure.
 :::
 
 ## Useful links
@@ -88,6 +88,10 @@ If the package is used with RStudio the metadata can also be nicely rendered as 
 :::
 
 ### Processes
+
+::: tip Note
+Please note that the any of this code only creates a process graph representation of your EO analysis and does not take major processing power from you device.
+:::
 
 Processes in openEO are operations that can be applied on (EO) data
 (e.g. calculate the mean of an array, or mask out observations outside a given polygon).
@@ -224,6 +228,8 @@ start_job(job = job)
 It can be annoying to manage and monitor batch jobs via code.
 If you want to use an interface for your batch jobs (or other resources) that is easier to use, you can also open the [openEO Platform Editor](https://editor.openeo.cloud).
 After login, you'll be able to manage and monitor your batch jobs in a near-realtime interactive environment; Look out for the "Data Processing" tab. 
+You may shut down your device or log out during the job runs on the backend. You can retrieve the status and results later and from any client.
+
 :::
 
 After the job was executed, status updates can be fetched by using the `list_jobs()` function. This function returns a list of job descriptions, which can be indexed with the jobs ID to limit the search results. But remember that only `list_jobs()` refreshes this list. So, to monitor a job you have to iteratively call the job (`describe_job()`) or the job list `list_jobs()`.
@@ -239,7 +245,8 @@ jobs$cZ2ND0Z5nhBFNQFq
 describe_job(job = job)
 ```
 
-When the job is finished, calling `download_results()` will download the results of a job. Using `list_results()` will return an overview about the created files and their download link or it states the error message, in case of an error.
+When the job is finished, calling `download_results()` will download the results of a job. Using `list_results()` will return an overview about the created files and their download link or it states the error message, in case of an error. 
+
 
 ```r
 # list the processed results
