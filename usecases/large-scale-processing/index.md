@@ -1,0 +1,76 @@
+# Large scale processing
+
+Processing of larger areas up to global scale is one of the more challenging tasks in earth observation, 
+but certainly one that this platform wants to address. This page describes some best practices based on the example
+of processing all 27 countries in the European Union. We do encourage you to get in touch with backend providers about your
+specific case, as not every workflow is the same, and some advance planning may be needed to ensure that you get sufficient
+processing resources.
+
+The approach desribed here is based on local files to track the production. This is a low-cost approach that does not require 
+special IT knowledge, but comes with some risks such as loosing your local files. A more robust approach for production-grade projects
+would typically rely on some sort of database or STAC catalog service to monitor processing. Such a setup is however quite similar in many aspects.
+
+The basic strategy for processing large areas is to split it up into smaller areas, usually according to a regular tile grid. 
+Splitting reduces the size of the area that needs to be processed by one batch job, and avoids running into all kinds of limitations.
+For instance, when processing in a specific projection, you anyway have to stay within the bounds of that projection. Also the output
+file size of a job often becomes impractical when working over huge areas. Or you will hit bottlenecks in the backend implementation that
+do not occur for normally sized jobs. Also, when a smaller job fails or requires reprocessing, the cost will be smaller.
+
+## Preparation
+
+The idea is that we first create and persist the list of tiles to produce, with all attributes required to produce that 
+specific tile. This gives us a very good visual overview of the processing that will be performed.
+
+Having job parameters in a file is also useful for debugging afterwards. Determining parameters at runtime means you don't 
+have absolute certainty over the value of a specific argument, as there may be bugs in your code.
+
+## Prepare tiling grid
+
+The choice of tiling grid depends on your preferred projection system, which depends on your area of interest. 
+For Europe, the EPSG:3035 projection can be used, while for global processing you may want to work with different projections according
+to UTM zones.
+
+The size of tiles in your grid is also important, and often ranges from 20km to 100km. For relatively light workflows, a 100km grid can work well, 
+while for more demanding cases, a 20km grid is better. In our example, we choose to work with 20km tiles because the workflow was quite demanding. A smaller 
+tile size can also result in less unneeded processing when your target area has an irregular shape, like most countries and continents.
+
+A couple of basic grids can be found here:
+https://artifactory.vgt.vito.be/webapp/#/artifacts/browse/tree/General/auxdata-public/grids
+
+A grid can be masked based on the countries we want to load, the following script shows an example:
+
+```python
+import geopandas as gpd
+europe = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
+europe = europe[europe.continent=="Europe"]
+countries = europe[europe.name.isin(EU27)]
+df = gpd.read_file("https://artifactory.vgt.vito.be/auxdata-public/grids/LAEA-20km.gpkg",mask=countries)
+```
+
+## Prepare job attributes
+
+Next to the tiling grid, we recommend to also determine other properties required by your processing jobs up front. This allows you to properly
+review those properties before starting to process. Examples include simple things like a job title or tile specific processing parameters, but also an 
+attribute to determine processing order.
+
+In this step, you may also want to make sure to already determine the correct tile extent in the coordinate system of your tile grid. 
+Providing exact coordinates in the right projection is necessary to ensure pixel-perfect alignment of your tiles.
+
+## Tuning your processing job
+
+Before kicking off large processing, you want to be very sure that the correct output is generated, and that you have sufficient credits and resources
+available to finish your job in time. This can be done by simply running various jobs, and using the statistics reported in the metadata to determine average 
+parameters.
+
+For instance, for the case of processing the EU27 croptype map, consisting of ~11000 20km tiles, we made the following calculations op front:
+
+- Average runtime was 30 minutes, which means that it would take ~15 days of continous processing with 15 parallel jobs.
+- Average cost was below 100 credits, so we would be able to process with a budget of 1100000 credits.
+
+To achieve these numbers, we did have to optimize batch job settings and also the overall workflow to reduce resource usage!
+
+## Starting map production
+
+The openEO Python client provides a useful tool to run multiple processing jobs in multiple backends:
+
+https://open-eo.github.io/openeo-python-client/cookbook/job_manager.html
