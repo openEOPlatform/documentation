@@ -46,7 +46,7 @@ while for more demanding cases, a 20km grid is better. In our example, we choose
 tile size can also result in less unneeded processing when your target area has an irregular shape, like most countries and continents.
 
 A couple of basic grids can be found here:
-https://artifactory.vgt.vito.be/webapp/#/artifacts/browse/tree/General/auxdata-public/grids
+<https://artifactory.vgt.vito.be/webapp/#/artifacts/browse/tree/General/auxdata-public/grids>
 
 A grid can be masked based on the countries we want to load, the following script shows an example:
 
