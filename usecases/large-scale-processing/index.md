@@ -89,7 +89,7 @@ In our example, we used the Geotrellis backends, which has [these execution opti
 
 The openEO Python client provides a useful tool to run multiple processing jobs in multiple backends:
 
-https://open-eo.github.io/openeo-python-client/cookbook/job_manager.html
+<https://open-eo.github.io/openeo-python-client/cookbook/job_manager.html>
 
 This class takes a GeoJSON corresponding to your tile grid and job properties per tiles, and triggers a function provided by you whenever a new
 job needs to be created. You can configure multiple backends, and set the number of parallel jobs per backend. 
