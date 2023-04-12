@@ -83,7 +83,7 @@ To achieve these numbers, we did have to optimize batch job settings and also th
 A common bottleneck to parallellization is the memory consumption, and it can be useful to know the maximum memory allocation on a single machine in
 your backend of choice. For instance, in a cloud environment with 16GB per machine and 4 cpu's, using slightly less than 4GB per worker is efficient as you can fit 4 parallel workers on a single VM, while requiring 6GB would fit only 2 workers and leave about 4GB unused.
 
-In our example, we used the Geotrellis backends, which has [these tunables](../../federation/#customizing-batch-job-resources-on-terrascope).
+In our example, we used the Geotrellis backends, which has [these execution options](../../federation/index.md#customizing-batch-job-resources-on-terrascope).
 
 ## Starting map production
 
