@@ -9,17 +9,31 @@ When back-ends offer/mirror the same datasets, it is required to align names and
 - [SENTINEL2_L2A](#sentinel2-l2a)
 - SENTINEL3_OLCI_L1B
 
-## Naming convention
+## Common naming convention
 
-In order to achieve a uniform structure for all collections on the platform and thus make it easier for users to navigate between collections, it is recommended to follow the common naming convention:
+In order to achieve a uniform structure for all collections on the platform and thus make it easier for users to navigate between collections, it is recommended to follow the common naming convention*:
 
 - Names should be written in capital letters ("all caps")
-- Names can consist of a combination of different attributes. Frequently used attributes: `PROVIDER_SATELLITE_PROCESSINGLEVEL_RESOLUTION_DATA_YEAR`
+- Names should consist of a combination of different optional attributes (see table)
+- The different attributes should be separated by an underscore
 
-Common combinations of attributes (examples):
-- SENTINEL2_L1C (`SATELLITE _PROCESSINGLEVEL`)
-- ESA_WORLDCOVER_10M_2020_V1 (`PROVIDER _DATA_ RESOLUTION _YEAR`)
-- CNES_LAND_COVER_MAP (`PROVIDER_DATA`)
+Very roughly speaking, collections can be divided into two groups (in reality it is more of a spectrum with all gradations in between):
+- collections containing raw data (or processing levels of that data) measured directly by a satellite (or an other measurement platform) and often distributed by the platform operator (e.g., ESA)
+- derived collections, which are based on (pre-processed) raw data that has been processed to create a collection with a specific purpose (e.g., a land cover map) and are often distributed by the institution (or a service of an institution) that created the collection
+
+| Attribute | Type |Description | Examples |
+|-----------|------|------------|----------|
+| Provider | string | Often used for derived collections produced or order by the listed provider. | `ESA`, `CNSE`, `EMODNET`, `TERRASCOPE`. `CAMS`, `CGLS` |
+| Satellite/Platform | string | Name of the satellite/platform that acquired the data in the collection. | `SENTINEL2`, `LANDSAT8`, `PALSAR2` |
+| Processing level | string | Name of the level to which the data was processed (often processed raw data). | `L2A`, `L3`, `L2_1` |
+| Version | string | Often used for derived collections that are produced in several versions. | `V1`, `V2`|
+| Resolution | string (`number + unit` or `string`) | Usually added, if the resolution is of particular importance for the collection (e.g., novel product with this resolution) for the collection. | `10M`, `120M`, `EUROPE`, `GLOBAL` |
+| Product Description | string | Human readable description of the data within the collection. Can also be an abbreviation or acronym. | `LAND_COVER_MAP`, `WORLDCOVER`, `NDVI`, `LAI` |
+| Year | number | Often used for derived products that where updated in the specified year or created based on data of the specified year. | `2022` |
+
+Collections containing raw data or processing levels of that data often use a combination of satellite/platform and processing level (e.g., `SENTINEL2_L1C` ). Derived collections often use a combination of provider and product description (e.g., CNES_LAND_COVER_MAP).
+
+*Some existing collections may not strictly follow this naming convention as they were added to the platform prior to this agreement.
 
 ## Sentinel2-L2A
 
