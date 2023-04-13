@@ -19,15 +19,16 @@ In order to achieve a uniform structure for all collections on the platform and 
 
 Very roughly speaking, collections can be divided into two groups (in reality it is more of a spectrum with all gradations in between):
 - collections containing raw data (or processing levels of that data) measured directly by a satellite (or an other measurement platform) and often distributed by the platform operator (e.g., ESA)
-- derived collections, which are based on (pre-processed) raw data that has been processed to create a collection with a specific purpose (e.g., a land cover map) and are often distributed by the institution that created the collection
+- derived collections, which are based on (pre-processed) raw data that has been processed to create a collection with a specific purpose (e.g., a land cover map) and are often distributed by the institution (or a service of an institution) that created the collection
 
 | Attribute | Type |Description | Examples |
 |-----------|------|------------|----------|
-| Provider | string | Often used for derived collections produced or order by the listed provider. | `ESA`, `CNSE`, `EMODNET`, `TERRASCOPE` |
-| Satellite/Platform | string | Name of the satellite/platform that acquired the data in the collection. | `SENTINEL2`, `LANDSAT8` |
-| Processing level | string | Name of the level to which the data was processed (often processed raw data). | `L2A`, `L3` |
-| Resolution | string (`number + unit`) | Should only be added, if the resolution is of particular importance for the collection (e.g., novel product with this resolution) for the collection. | `10M`, `120M` |
-| Product Description | string | Human readable description of the data within the collection. | `LAND_COVER_MAP`, `WORLDCOVER` |
+| Provider | string | Often used for derived collections produced or order by the listed provider. | `ESA`, `CNSE`, `EMODNET`, `TERRASCOPE`. `CAMS`, `CGLS` |
+| Satellite/Platform | string | Name of the satellite/platform that acquired the data in the collection. | `SENTINEL2`, `LANDSAT8`, `PALSAR2` |
+| Processing level | string | Name of the level to which the data was processed (often processed raw data). | `L2A`, `L3`, `L2_1` |
+| Version | string | Often used for derived collections that are produced in several versions. | `V1`, `V2`|
+| Resolution | string (`number + unit` or `string`) | Usually added, if the resolution is of particular importance for the collection (e.g., novel product with this resolution) for the collection. | `10M`, `120M`, `EUROPE`, `GLOBAL` |
+| Product Description | string | Human readable description of the data within the collection. Can also be an abbreviation or acronym. | `LAND_COVER_MAP`, `WORLDCOVER`, `NDVI`, `LAI` |
 | Year | number | Often used for derived products that where updated in the specified year or created based on data of the specified year. | `2022` |
 
 Collections containing raw data or processing levels of that data often use a combination of satellite/platform and processing level (e.g., `SENTINEL2_L1C` ). Derived collections often use a combination of provider and product description (e.g., CNES_LAND_COVER_MAP).
