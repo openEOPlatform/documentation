@@ -9,27 +9,25 @@ Registration to the platform and management of your user account happens via EOP
 EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO Platform, credits will be deducted. You can increase the number of credits by a [Network of Resources](https://openeo.cloud/esa-network-of-resources-funding/) request, or acquiring them directly on EOPlaza.
 
 
-## Preamble: Registration and Login (Authentication)
 
-To register for openEO Platform,
-you usually do not need to pick a username and invent a new password. 
-Instead, we rely on the authentication and authorization service
-[EGI Check-in](https://www.egi.eu/services/check-in/),
-provided by the [EGI Foundation](https://egi.eu). 
-It allows you to log in through an **existing account** from either your institution,
-or other commonly used (social) platforms such as Google, GitHub, Facebook or LinkedIn.
+::: tip EGI Check-in based "Single Sign-on"
 
-::: tip Some background on Security & Privacy
-This procedure has important advantages for our users:
+OpenEO Platform relies on
+[EGI Check-in](https://www.egi.eu/services/check-in/)
+(provided by the [EGI Foundation](https://egi.eu))
+for authentication and authorization services,
+which offers several benefits:
 
-- Neither openEO Platform nor the EGI Foundation see, handle or store your password.
-  That information is only exchanged directly with your institution or the selected (social) platforms, 
-  to minimize the risk of leaking sensitive credentials.
-- openEO Platform and EOPlaza only retain minimal information about its users,
-  such as an email address and a few more general attributes.
-- No need to set up and remember yet another username and password.
+- log in through an **existing account**
+  from either your academic/scientific institution,
+  or other social platforms such as Google, GitHub, Facebook or LinkedIn.
+- no need to set up and remember yet another username-password combo.
+- neither openEO Platform nor the EGI Foundation see, handle or store your password.
+- openEO Platform and EOPlaza only keep minimal user information (e.g. email address).
+  For further details, you can check the privacy policy of [openEO Platform](https://openeo.cloud/privacy-policy)
+  and [EOPlaza](https://vito.be/en/privacy-policy).
 
-For further details, you can check the privacy policy of [openEO Platform](https://openeo.cloud/privacy-policy) and [EOPlaza](https://vito.be/en/privacy-policy).
+
 :::
 
 ## Step 1: Connect an existing account
