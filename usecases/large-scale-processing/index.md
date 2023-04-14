@@ -82,8 +82,7 @@ Providing exact coordinates in the right projection is necessary to ensure pixel
 ## Tuning your processing job
 
 Before kicking off large processing, you want to be very sure that the correct output is generated, and that you have sufficient credits and resources
-available to finish your job in time. This can be done by simply running various jobs, and using the statistics reported in the metadata to determine average 
-parameters.
+available to finish your job in time. This can be done by simply running various jobs, and using the statistics reported in the metadata to determine average parameters. (The map production section below shows a way to collect these parameters in a CSV.)
 
 For instance, for the case of processing the EU27 croptype map, consisting of ~11000 20km tiles, we made the following calculations op front:
 
@@ -111,6 +110,9 @@ This class also takes care of error handling, and can be considered more resilie
 A full example of how we use this can be found [here](https://github.com/openEOPlatform/openeo-classification/blob/main/src/openeo_classification/scripts/cropmap_eu27.py).
 
 This script uses a CSV file to track your jobs, and whenever it is interrupted it can simply resume from that CSV file, making it tolerant to failure.
+
+![Tracking jobs by CSV](https://user-images.githubusercontent.com/5937096/231968590-f0f0b415-453c-4ab7-9502-82eab795a84e.png)
+
 
 ## Errors during production
 
