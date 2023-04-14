@@ -13,7 +13,7 @@ We approve accounts traditionally on Monday evenings. Please be a bit patient sp
 
 To become part of the OpenEO Platform Virtual Organization you need to follow 2 steps:
 
-1. Connect an existing account to EGI check-in
+1. Connect an existing account to EGI Check-in
 2. Apply to the openEO Platform virtual organization 
 
 The 2 steps are described in detail below.
@@ -23,7 +23,7 @@ The 2 steps are described in detail below.
 To register for openEO platform,
 you usually do not need to pick a username and invent a new password. 
 Instead, we rely on the authentication and authorization service
-[EGI check-in](https://www.egi.eu/services/check-in/),
+[EGI Check-in](https://www.egi.eu/services/check-in/),
 provided by the [EGI Foundation](https://egi.eu). 
 It allows you to log in through an **existing account** from either your institution,
 or other commonly used (social) platforms such as Google, GitHub, Facebook or LinkedIn.
@@ -41,7 +41,7 @@ This procedure has important advantages for our users:
 
 ## Step 1: Connect an existing account
 
-The first step is to connect your existing account with EGI check-in
+The first step is to connect your existing account with EGI Check-in
 and become a member of the *EGI User community*.
 
 To get an idea of ​​what this step will require from you,
@@ -50,7 +50,7 @@ you can consult the [EGI Documentation](https://docs.egi.eu/documentation/333/us
 If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
 
 ::: tip You have already connected your account in the past?
-If you have already connected your existing account with EGI check-in in the past,
+If you have already connected your existing account with EGI Check-in in the past,
 you do not need to do so again and can continue with [joining openEO Platform](#join-openeo-platform).
 If you do not remember if you have already connected your account, you can simply try to follow the steps below.
 If it is already connected you will get a warning at the end of the process: "The identifier is already in use".
@@ -62,9 +62,9 @@ and follow the login procedure.
 
 ::: warning Recommendation
 We recommend using your institutional account whenever possible.
-Nevertheless, if you are the first member of your institution to work with EGI check-in, 
+Nevertheless, if you are the first member of your institution to work with EGI Check-in, 
 problems may occur and sometimes require your institution's IT team to properly
-support EGI check-in through EduGain. For any question regarding this procedure,
+support EGI Check-in through EduGain. For any question regarding this procedure,
 please contact `check-in <at> egi.eu`.
 :::
 
@@ -93,12 +93,12 @@ You don't need to remember this ID as it's not needed in the following steps.
 
 ## Step 2: Join openEO Platform virtual organization
 
-Once you have connected your existing account with EGI check-in, you will need to
+Once you have connected your existing account with EGI Check-in, you will need to
 become part of the openEO Platform virtual organization.
 
 
 To get started, please [apply to the openEO Platform virtual organization](https://aai.egi.eu/registry/co_petitions/start/coef:327).
-You may be asked to log in again with the account you have previously connected to EGI check-in.
+You may be asked to log in again with the account you have previously connected to EGI Check-in.
 
 ::: tip Note
 The instructions below are available in English, but may be localized to your preferred language.
@@ -141,7 +141,7 @@ in the federation for better support or performance.
 
 After you've been approved to join openEO Platform, you can start working with
 the platform through any of the clients. With all clients you will need to connect to
-`https://openeo.cloud` and then authenticate through EGI check-in with the 
+`https://openeo.cloud` and then authenticate through EGI Check-in with the 
 account used above.
 
 ::: tip Tip
