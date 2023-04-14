@@ -3,7 +3,7 @@
 
 [Click here](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) to register with the platform and immediately start a 30 day free trial. 
 
-Registration to the platform and management of your user account happens via EOPlaza ([portal.terrascope.be](https://portal.terrascope.be)) and EGI checkin (https://www.egi.eu/services/check-in/). The registration link takes you through 2 steps that are described in detail below. After registration, you are redirected to the [EOPlaza dashboard](https://portal.terrascope.be/dashboard) where you can manage your account.
+Registration to the platform and management of your user account happens via EOPlaza ([portal.terrascope.be](https://portal.terrascope.be)) and [EGI check-in](https://www.egi.eu/services/check-in/). The registration link takes you through 2 steps that are described in detail below. After registration, you are redirected to the [EOPlaza dashboard](https://portal.terrascope.be/dashboard) where you can manage your account.
 
 
 EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO Platform, credits will be deducted. You can increase the number of credits by a [Network of Resources](https://openeo.cloud/esa-network-of-resources-funding/) request, or acquiring them directly on EOPlaza.
