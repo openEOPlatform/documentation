@@ -6,6 +6,11 @@ of [processing a croptype map for all 27 countries in the European Union](https:
 specific case, as not every workflow is the same, and some advance planning may be needed to ensure that you get sufficient
 processing resources.
 
+<figure>
+    <img src="https://raw.githubusercontent.com/openEOPlatform/openeo-classification/60aa7a869f9000b1795afe2c9dde0d7977bcdbc6/docs/full_europe.png" alt="Crop type map for EU27">
+    <figcaption>EU27 croptype map, processed on openEO platform</figcaption>
+</figure>
+
 The approach desribed here is based on local files to track the production. This is a low-cost approach that does not require 
 special IT knowledge, but comes with some risks such as loosing your local files. A more robust approach for production-grade projects
 would typically rely on some sort of database or STAC catalog service to monitor processing. Such a setup is however quite similar in many aspects.
@@ -47,6 +52,13 @@ tile size can also result in less unneeded processing when your target area has 
 
 A couple of basic grids can be found here:
 <https://artifactory.vgt.vito.be/webapp/#/artifacts/browse/tree/General/auxdata-public/grids>
+
+The images below illustrate the overlap in the UTM grids versus a regular LAEA grid.
+
+UTM 100km             |  LAEA 100km
+:-------------------------:|:-------------------------:
+<img src="https://user-images.githubusercontent.com/5937096/231963581-1c51a512-c240-4d23-b557-30a3577c9027.png" width="400" height="300" /> |  <img src="https://user-images.githubusercontent.com/5937096/231963750-562b921c-7b5b-4ec1-86ca-cf1fd75e625d.png" width="400" height="300" />
+
 
 A grid can be masked based on the countries we want to load, the following script shows an example:
 
