@@ -38,7 +38,7 @@ The first step is to connect your existing account with EGI check-in
 and become a member of the *EGI User community*.
 
 To get an idea of ​​what this step will require from you,
-you can consult the [EGI Documentation](https://docs.egi.eu/documentation/333/users/check-in/signup/)
+you can consult the [EGI Documentation](https://docs.egi.eu/users/aai/check-in/signup/)
 (a step-by-step guide with pictures).
 If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
 
