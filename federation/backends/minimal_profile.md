@@ -1,6 +1,6 @@
-# Minimal profile for openEO backends
+# Minimal profile for openEO 'raster' backends
 This document describes the requirements for a backend that aims to provide minimal functionality for access and processing of gridded
-earth observation data.
+earth observation data also referred to as rasters. Earth observation raster data access and processing at a large scale is the main use case that drove the design of openEO. The final API is quite generic on purpose, so that it can also serve other cases. This however makes it impossible to define certain restrictions in the main API, hence the need for this profile.
 
 This document does not aim to contradict the openEO API, and when this is perceived to be the case, the definitions in the openEO API get precedence.
 It is possible that requirements in this document do define additional constraints on top of the openEO API.
