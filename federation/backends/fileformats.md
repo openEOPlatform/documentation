@@ -12,7 +12,7 @@ The idea of these guidelines is to align with what the formats and corresponding
 
 ## GeoTiff
 Defaults:
-- One timestamp per geotiff, as geotiffs do not support multiple timestamps.
+- a single GeoTiff corresponds to one timestamp (in combination with STAC, multi-temporal collections can be supported)
 - All datacube bands are stored in the same geotiff
 - The full spatial extent is written to the same geotiff
 - Cloud optimized
