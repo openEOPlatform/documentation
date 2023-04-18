@@ -21,8 +21,9 @@ Depending on the data cube that your process graph creates and on your later use
   - a single GeoTiff corresponds to one timestamp (in combination with STAC, multi-temporal collections can be supported)
   - cloud optimized
 
-## Common file formats agreement 
+## Federation agreement file formats 
 If back-ends offer/mirror the same file formats for both import and export, it is required to align them.
+
 For file export through `save_result` for example, the output parameters and the structure of the data that is written to storage needs to be defined.
 For the following file formats an agreement has been achieved:
 
