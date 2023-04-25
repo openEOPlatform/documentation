@@ -1,59 +1,71 @@
 
 # Registration
 
-[Click here](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) to register with the platform and immediately start a 30 day free trial. 
+Register for openEO platform and immediately start a 30 day free trial:
 
-Registration to the platform and management of your user account happens via EOPlaza ([portal.terrascope.be](https://portal.terrascope.be)) and [EGI Check-in](https://www.egi.eu/services/check-in/). The registration link takes you through 2 steps that are described in detail below. After registration, you are redirected to the [EOPlaza dashboard](https://portal.terrascope.be/dashboard) where you can manage your account.
+<a href="https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid" class="action-button" style="display: inline-block; font-size:1.2rem; color: #fff; background-color: #335e6f; padding: 0.8rem 1.6rem; border-radius: 4px; border-bottom: 1px solid #2e5564;">&rarr; Register for openEO Platform</a>
 
 
-EOPlaza manages your account balance on the platform, free trial users receive 1000 free credits upon registration. Whenever you consume processing resources on openEO Platform, credits will be deducted. You can increase the number of credits by a [Network of Resources](https://openeo.cloud/esa-network-of-resources-funding/) request, or acquiring them directly on EOPlaza.
 
+The registration link above will lead you automatically through a couple of phases,
+which are explained in more detail below:
+
+- Basic registration and authentication with [EGI Check-in](https://www.egi.eu/services/check-in/),
+  a general authentication service.
+- Further registration at [EOPlaza](https://portal.terrascope.be),
+  where you can manage your openEO Platform account, your account balance and additional services.
+  Free trial users receive **1000 free credits** upon registration. 
+  
+
+
+## Connect with EGI Check-in
+
+The first step is to become member of the *EGI User Community*, 
+by creating an account there,
+preferably by just connecting with an **existing account**
+and filling in some additional information.
 
 
 ::: tip EGI Check-in based "Single Sign-on"
-
 OpenEO Platform relies on
 [EGI Check-in](https://www.egi.eu/services/check-in/)
 (provided by the [EGI Foundation](https://egi.eu))
 for authentication and authorization services,
 which offers several benefits:
 
-- log in through an **existing account**
+- Register and log in through an **existing account**
   from either your academic/scientific institution,
   or other social platforms such as Google, GitHub, Facebook or LinkedIn.
-- no need to set up and remember yet another username-password combo.
-- neither openEO Platform nor the EGI Foundation see, handle or store your password.
+- No need to set up and remember yet another username-password combo.
+- Neither openEO Platform nor the EGI Foundation see, handle or store your password.
 - openEO Platform and EOPlaza only keep minimal user information (e.g. email address).
-  For further details, you can check the privacy policy of [openEO Platform](https://openeo.cloud/privacy-policy)
-  and [EOPlaza](https://vito.be/en/privacy-policy).
-
-
+  Check the privacy policy of [openEO Platform](https://openeo.cloud/privacy-policy)
+  and [EOPlaza](https://vito.be/en/privacy-policy) for further details.
+- Use the same EGI account accross multiple scientific services
 :::
 
-## Step 1: Connect an existing account
-
-The first step is to connect your existing account with EGI Check-in
-and become a member of the *EGI User community*.
-
-To get an idea of ​​what this step will require from you,
-you can consult the [EGI Documentation](https://docs.egi.eu/users/aai/check-in/signup/)
-(a step-by-step guide with pictures).
-If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
-
-::: tip You have already connected your account in the past?
-If you have already connected your existing account with EGI Check-in in the past,
-you do not need to do so again and can continue with [joining openEO Platform](#join-openeo-platform).
-If you do not remember if you have already connected your account, you can simply try to follow the steps below.
-If it is already connected you will get a warning at the end of the process: "The identifier is already in use".
-:::
 
 ::: warning Recommendation
-We recommend using your institutional account whenever possible.
+We recommend using your **institutional account** whenever possible.
 Nevertheless, if you are the first member of your institution to work with EGI Check-in, 
 problems may occur and sometimes require your institution's IT team to properly
-support EGI Check-in through EduGain. For any question regarding this procedure,
-please contact `check-in <at> egi.eu`.
+support EGI Check-in through EduGain.
+[Contact EGI](https://www.egi.eu/service-contact/) for further support.
 :::
+
+
+::: tip Already connected?
+Did you already connect an existing account with EGI Check-in in the past,
+or you are unsure about that?
+Just follow the procedure discussed here:
+previously completed steps will be skipped automatically.
+:::
+
+
+To get an idea of how the EGI sign up flow works and what it will require from you,
+you can consult an [illustrated step-by-step guide in the EGI Documentation](https://docs.egi.eu/users/aai/check-in/signup/).
+If problems occur during this process, feel free to send a support request to `check-in <at> egi.eu`.
+
 
 If you didn't see the list of institutions and (social) platforms, you are likely already logged in.
 In this case you can simply select *'SIGN UP'*.
@@ -73,14 +85,18 @@ Please Wait until your registration is processed and you see the following Banne
 After submitting the registration form, you will receive a verification e-mail.
 The e-mail verification needs to be completed before you can contine with the next steps.
 
-::: tip Note
-Within the process, EGI will mention that you got a personal EGI Check-in ID assigned.
-You don't need to remember this ID as it's not needed in the following steps.
-:::
 
-## Step 2: Join openEO Platform virtual organization
+## EOPlaza
 
-Once you have connected your existing account with EGI Check-in, the EOPlaza [registration link](https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://portal.terrascope.be/dashboard&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid) allows you to easily configure your openEO platform account on EOPlaza, and get started.
+Once you finished the registration flow at EGI Check-in, 
+you will be forwarded to EOPlaza for further set up of your openEO Platform account.
+
+For example, on the [EOPlaza Dashboard](https://portal.terrascope.be/dashboard)
+you can consult your balance of credits.
+Whenever you consume processing resources on openEO Platform, credits will be deducted. 
+You can increase the number of credits by a [Network of Resources](https://openeo.cloud/esa-network-of-resources-funding/) request, 
+or acquiring them directly on EOPlaza.
+
 
 If you have any questions about the enrollment to openEO Platform or the free trial period,
 please [contact us](https://openeo.cloud/contact/).
