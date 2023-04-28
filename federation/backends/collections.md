@@ -17,6 +17,9 @@ The providers with role 'host' and 'producer' are mandatory.
 
 The collection description needs to specify known limitations with respect to the original collection. For instance, if only a subset of the full archive is available, this should be indicated.
 
+Collections without an end time are assumed to be active missions. By default, 99% of items in these collections should be available within 48 hours after being published by the producer. This gives users a basic guarantee with respect to timeliness of products. 
+
+
 ## Harmonization
 
 When back-ends offer/mirror the same datasets, it is required to align names and metadata. For the following collections and metadata an agreement has been achieved. These are all Copernicus Missions, and the standard names refer to the archives prepared and distributed by ESA. If it is not possible/desirable to use this name as collection id, a 'common_name' can be added next to the 'id' property to identify the collection as a standard archive.
