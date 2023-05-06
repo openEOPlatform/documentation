@@ -11,13 +11,25 @@ The 'experimental' flag from https://stac-extensions.github.io/version/v1.1.0/sc
 A collection can be experimental either because there are issues with the actual data or catalog, or because of backend specific issues that make the use of the collection unstable. 
 A collection marked as experimental does not need to comply with further requirements. 
 
-Collections need to indicate the key 'providers' that are responsible for ensuring access to the data and continuity in the case of active missions. The user may depend on the guarantees offered by these
+### Requirements for non-experimental collections
+
+The main goal for non-experimental features is to achieve high user satisfaction by providing stability & usability _and_ to comply with federation agreements that make it possible to offer a unified service.
+The list below makes this more concrete, but is not expected to cover all aspects. It is therefore important that providers, who know their implementations and datasets best, properly judge if a specific collection can be
+considered non-experimental.
+
+1. Collections need to indicate the key 'providers' that are responsible for ensuring access to the data and continuity in the case of active missions. The user may depend on the guarantees offered by these
 providers with respect to the properties (timeliness, completeness,...) of a specific collection. 
 The providers with role 'host' and 'producer' are mandatory.
 
-The collection description needs to specify known limitations with respect to the original collection. For instance, if only a subset of the full archive is available, this should be indicated.
+2. The collection description needs to specify known limitations with respect to the original collection. For instance, if only a subset of the full archive is available, this should be indicated.
 
-Collections without an end time are assumed to be active missions. By default, 99% of items in these collections should be available within 48 hours after being published by the producer. This gives users a basic guarantee with respect to timeliness of products. 
+3. Collections without an end time are assumed to be active missions. By default, 99% of items in these collections should be available within 48 hours after being published by the producer. This gives users a basic guarantee with respect to timeliness of products. 
+4. Collection metadata should be valid STAC metadata. This can be verified by tools such as [STAC-validator](https://github.com/stac-utils/stac-validator)
+5. Collections have to follow harmonization guidelines specified below, if applicable.
+6. Collections naming (id, bands) should remain constant. 
+7. Backwards incompatible changes or removal need to be announced with a lead time of 6 months, together with a migration path.
+8. The backend hosting the collection should not be experimental, and have an availability of 98% on a monthly basis for all features.
+9. Evidence of maturity and usage needs to be available. Significant testing by users or the backend itself is required.
 
 
 ## Harmonization
