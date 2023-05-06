@@ -25,11 +25,12 @@ The providers with role 'host' and 'producer' are mandatory.
 
 3. Collections without an end time are assumed to be active missions. By default, 99% of items in these collections should be available within 48 hours after being published by the producer. This gives users a basic guarantee with respect to timeliness of products. 
 4. Collection metadata should be valid STAC metadata. This can be verified by tools such as [STAC-validator](https://github.com/stac-utils/stac-validator)
-5. Collections have to follow harmonization guidelines specified below, if applicable.
-6. Collections naming (id, bands) should remain constant. 
-7. Backwards incompatible changes or removal need to be announced with a lead time of 6 months, together with a migration path.
-8. The backend hosting the collection should not be experimental, and have an availability of 98% on a monthly basis for all features.
-9. Evidence of maturity and usage needs to be available. Significant testing by users or the backend itself is required.
+5. FAIR principle R1: [(Meta)data are richly described with a plurality of accurate and relevant attributes](https://www.go-fair.org/fair-principles/r1-metadata-richly-described-plurality-accurate-relevant-attributes/)
+6. Collections have to follow harmonization guidelines specified below, if applicable.
+7. Collections naming (id, bands) should remain constant. 
+8. Backwards incompatible changes or removal need to be announced with a lead time of 6 months, together with a migration path.
+9. The backend hosting the collection should not be experimental, and have an availability of 98% on a monthly basis for all features.
+10. Evidence of maturity and usage needs to be available. Significant testing by users or the backend itself is required.
 
 
 ## Harmonization
