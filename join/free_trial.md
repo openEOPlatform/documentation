@@ -9,7 +9,7 @@ Free trial users receive **1000 free credits** upon registration. openEO Platfor
 - EGI for Authentification & Authorization via [EGI Check-in](https://www.egi.eu/services/check-in/)
 - Terrascope EOPlaza for Account management
 - EODC for provisioning of JupyterLab
-- SentinelHub, EuroDataCube and Creodiaz backends
+- Terrascope including Sentinel Hub connection via the EuroDataCube, EODC and Sentinel Hub backends
 
 The Network of Resources a ESA sponsoring initiative to facilitate the use of cloud environments.
 The registration link above will lead you automatically through a couple of phases,
