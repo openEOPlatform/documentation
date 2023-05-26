@@ -14,7 +14,12 @@ Free trial users receive **1000 free credits** upon registration. openEO Platfor
 The Network of Resources a ESA sponsoring initiative to facilitate the use of cloud environments.
 The registration link above will lead you automatically through a couple of phases,
 which are explained in the graphic below.
-![Registration Flow](/join/Registration_Flow.png "Registration Flow")
+
+<figure>
+    <img src="./Registration_Flow.png" alt="Registration Flow">
+    <figcaption>Registration Flow</figcaption>
+</figure>
+
   
 
 
