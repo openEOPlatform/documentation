@@ -5,15 +5,16 @@ Register for openEO platform and immediately start a 30 day free trial:
 
 <a href="https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://openeo.cloud/welcome-to-openeo-platform/&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid" class="action-button" style="display: inline-block; font-size:1.2rem; color: #fff; background-color: #335e6f; padding: 0.8rem 1.6rem; border-radius: 4px; border-bottom: 1px solid #2e5564;">&rarr; Register for openEO Platform</a>
 
+Free trial users receive **1000 free credits** upon registration. openEO Platform is a federation of services which include:
+- EGI for Authentification & Authorization via [EGI Check-in](https://www.egi.eu/services/check-in/)
+- Terrascope EOPlaza for Account management
+- EODC for provisioning of JupyterLab
+- Terrascope including Sentinel Hub connection via the EuroDataCube, EODC and Sentinel Hub backends
 
+The Network of Resources a ESA sponsoring initiative to facilitate the use of cloud environments.
 The registration link above will lead you automatically through a couple of phases,
-which are explained in more detail below:
-
-- Basic registration and authentication with [EGI Check-in](https://www.egi.eu/services/check-in/),
-  a general authentication service.
-- Further registration at [EOPlaza](https://portal.terrascope.be),
-  where you can manage your openEO Platform account, your account balance and additional services.
-  Free trial users receive **1000 free credits** upon registration. 
+which are explained in the graphic below.
+![Registration Flow](/join/Registration_Flow.png "Registration Flow")
   
 
 
