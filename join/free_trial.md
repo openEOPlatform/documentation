@@ -1,7 +1,12 @@
 
 # Registration
 
-Register for openEO platform and immediately start a 30 day free trial:
+<figure>
+    <img src="./Registration_Flow.png" alt="Registration Flow">
+    <figcaption>Registration Flow</figcaption>
+</figure>
+
+Register for openEO Platform and immediately start a 30 day free trial:
 
 <a href="https://sso.terrascope.be/auth/realms/terrascope/protocol/openid-connect/auth?client_id=openeoplatform&redirect_uri=https://openeo.cloud/welcome-to-openeo-platform/&state=0%2F95954a95-1968-4a64-8b88-fef0f47936fb&response_type=code&scope=openid" class="action-button" style="display: inline-block; font-size:1.2rem; color: #fff; background-color: #335e6f; padding: 0.8rem 1.6rem; border-radius: 4px; border-bottom: 1px solid #2e5564;">&rarr; Register for openEO Platform</a>
 
@@ -14,14 +19,6 @@ Free trial users receive **1000 free credits** upon registration. openEO Platfor
 The Network of Resources a ESA sponsoring initiative to facilitate the use of cloud environments.
 The registration link above will lead you automatically through a couple of phases,
 which are explained in the graphic below.
-
-<figure>
-    <img src="./Registration_Flow.png" alt="Registration Flow">
-    <figcaption>Registration Flow</figcaption>
-</figure>
-
-  
-
 
 ## Connect with EGI Check-in
 
