@@ -3,7 +3,7 @@
 
 <figure>
     <img src="./Registration_Flow.png" alt="Registration Flow">
-    <figcaption>Registration Flow</figcaption>
+    <figcaption>Figure 1: Registration Flow</figcaption>
 </figure>
 
 Register for openEO Platform and immediately start a 30 day free trial:
@@ -79,7 +79,7 @@ You may have to fill any missing personal information: *Name*, *Email*, *Affilia
 Please Wait until your registration is processed and you see the following Banner on top of your screen:
 <figure>
     <img src="./join0.png" alt="Join EGI user community - process end">
-    <figcaption>Join EGI user community - Screen when the process is finished</figcaption>
+    <figcaption>Figure 2: Join EGI user community - Screen when the process is finished</figcaption>
 </figure>
 :::
 
