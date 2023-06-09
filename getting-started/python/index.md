@@ -297,3 +297,4 @@ Additional information and resources about the openEO Python Client Library:
 * [Example Python scripts](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
 * [Example Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
 * [Repository on GitHub](https://github.com/Open-EO/openeo-python-client)
+* [Run openEO processes in a Python Shiny App](./shiny.md)
