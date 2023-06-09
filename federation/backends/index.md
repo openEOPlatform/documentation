@@ -13,13 +13,13 @@ user-critical workflows such functionality needs to be clearly marked, for insta
 an 'experimental' property on a process, collection or backend, and by indicating it in descriptions or the documentation. 
 
 We assume that most often, an implementor knows when a feature is mature enough. However, when there is doubt about indicating a feature as experimental:
-- By default or if unsure, it is probably experimental
-- If a feature is new or it hasn't been used, it's experimental
+- By default or if unsure, it is probably experimental.
+- If a feature is new or it hasn't been used, it's experimental.
 - If still in doubt, consult with partner providers.
 
 If a non-experimental component exceeds the [error budget](https://sre.google/workbook/implementing-slos/), for instance when downtime exceeds the objective, 
 the provider is expected to stop working on new features and improve reliability, or to mark the component 
-as experimental, if the contract with users allows that.
+as experimental. Reverting a 'stable' feature to 'experimental' should be considered a backwards incompatible change, requiring communication towards the user and proper consideration of the impact.
 
 ::: tip Note
 To join the federation, it is required to (mostly) fulfill these requirements and document differences for users in the "[Federation Aspects and Known Issues](../index.md)".
