@@ -21,7 +21,7 @@ considered non-experimental.
 providers with respect to the properties (timeliness, completeness,...) of a specific collection. 
 The providers with role 'host' and 'producer' are mandatory.
 
-2. The collection description needs to specify known limitations with respect to the original collection. For instance, if only a subset of the full archive is available, this should be indicated.
+2. The collection description and extents needs to specify known limitations with respect to the original collection. For instance, if only a subset of the full archive is available, this should be indicated. Extents can be rough approximations to avoid requiring very detailed geometry in the metadata.
 
 3. Collections without an end time are assumed to be active missions. By default, 99% of items in these collections should be available within 48 hours after being published by the producer. This gives users a basic guarantee with respect to timeliness of products. 
 4. Collection metadata should be valid STAC metadata and must include all extensions in `stac_extensions`. Tools such as [STAC-validator](https://github.com/stac-utils/stac-validator) can indicate obvious issues.
