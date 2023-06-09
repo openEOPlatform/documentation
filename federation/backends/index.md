@@ -5,7 +5,7 @@ See the [overview about the existing federation concepts and issues](../index.md
 
 This contract has 2 main goals:
 1. Achieve user satisfaction, which can be measured in terms of user growth and number of complaints versus the usage of a specific feature.
-2. Agree on interfaces and harmonization rules to align the different services in the federation
+2. Agree on interfaces and harmonization rules to align the different services in the federation.
 
 The platform aims to be inclusive towards onboarding new features and components,
 to stimulate growth and innovation. To allow this in an environment that also supports 
