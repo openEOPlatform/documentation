@@ -175,7 +175,7 @@ For the technical discussion on file format federation, see [Open-EO/openeo-aggr
 
 ## On-demand-preview
 
-Sometimes there is a need to quickly inspect results of a process graph on the map without first running the entire graph first and waiting for the results to be computed and returned. This `on-demand-preview` is available in the [openEO Platform Editor](https://editor.openeo.cloud/) and the [openEO Python Client](https://open-eo.github.io/openeo-python-client/index.html).
+Sometimes there is a need to quickly inspect results of a process graph on the map without first running the entire graph first and waiting for the results to be computed and returned. This `on-demand-preview` is available in the [openEO Platform Editor](https://editor.openeo.cloud/) and the [openEO Python Client*](https://open-eo.github.io/openeo-python-client/index.html).
 
 In the Editor you can find the functionality in the `Web Services` tab. Use the button`Show on Map`. 
 
@@ -187,6 +187,8 @@ This functionallity currently only works with collections that are also on the S
 - a single temporal extent,
 - and scale the data to a range so that the output format can adequately save it.
 :::
+
+*You need to have at least version 0.19.0 installed to use this functionality.
 
 ## Batch jobs
 
