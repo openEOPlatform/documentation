@@ -179,7 +179,7 @@ Sometimes there is a need to quickly inspect results of a process graph on the m
 
 In the Editor you can find the functionality in the `Web Services` tab. Use the button`Show on Map`. 
 
-In the Python Client, you can use the [.preview() method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.preview) to create a service with your process graph and display the results in an ipyleaflet Map object. You can find an example implementation in [this Jupyter notebook](https://github.com/openEOPlatform/SH_backend_notebooks/blob/main/notebooks/SAP02_On-demand_preview.ipynb).
+In the Python Client, you can use the [.preview() method](https://open-eo.github.io/openeo-python-client/api.html#openeo.rest.datacube.DataCube.preview) to create a service with your process graph and display the results in an ipyleaflet Map object. You can find an example implementation in [this Jupyter notebook](https://github.com/openEOPlatform/sample-notebooks/blob/main/on-demand_preview.ipynb).
 
 ::: tip Note
 This functionallity currently only works with collections that are also on the Sentinel Hub backend (Provider > Backend > sentinelhub). In order for the map to display meaningful results, your process graph should:
