@@ -72,7 +72,10 @@ toc.result_node().update_arguments(featureflags={"byoc_collection_id": byoc_coll
 ```
 
 List of currently supported commercial data providers:
+- Airbus Pleiades (ID: [PLEIADES](https://openeo.cloud/data-collections/view/?id=PLEIADES))
+- Airbus Spot (ID: [SPOT](https://openeo.cloud/data-collections/view/?id=SPOT))
 - PlanetScope (ID: [PLANETSCOPE](https://openeo.cloud/data-collections/view/?id=PLANETSCOPE))
+- WorldView (ID: [WORLDVIEW](https://openeo.cloud/data-collections/view/?id=WORLDVIEW))
 
 ### EODC
 
