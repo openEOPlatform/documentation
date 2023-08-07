@@ -79,9 +79,9 @@ The common name for this collection is 'SENTINEL2_L2A'. It refers to the L2A pro
 Band names for spectral bands follow the Bxx naming convention used by ESA. For example: B01, B02, B03, B08, B8A, B12
 
 - `SCL` = the Sen2Cor scene classification band
-- `approximateViewAzimuth` = collective term for the mean and accurate viewing azimuth angle. Depending on which backend is processing the data, the mean angle (for Sentinel Hub) or the accurate angle (for Terrascope) is used. If the accurate angle (`viewAzimuthAngles`) or the mean angle (`viewAzimuthMean`) is explicitly specified, the data is processed on the backend that holds the specified band.
-- `viewZenithMean` = collective term for the mean and accurate viewing zenith angle. Depending on which backend is processing the data, the mean angle (for Sentinel Hub) or the accurate angle (for Terrascope) is used. If the accurate angle (`viewZenithMean`) or the mean angle (`viewZenithAngles`) is explicitly specified, the data is processed on the backend that holds those bands.
-- `sunAzimuthAngles`/`sunZenithAngles` = collective term for the exact sun azimuth and sun zenith angle.
+- `approximateViewAzimuth` = collective term for the mean and accurate viewing azimuth angle. Depending on which backend is processing the data (Sentinel Hub or Terrascope), the mean angle or the accurate angle is used. Use a specific name band to choose what backend is used: `viewAzimuthAngles`/`viewAzimuthMean`
+- `approximateViewZenith`  = collective term for the mean and accurate viewing zenith  angle. Depending on which backend is processing the data (Sentinel Hub or Terrascope), the mean angle or the accurate angle is used. Use a specific name band to choose what backend is used: `viewZenithAngles`/`viewZenithMean`
+- `sunAzimuthAngles`/`sunZenithAngles` = bands for the sun azimuth and sun zenith angle.
 
 ### Common Properties
 
