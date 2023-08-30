@@ -63,45 +63,6 @@ can execute any of the code snippets below.
 Details can be found in the corresponding Getting Started guides.
 :::
 
-### Sentinel-1 toolbox (provided by EODC)
-
-EODC supports the `sar_backscatter` process, which internally uses the [Sentinel-1 toolbox](https://sentinel.esa.int/web/sentinel/toolboxes/sentinel-1).
-
-There are [two collections](/data-collections/?q=S1_GRD_SIGMA0_) available at this back-end right now:
-`S1_GRD_SIGMA0_ASCENDING` and `S1_GRD_SIGMA0_DESCENDING`. Below is an example for one of them:
-
-<CodeSwitcher>
-<template v-slot:py>
-
-```python
-datacube = connection.load_collection(
-    'S1_GRD_SIGMA0_ASCENDING',
-    spatial_extent = {'west': 2.59003, 'east': 2.8949, 'south': 51.069, 'north': 51.2206},
-    temporal_extent = ['2019-10-10', '2019-10-10']
-)
-datacube = datacube.sar_backscatter()
-job = datacube.execute_batch(format = 'GTiff')
-job.get_results().download_files("sar-nrb")
-```
-
-</template>
-
-<template v-slot:js>
-
-```js
-var builder = await connection.buildProcess();
-var datacube = builder.load_collection(
-    'S1_GRD_SIGMA0_ASCENDING',
-    {west: 2.59003, east: 2.8949, south: 51.069, north: 51.2206},
-    ['2019-10-10', '2019-10-10']
-);
-datacube = builder.sar_backscatter(datacube);
-var result = builder.save_result(datacube, 'GTiff');
-var job = await connection.createJob(result, 'Backscatter for Sentinel-1');
-```
-
-</template>
-</CodeSwitcher>
 
 ### CARD4L NRB for `SENTINEL1_GRD` collection (provided by Sentinel Hub)
 

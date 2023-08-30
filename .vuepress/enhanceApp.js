@@ -4,7 +4,8 @@ export default ({ router, Vue }) => {
 	];
 	router.beforeEach((to, from, next) => {
 	  const redirectList = {
-		'/authentication': '/join/early_adopter.html',
+		'/authentication': '/join/free_trial.html',
+		'/join/early_adopter.html': '/join/free_trial.html',
 	  }
 	  const redirect = redirectList[to.path]
   

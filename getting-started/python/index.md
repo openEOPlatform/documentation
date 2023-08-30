@@ -1,7 +1,9 @@
 # Get started with the openEO Python Client
 
 ::: danger Important
+
 You need to [get an openEO Platform account](https://openeo.cloud/#plans) to access the processing infrastructure.
+
 
 This Getting Started guide will simply give you an overview of the capabilities of the openEO Python client library.
 More in-depth information and documentation can be found on the [official documentation](https://open-eo.github.io/openeo-python-client/) website.
@@ -138,9 +140,8 @@ However, to run non-trivial processing queries one has to authenticate
 so that permissions, resource usage, etc. can be managed properly.
 
 To handle authentication, openEO leverages [OpenID Connect (OIDC)](https://openid.net/connect/).
-It offers some interesting features (e.g. a user can securely reuse an existing account),
-but is a fairly complex topic, discussed in more depth in the general for the
-[Free Tier](../../join/free_trial.md) and the [Early Adopter program](../../join/early_adopter.md).
+It offers some interesting features (e.g., a user can securely reuse an existing account),
+but is a fairly complex topic, discussed in more depth on the [Free Trial](../../join/free_trial.md) page.
 
 The openEO Python client library tries to make authentication as streamlined as possible.
 In most cases for example, the following snippet is enough to obtain an authenticated connection:
@@ -308,3 +309,4 @@ Additional information and resources about the openEO Python Client Library:
 * [Example Python scripts](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
 * [Example Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
 * [Repository on GitHub](https://github.com/Open-EO/openeo-python-client)
+* [Run openEO processes in a Python Shiny App](./shiny.md)

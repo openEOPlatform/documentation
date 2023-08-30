@@ -1,5 +1,6 @@
 # Get started with openEO Platform in JupyterLab (Python)
 
+
 ::: danger Important
 You need to [get an openEO Platform account](https://openeo.cloud/#plans) to access the processing infrastructure.
 :::
@@ -10,7 +11,8 @@ It has the openEO Python client pre-installed, but it does not support running t
 
 You need to authenticate before you can use it:
 
-1. Select from the "Sign in " dropdown menu the "openEO Platform" option
+
+1. Select from the "Sign in" dropdown menu the "openEO Platform" option
 2. It will start the EGI Authentication workflow for openEO Platform. If you haven't you need to [get an openEO Platform account](https://openeo.cloud/#plans) before you proceed. 
 3. After you have logged in via EGI, the "Server Options" appear and you are requested to "Select your desired stack". Please choose "openEO Platform Lab" and click "Start".
 4. You are logged in, now. The JupyterLab should be usable like a normal JupyterLab instance that has the openEO Python client and some other tools pre-installed.

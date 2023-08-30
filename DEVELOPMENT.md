@@ -14,6 +14,17 @@ You can now run three different commands for testing purposes:
 * `npm test` - checks links and some other things in Markdown, but unfortunately may not catch all issues.
 * `npm run build` - builds the full page like the CI would do it, this is the final indicator whether deployment will work.
 
+With a recent version of node (17.0.0 or higher), you might encounter an error along the lines of
+`error:03000086:digital envelope routines::initialization error`.
+A workaround (documented at [vuejs/vue-cli#6770](https://github.com/vuejs/vue-cli/issues/6770))
+is to set `--openssl-legacy-provider` in  the `NODE_OPTIONS` environment variable, e.g.:
+
+    # On Linux/Mac
+    export NODE_OPTIONS=--openssl-legacy-provider
+    # On Windows
+    SET NODE_OPTIONS=--openssl-legacy-provider
+
+
 ## Writing and updating documentation
 
 The documentation is built with [VuePress](https://vuepress.vuejs.org/), a static site generator.
