@@ -246,6 +246,16 @@ After applying all processes you want to execute, we need to tell the back-end t
 result = datacube.save_result("GTiff")
 ```
 
+::: tip
+You can list the available file formats on the openEO back-end doing:
+```python
+print(connection.list_file_formats())
+```
+The openEO Python client library comes with Jupyter (notebook) integration in a couple of places.
+For example, put `connection.list_file_formats()` (without `print()`)
+as last statement in a notebook cell 
+and you'll get a nice graphical rendering of the available file formats.
+:::
 
 
 ## Execution
