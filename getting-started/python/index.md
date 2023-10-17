@@ -246,6 +246,12 @@ After applying all processes you want to execute, we need to tell the back-end t
 result = datacube.save_result("GTiff")
 ```
 
+::: tip
+You can list the available file formats using:
+```python
+connection.list_file_formats()
+```
+:::
 
 
 ## Execution
