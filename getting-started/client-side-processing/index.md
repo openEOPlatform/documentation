@@ -7,10 +7,8 @@ It relies on the projects [openeo-pg-parser-networkx](https://github.com/Open-EO
 
 ## Installation
 
-::: danger Important
-
+::: warning Important
 This feature requires ``Python>=3.9``.
-
 :::
 
 The openEO Python client library can easily be installed with a tool like `pip`, for example:
@@ -26,10 +24,9 @@ Every openEO process graph relies on data which is typically provided by a cloud
 The client-side processing adds the possibility to read and use local netCDFs, geoTIFFs, ZARR files, and remote STAC Collections or Items for your experiments.
 
 ### STAC Collections and Items
-::: danger Important
 
+::: warning Important
 The provided examples using STAC rely on third party STAC Catalogs, we can't guarantee that the urls will remain valid.
-
 :::
 
 With the `load_stac` process it's possible to load and use data provided by remote or local STAC Collections or Items.
@@ -105,9 +102,10 @@ local_conn.list_collections()
 This code will parse the metadata content of each netCDF, geoTIFF or ZARR file in the provided folders and return a JSON object containing the STAC representation of the metadata.
 If this code is run in a Jupyter Notebook, the metadata will be rendered nicely.
 
-.. tip::
-    The code expects local files to have a similar structure to the sample files provided [here](https://github.com/Open-EO/openeo-localprocessing-data.git).
-    If the code can not handle you special netCDF, you can still modify the function that reads the metadata from it [here](https://github.com/Open-EO/openeo-python-client/blob/master/openeo/local/collections.py) and the function that reads the data [here](https://github.com/Open-EO/openeo-python-client/blob/master/openeo/local/processing.py).
+::: tip
+The code expects local files to have a similar structure to the sample files provided [here](https://github.com/Open-EO/openeo-localprocessing-data.git).
+If the code can not handle you special netCDF, you can still modify the function that reads the metadata from it [here](https://github.com/Open-EO/openeo-python-client/blob/master/openeo/local/collections.py) and the function that reads the data [here](https://github.com/Open-EO/openeo-python-client/blob/master/openeo/local/processing.py).
+:::
 
 ### Local Processing
 
@@ -179,6 +177,7 @@ result_ndvi = ndvi_median.execute()
 ```
 
 ## Client-Side Processing Example Notebooks
+
 * [From the openEO Python Client repo](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks/Client_Side_Processing)
 * [From the Cubes and Clouds repo](https://github.com/EO-College/cubes-and-clouds/blob/main/lectures/3.1_data_processing/exercises/_alternatives/31_data_processing_stac.ipynb)
 
@@ -191,4 +190,4 @@ Additional information and resources about the openEO Python Client Library:
 * [Example Python scripts](https://github.com/Open-EO/openeo-python-client/tree/master/examples)
 * [Example Jupyter Notebooks](https://github.com/Open-EO/openeo-python-client/tree/master/examples/notebooks)
 * [Repository on GitHub](https://github.com/Open-EO/openeo-python-client)
-* [Run openEO processes in a Python Shiny App](./shiny.md)
+* [Run openEO processes in a Python Shiny App](../python/shiny.md)

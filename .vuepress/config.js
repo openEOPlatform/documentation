@@ -14,6 +14,7 @@ module.exports = {
     nav: [
       { text: 'Datasets', link: '/data-collections/' },
       { text: 'Get Started', items: [
+        { text: 'Free Trial Registration', link: '/join/free_trial.html' },
         { text: 'Data Cubes', link: 'https://openeo.org/documentation/1.0/datacubes.html' },
         { text: 'Client Libraries', items: [
           { text: 'JavaScript', link: '/getting-started/javascript/' },
@@ -24,8 +25,8 @@ module.exports = {
           { text: 'JupyterLab (Python)', link: '/getting-started/jupyterlab/' },
           { text: 'Editor', link: '/getting-started/editor/' }
         ] },
-        { text: 'Free Trial Registration', link: '/join/free_trial.html' }, 
         { text: 'Cookbook', link: 'https://openeo.org/documentation/1.0/cookbook/' },
+        { text: 'Client-Side Processing (Python)', link: '/getting-started/client-side-processing/' },
       ] },
       { text: 'Clients', items: [
           { text: 'JavaScript', link: 'https://open-eo.github.io/openeo-js-client/latest/' },
