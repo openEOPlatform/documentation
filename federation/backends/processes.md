@@ -17,7 +17,7 @@ There are two additional openEO Platform specific profiles with additional requi
 
 The profiles below only lists requirements that are not covered by the corresponding openEO profiles yet.
 
-Although in the openEO Profiles experimental processes only lead to a "warning", in openEO Platform experimental processes are required to be available.
+Although in the openEO Profiles experimental processes shall only lead to a "warning", experimental processes in profiles that *L2P* depends on are required to be available (which currently are `inspect` and `nan`).
 
 ## L2P: Required - openEO Platform
 
