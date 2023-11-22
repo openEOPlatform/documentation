@@ -30,7 +30,7 @@ The profile only lists requirements that are not covered by the openEO profile *
 
 | # | Functionality | Description |
 | -- | -- | -- |
-| 45 | `GET /file_formats` | File format names and parameters aligned with openEO Platform (at least GTIFF and NetCDF) |
+| 45 | `GET /file_formats` | File format names and parameters aligned with openEO Platform as defined for the pre-defined [file formats](./fileformats.md) |
 
 #### Other
 
