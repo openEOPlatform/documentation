@@ -67,12 +67,20 @@ For more details about [Authentication and Authorization](#authentication-and-au
 | # | Functionality | Description |
 | -- | -- | -- |
 | 703 |  | Batch jobs and synchronous processing are implemented (secondary web services are optional) |
+| 704 |  | Time after which batch job results get automatically deleted: 90 days or later |
+| 705 |  | Time after which batch job metadata gets automatically deleted: 1 year or later |
+
+#### Batch Jobs > Results
+
+| # | Functionality | Description |
+| -- | -- | -- |
+| 873 | `GET /jobs/{id}/results` > public access link | Default expiry time of the signed URLs for results: 7 days |
 
 #### Synchronous Processing
 
 | # | Functionality | Description |
 | -- | -- | -- |
-| 920 | `POST /result` > timeout | The timeout for synchronous calls is (in minutes): 5 |
+| 920 | `POST /result` > timeout | The timeout for synchronous calls is: 5 minutes |
 
 ## Authentication and authorization
 
