@@ -40,7 +40,6 @@ Requires [openEO Profile L2: Recommended](https://openeo.org/documentation/1.0/d
 - **`array_contains`**
 - **`dimension_labels`**
   - has been tested on > 100x100km at 10m resolution (or equivalent)
-    *Note: Sinergise requested example process*
 - **`drop_dimension`**
   - has been tested on > 100x100km at 10m resolution (or equivalent)
 - **`filter_bands`**
