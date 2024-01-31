@@ -1,5 +1,6 @@
 # Collections
-This page describes requirements on STAC collection metadata for backend providers in the openEO platform federation. These requirements should be considered an addition to what is already required by the [openEO API](https://api.openeo.org/#tag/EO-Data-Discovery/operation/describe-collection).
+This page describes requirements on STAC collection metadata for backend providers in the openEO platform federation.
+These requirements should be considered an addition to what is already required by the [openEO API](https://api.openeo.org/#tag/EO-Data-Discovery/operation/describe-collection) and the [API profiles](./api.md#profiles).
 
 ## Collection availability
 
