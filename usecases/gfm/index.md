@@ -16,7 +16,7 @@ elements:
   Reference water mask, Exclusion Mask and Likelihood Values
 - Web service-based access and dissemination of the GFM product output layers
 
-## Output layers used in this notebook
+## Output layers used in openEO
 - Observed flood extent (ENSEMBLE of all three individual flood outputs)
 - Reference water mask (permament and seasonal water bodies)
 
