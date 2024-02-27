@@ -2,18 +2,6 @@
 
 In this notebook we will learn how to apply adaptive thresholding to SENTINEL1_GRD data within OpenEO Platform. We will then take a look at our results against vessel location data from the Maritime Traffic Agency over the Adriatic. We will be using the the openeo-python-client to prepare our process graph, and a Plotly Dash dashboard to interact with our results.
 
-### Recap
-
-We've been through a number of iterations to arrive at this process graph.
-
-1. Recieved an initial implementation from Planetek, which we packaged and released as a custom function, "vessel_detection". 
-2. Porting to Xarray. This resulted in a single function called "adaptive_thresholding", that removed the dependency to the ellipsoid corrected SENTINEL1_GRD imagery.
-3. Porting to existing OpenEO processes. This addresses the feedback from the previous review, i.e. the implementation should be reproducable for this use case.
-
-These iteration steps roughly describe the process of how we can go about onboarding new processes into the OpenEO Platform.
-
-Initial Implementation > Containerise > Reduce Dependencies > Xarray > OpenEO
-
 ### Adaptive Thresholding in Xarray
 
 After investigating the code initially provided by Planetek, we arrived at this xarray implementation of adaptive thresholding.
@@ -173,3 +161,13 @@ app.run()
 
 With the additional auxilliary job
 ![Plotly Dashboard](./dashboard_with_raster.png)
+
+
+#### Use Case -- Recap
+
+We've been through a number of iterations to arrive at this implementation.
+
+1. Recieved an initial implementation from Planetek, which we packaged and released as a custom function, "vessel_detection". 
+2. Porting to Xarray. This resulted in a single function called "adaptive_thresholding", that removed the dependency to the ellipsoid corrected SENTINEL1_GRD imagery.
+3. Porting to existing OpenEO processes. This addresses the feedback from the previous review, i.e. the implementation should be reproducable for this use case.
+
