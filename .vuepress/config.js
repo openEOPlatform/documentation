@@ -44,7 +44,8 @@ module.exports = {
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
         { text: 'Land Cover Classification', link: '/usecases/landcover/' },
         { text: 'NO₂ monitoring', link: '/usecases/no2-monitoring/' },
-        { text: 'Large scale processing', link: '/usecases/large-scale-processing/' },        
+        { text: 'Large scale processing', link: '/usecases/large-scale-processing/' },
+        { text: 'Vessel Detection', link: '/usecases/vessel-detection/' },         
       ] },      
       {text: 'Processes', items: [
         {text: 'JavaScript & R', link: '/processes/'},
