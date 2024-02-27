@@ -2,7 +2,7 @@
 
 In this notebook we will learn how to apply adaptive thresholding to SENTINEL1_GRD data within OpenEO Platform. We will then take a look at our results against vessel location data from the Maritime Traffic Agency over the Adriatic. We will be using the the openeo-python-client to prepare our process graph, and a Plotly Dash dashboard to interact with our results.
 
-### Adaptive Thresholding in Xarray
+## Adaptive Thresholding in Xarray
 
 After investigating the code initially provided by Planetek, we arrived at this xarray implementation of adaptive thresholding.
 
@@ -145,20 +145,17 @@ PyGeoApi Data: https://features.dev.services.eodc.eu/collections/adriatic_vessel
 
 ```python
 from eodc.visualisation.vessel_detection.app import app
-```
-
-
-```python
 app.run()
 ```
+
 #### Plotly Dashboard for results viewing
 ![Plotly Dashboard](./dashboard.png)
 
-With the additional auxilliary job
+#### With the additional auxilliary job
 ![Plotly Dashboard](./dashboard_with_raster.png)
 
 
-#### Use Case -- Recap
+## Use Case -- Recap
 
 We've been through a number of iterations to arrive at this implementation.
 
