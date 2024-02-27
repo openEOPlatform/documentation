@@ -108,9 +108,7 @@ applied_kernel = masked_data.apply_kernel(kernel=kernel,factor=5)
 
 
 
-We then compare the pixel values from the previous node, against the values of the data we initially masked. We want to keep any values from the initially masked data, in order to generate a boolean mask, which should reflect our vessels.
-
-I could not find a nice way to express this in the client, without it re-including the first three nodes of the process graph. So I have applied it directly as a process here.
+Next we want to compare the results of apply_kernel, against the values of the data we initially masked. We can use the process merge_cubes with the overlap resolver set to the less than process to acheive this.
 
 
 ```python
