@@ -104,21 +104,21 @@ Replace the values that lie outside of our polygon with NaN values.
 masked_data = s1_datacube.mask_polygon(sea_mask)
 ```
 
-Apply a window to our datacube, and per pixel, update the pixel's value to be the mean of the window surrounding it.
-
-This would be the equivalent of the `data.rolling()` from the xarray example above.
+To achieve the equivalent functionality of `data.rolling()`, we will use the process apply_kernel. The kernel will be the length and width of the window we want to apply the convolution to. The value of each pixel in the kernel is equal to `1/(kernel_width*kernel_height)`, spreading the weight evenly will achieve a mean for across the pixels in the kernel. The resut of the convolution is multiplied then multipled in the process by the factor value.
 
 
 ```python
-aggregated_window = masked_data.aggregate_spatial_window(size=[30, 30], reducer="mean")
+kernel_value = 0.00104
+kernel = [
+    [
+      kernel_value for y in range(0, 31)
+    ] for x in range(0, 31)
+]
+
+applied_kernel = masked_data.apply_kernel(kernel=kernel,factor=5)
 ```
 
-Apply the multiplication of our given value to the result of the spatial window. We multiply to increase the contrast between sea and ship, which makes the detection more reliable.
 
-
-```python
-multiplied = aggregated_window.apply(lambda x: x.multiply(4) )
-```
 
 We then compare the pixel values from the previous node, against the values of the data we initially masked. We want to keep any values from the initially masked data, in order to generate a boolean mask, which should reflect our vessels.
 
@@ -126,34 +126,16 @@ I could not find a nice way to express this in the client, without it re-includi
 
 
 ```python
-lt_comparison = multiplied.process("apply", {
-                    "data": multiplied,
-                    "context": masked_data,
-                    "process": {
-                      "process_graph": {
-                        "lt1": {
-                          "process_id": "lt",
-                          "arguments": {
-                            "x": {
-                              "from_parameter": "x"
-                            },
-                            "y": {
-                              "from_parameter": "context"
-                            }
-                          },
-                          "result": True
-                        }
-                      }
-                    }
-                  }
-                )
+lt_comparison = applied_kernel.merge_cubes(
+  masked_data, overlap_resolver="lt"
+)
 ```
 
 Convert the resulting boolean datacube to a vector cube, and output the result in save result as a GeoJson. This will make the comparison of our results with the Maritime traffic data more straight forward.
 
 
 ```python
-output_data = lt_comparison.process("raster_to_vector", {"data": lt_comparison})
+output_data = lt_comparison.raster_to_vector()
 ```
 
 
@@ -161,40 +143,19 @@ output_data = lt_comparison.process("raster_to_vector", {"data": lt_comparison})
 vessel_detection = output_data.save_result(format="GeoJSON")
 ```
 
-Create and trigger the job. We can regularly poll the status to ensure it has finished, before moving on to the visualisation of the results.
+### 4. Run Auxilliary job
 
+You can optionally run the following job, if you would like to compare the original Sentinel1_GRD data, against the results from the vessel detection. This comparison makes it easier to visually validate the results, and spot erroneous polygons.
 
-```python
-job_vessel_detection = vessel_detection.create_job(title = "UC2-Vessel-Detection")
-job_vessel_detection.start_job()
 ```
-
-
-```python
-job_vessel_detection.status()
-```
-
-
-```python
-job_results = job_vessel_detection.get_results()
-```
-
-
-```python
-# Grab the canonical URL for a given job
-
-def canonical_url_from_job(job: openeo.BatchJob):
-    """ Helper function to get the canonical URL for a finish batch job. """
-    links = [ link for link in job.get_metadata()['links'] if link['rel'] == "canonical" ]
-    return links[0]['href'] if len(links) != 0 else None
-
-canon_url = canonical_url_from_job(job_results)
-canon_url
+sentinel1_data = s1_datacube.save_result(format="GTiff")
+sentinel1_data_job = sentinel1_data.create_job(title = "UC2-Auxilliary-Job")
+sentinel1_data_job.start_job()
 ```
 
 ## Result Visualisation
 
-We will use a small dashboard created with the Plotly Dash library to quickly visualise the results of our processing. We're using this dashboard so we can interface with the PyGeoApi server that hosts the Maritime Traffic data.
+A small dashboard has been provided with the Plotly Dash library to quickly visualise the results of our processing. We're using this dashboard so we can interface with the PyGeoApi server that hosts the Maritime Traffic data. You will need to use the canonical url of the job result, this can be found in the notebook via a helper fuinction, or in the job information via the web editor.
 
 PyGeoApi Data: https://features.dev.services.eodc.eu/collections/adriatic_vessels
 
@@ -209,3 +170,6 @@ app.run()
 ```
 #### Plotly Dashboard for results viewing
 ![Plotly Dashboard](./dashboard.png)
+
+With the additional auxilliary job
+![Plotly Dashboard](./dashboard_with_raster.png)
