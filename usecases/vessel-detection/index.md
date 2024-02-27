@@ -67,18 +67,15 @@ temporal_extent = [
           "2021-10-09"
         ]
 
-collection      = "SENTINEL1_GRD"
-bands           = ["VV","VH"]
-
 s1_datacube = conn.load_collection(
-    collection,
+    "SENTINEL1_GRD",
     spatial_extent=spatial_extent,
-    bands=bands,
+    bands=["VV","VH"],
     temporal_extent=temporal_extent
 )
 ```
 
-Load the geometries as a vector cube.
+Load the geometries as a vector cube. This is currently a custom process, so is not available at all backend. Could be replaced with load_url if this is an issue.
 
 
 ```python
