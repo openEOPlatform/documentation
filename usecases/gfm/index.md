@@ -24,12 +24,19 @@ elements:
 https://extwiki.eodc.eu/GFM
 
 ## Compute the maximum flood extent
-The sum of flooded pixels over time
+In this example, we have a closer look at an area in Pakistan, which was revaged by the unprecedented floods of 2022. The flooding caused severe damage and economic losses and is referred to as the worst flood in the history of Pakistan. 
+We compute the sum of flooded pixels over time.
 
 <CodeSwitcher>
 <template v-slot:py>
 
 ```python
+import openeo
+from openeo.processes import *
+
+backend = "openeo.cloud"
+conn = openeo.connect(backend).authenticate_oidc()
+
 spatial_extent  = {'west': 67.5, 'east': 70, 'south': 24.5, 'north': 26}
 temporal_extent = ["2022-09-01", "2022-10-01"] 
 collection      = 'GFM'
@@ -49,6 +56,8 @@ gfm_sum_tiff = gfm_sum.save_result(format="GTiff", options={"tile_grid": "wgs84-
 
 ## Explore how the flood extent relates to the Global Human Settlement Built-up layer
 
+We display the flood extent next to the Global Human Settlement Built-up layer.
+
 The Global Human Settlement Layer (GHSL) project produces global spatial 
 information about the human presence on the planet over time in the form of 
 built-up maps, population density maps and settlement maps.
@@ -65,8 +74,26 @@ The GHSL is available in `wgs84`. Therefore, the `tile_grid` for the GFM data wa
 
 <figure>
     <img src="./gfm-flood-extent.png" alt="Flood extent">
-    <figcaption>Figure 1: Estimate of how the built-up surface was effected by the flood in Pakistan in September 2022.</figcaption>
+    <figcaption>Figure 1: Estimate of how the built-up surface was effected by the flood in Pakistan in September 2022. Some of the highest values of the GHSL can be found around 25.16 N 69.11 E, which marks Digri Tehsil, the second largest town of Mirpurkhas District, Pakistan. </figcaption>
 </figure>
+
+## Statistical analysis
+
+In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)`. openEO provides a range of reducers to choose from. 
+
+- Compute the flood frequency: set the reducer to `mean`
+- Generate a mask of flooded pixels: set the reducer to `any`
+
+<CodeSwitcher>
+<template v-slot:py>
+
+```python
+gfm_flood_frequency = gfm_data.reduce_dimension(dimension="time", reducer=mean)
+
+gfm_flood_frequency_tiff = gfm_flood_frequency.save_result(format="GTiff", options={"tile_grid": "wgs84-1degree"})
+```
+</template>
+</CodeSwitcher>
 
 ## Observed water (flood_extent + refwater)
 
