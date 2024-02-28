@@ -46,6 +46,7 @@ module.exports = {
         { text: 'NO₂ monitoring', link: '/usecases/no2-monitoring/' },
         { text: 'Large scale processing', link: '/usecases/large-scale-processing/' },        
         { text: 'Global flood monitoring', link: '/usecases/gfm/' },
+        { text: 'Vessel Detection', link: '/usecases/vessel-detection/' },         
       ] },      
       {text: 'Processes', items: [
         {text: 'JavaScript & R', link: '/processes/'},
