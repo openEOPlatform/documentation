@@ -27,9 +27,6 @@ https://extwiki.eodc.eu/GFM
 In this example, we have a closer look at an area in Pakistan, which was ravaged by the unprecedented floods of 2022. The flooding caused severe damage and economic losses and is referred to as the worst flood in the history of Pakistan. 
 We compute the sum of flooded pixels over time.
 
-<CodeSwitcher>
-<template v-slot:py>
-
 ```python
 import openeo
 from openeo.processes import *
@@ -51,8 +48,6 @@ gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)
 
 gfm_sum_tiff = gfm_sum.save_result(format="GTiff", options={"tile_grid": "wgs84-1degree"})
 ```
-</template>
-</CodeSwitcher>
 
 ## Explore how the flood extent relates to the Global Human Settlement Built-up layer
 
@@ -84,24 +79,16 @@ In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_di
 - Compute the flood frequency: set the reducer to `mean`
 - Generate the mask of flooded pixels: set the reducer to `any`
 
-<CodeSwitcher>
-<template v-slot:py>
-
 ```python
 gfm_flood_frequency = gfm_data.reduce_dimension(dimension="time", reducer=mean)
 
 gfm_flood_frequency_tiff = gfm_flood_frequency.save_result(format="GTiff", options={"tile_grid": "wgs84-1degree"})
 ```
-</template>
-</CodeSwitcher>
 
 ## Observed water (flood_extent + refwater)
 
 The observed water combines both flood extent and the reference water mask. The reference water mask represents permanent or seasonal water bodies, which are clearly distinct from flood events.
 With openEO, the two layers `flood_extent` and `refwater` can be combined directly and stored into one file. No need to download layers individually.
-
-<CodeSwitcher>
-<template v-slot:py>
 
 ```python
 spatial_extent  = {'west': 67.5, 'east': 70, 'south': 24.5, 'north': 26}
@@ -122,8 +109,6 @@ observed_water = gfm_data.reduce_dimension(dimension="bands", reducer=any).reduc
 # Save the result in Equi7Grid and as GeoTiff
 observed_water_tif = observed_water.save_result(format="GTiff", options={"tile_grid": "equi7"})
 ```
-</template>
-</CodeSwitcher>
 
 ## Explore the observed water
 
