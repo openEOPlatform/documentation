@@ -79,7 +79,7 @@ The GHSL is available in `wgs84`. Therefore, the `tile_grid` for the GFM data wa
 
 ## Statistical analysis
 
-In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)`. openEO provides a range of reducers to choose from. E.g.:
+In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)`. OpenEO provides a range of reducers to choose from. E.g.:
 
 - Compute the flood frequency: set the reducer to `mean`
 - Generate the mask of flooded pixels: set the reducer to `any`
