@@ -127,7 +127,7 @@ observed_water_tif = observed_water.save_result(format="GTiff", options={"tile_g
 
 ## Explore the observed water
 
-The original GFM data is stored on the Equi7 Grid and the Asian Equi7 coordinate reference system. With the `tile_grid` parameter, the user can either keep the data like this, or pick a different CRS.
+The original GFM data is stored in the Equi7 Grid and the Asian Equi7 coordinate reference system. With the `tile_grid` parameter, the user can either keep the data like this, or pick a different CRS.
 
 <figure>
     <img src="./gfm-observed-water.png" alt="Observed water">
