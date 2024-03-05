@@ -24,7 +24,7 @@ elements:
 https://extwiki.eodc.eu/GFM
 
 ## Compute the maximum flood extent
-In this example, we have a closer look at an area in Pakistan, which was revaged by the unprecedented floods of 2022. The flooding caused severe damage and economic losses and is referred to as the worst flood in the history of Pakistan. 
+In this example, we have a closer look at an area in Pakistan, which was ravaged by the unprecedented floods of 2022. The flooding caused severe damage and economic losses and is referred to as the worst flood in the history of Pakistan. 
 We compute the sum of flooded pixels over time.
 
 <CodeSwitcher>
