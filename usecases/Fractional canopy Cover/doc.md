@@ -12,7 +12,7 @@ As VHR commercial data from Planet was used for the training of the model, a str
 
 <figure>
     <img src="./score.png" alt="Scoring method">
-    <figcaptionFigure 1. Scoring based on the scoring criterion 
+    <figcaption>Figure 1: Scoring based on the scoring criterion 
  </figcaption>
 </figure>
 
@@ -28,16 +28,21 @@ The Forest masks extracted from the VHR data were vectorized to polygons which w
 
 The trained model can be stored for further jobs in different regions within the interest area. In figure 2 below a process graph is shown where the trained model is applied on the predictors mentioned above. 
 
- 
-
-Figure 2. Process graph showing the prediction of Fractional Canopy Cover with Sentinel-1 and Sentinel-2 
-
+<figure>
+    <img src="./PG_prediction.png" alt="Scoring method">
+    <figcaption>Figure 2: Process graph showing the prediction of Fractional Canopy Cover with Sentinel-1 and Sentinel-2  
+ </figcaption>
+</figure> 
  
 
 ## Predicted Fractional Canopy Cover 
 
 In the fit_regr_random_forest process, the actual regression calculation is taking place. Based on the random forest implementation a model is created to predict the target variable. The fitting is done in a standard machine learning approach with 70% of the polygons whereas 30% of the polygons are used for the evaluation of the model.  
 
- 
+<figure>
+    <img src="./Predicted_FCC.png" alt="Scoring method">
+    <figcaption>Figure 3: Predicted Fractional Canopy Cover for part of the study area 
+ </figcaption>
+</figure>  
 
-Figure 3. Predicted Fractional Canopy Cover for part of the study area 
+
