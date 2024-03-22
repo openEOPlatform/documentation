@@ -11,7 +11,7 @@ Given all these uses, having an accurate percentage of the forest cover is imper
 As VHR commercial data from Planet was used for the training of the model, a stratification scheme was devised for getting the maximum coverage throughout the study area.  Additional data which included Copernicus Forest High-Resolution Layers (HRL, https://land.copernicus.eu/pan-european/high-resolution-layers/forests) of “Forest Type” and “Forest Cover Density” as well as the CORINE Land Cover were used to find suitable subsets within the study area to derive the target variable from the VHR data. The study area was divided into 40,000 potential test sites, which were sub-sequentially analyzed based on the amount of forest, its density, tree dominance as well as the land cover classes. Therefore, five different score criteria were introduced for each potential test site. These are shown below in Figure 1. 
 
 <figure>
-    <img src="./Fractional Canopy Cover-score.png" alt="Scoring method">
+    <img src="./score.png" alt="Scoring method">
     <figcaptionFigure 1. Scoring based on the scoring criterion 
  </figcaption>
 </figure>
