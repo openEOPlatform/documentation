@@ -1,4 +1,4 @@
-#Fractional Canopy Cover 
+## Fractional Canopy Cover 
 
 Forests play an essential role in our ecosystem and getting a quantitative measurement on the forest cover is essential for various applications. From understanding ecosystem health, biomass estimation, and monitoring changes over time due to factors like climate change or land use. Higher canopy covers regard for dense forests or other complex ecosystems while lower canopy cover means the presence of grasslands and less sparse vegetation. Getting a percentage of forest cover is also useful in controlling soil erosion to carbon sequestration which serves as an important factor in understanding and mitigating climate change.  
 
@@ -6,7 +6,7 @@ Given all these uses, having an accurate percentage of the forest cover is imper
 
  
 
-#Data Preparation 
+## Data Preparation 
 
 As VHR commercial data from Planet was used for the training of the model, a stratification scheme was devised for getting the maximum coverage throughout the study area.  Additional data which included Copernicus Forest High-Resolution Layers (HRL, https://land.copernicus.eu/pan-european/high-resolution-layers/forests) of “Forest Type” and “Forest Cover Density” as well as the CORINE Land Cover were used to find suitable subsets within the study area to derive the target variable from the VHR data. The study area was divided into 40,000 potential test sites, which were sub-sequentially analyzed based on the amount of forest, its density, tree dominance as well as the land cover classes. Therefore, five different score criteria were introduced for each potential test site. These are shown below in Figure 1. 
 
@@ -19,7 +19,7 @@ Based on the maximum scores within each cell Planet data was ordered for the 300
 
  
 
-#Model training 
+## Model training 
 
 The Forest masks extracted from the VHR data were vectorized to polygons which were then used as training points for the random forest regression model. The model's predictors are the Sentinel-2 Bands 02, 03, 04 and 08 representing Blue/Green/Red/NIR and the Sigma0 Sentinel-1 VV and VH polarizations. 
 
@@ -31,7 +31,7 @@ Figure 2. Process graph showing the prediction of Fractional Canopy Cover with S
 
  
 
-#Predicted Fractional Canopy Cover 
+## Predicted Fractional Canopy Cover 
 
 In the fit_regr_random_forest process, the actual regression calculation is taking place. Based on the random forest implementation a model is created to predict the target variable. The fitting is done in a standard machine learning approach with 70% of the polygons whereas 30% of the polygons are used for the evaluation of the model.  
 
