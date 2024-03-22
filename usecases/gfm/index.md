@@ -44,7 +44,7 @@ gfm_data = conn.load_collection(
     temporal_extent=temporal_extent, 
     bands = ["flood_extent"]
 )
-gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)
+gfm_sum = gfm_data.reduce_dimension(dimension="t", reducer=sum)
 
 gfm_sum_tiff = gfm_sum.save_result(format="GTiff", options={"tile_grid": "wgs84-1degree"})
 ```
@@ -74,13 +74,13 @@ The GHSL is available in `wgs84`. Therefore, the `tile_grid` for the GFM data wa
 
 ## Statistical analysis
 
-In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_dimension(dimension="time", reducer=sum)`. OpenEO provides a range of reducers to choose from. E.g.:
+In the example given above, we picked the `sum` in `gfm_sum = gfm_data.reduce_dimension(dimension="t", reducer=sum)`. OpenEO provides a range of reducers to choose from. E.g.:
 
 - Compute the flood frequency: set the reducer to `mean`
 - Generate the mask of flooded pixels: set the reducer to `any`
 
 ```python
-gfm_flood_frequency = gfm_data.reduce_dimension(dimension="time", reducer=mean)
+gfm_flood_frequency = gfm_data.reduce_dimension(dimension="t", reducer=mean)
 
 gfm_flood_frequency_tiff = gfm_flood_frequency.save_result(format="GTiff", options={"tile_grid": "wgs84-1degree"})
 ```
@@ -104,7 +104,7 @@ gfm_data = conn.load_collection(
 
 # retrieve all pixels which have been detected as water during the given period
 # -> observed water
-observed_water = gfm_data.reduce_dimension(dimension="bands", reducer=any).reduce_dimension(dimension="time", reducer=any)
+observed_water = gfm_data.reduce_dimension(dimension="bands", reducer=any).reduce_dimension(dimension="t", reducer=any)
 
 # Save the result in Equi7Grid and as GeoTiff
 observed_water_tif = observed_water.save_result(format="GTiff", options={"tile_grid": "equi7"})
