@@ -18,7 +18,7 @@ As VHR commercial data from Planet was used for the training of the model, a str
 
 
  
-Based on the maximum scores within each cell Planet data was ordered for the 300 highest scoring areas and then using these tiles, forest masks were created. 3 masks were generated from this VHR dataset including evergreen, deciduous, and mixed forests based on various thresholds of NDVI values. Finally, these masks were summed together and then resampled to 60 meters to be compatible with Sentinel 1 and 2.  
+Based on the maximum scores within each cell Planet data was ordered for the 300 highest-scoring areas and then using these tiles, forest masks were created. 3 masks were generated from this VHR dataset including evergreen, deciduous, and mixed forests based on various thresholds of NDVI values. Finally, these masks were summed together and then resampled to 60 meters to be compatible with Sentinel 1 and 2.  
 
  
 
@@ -26,7 +26,7 @@ Based on the maximum scores within each cell Planet data was ordered for the 300
 
 The Forest masks extracted from the VHR data were vectorized to polygons which were then used as training points for the random forest regression model. The model's predictors are the Sentinel-2 Bands 02, 03, 04 and 08 representing Blue/Green/Red/NIR and the Sigma0 Sentinel-1 VV and VH polarizations. 
 
-The trained model can be stored for further jobs in different regions within the interest area. In figure 2 below a process graph is shown where the trained model is applied on the predictors mentioned above. 
+The trained model can be stored for further jobs in different regions within the interest area. In Figure 2 below a process graph is shown where the trained model is applied on the predictors mentioned above. 
 
 <figure>
     <img src="./PG_prediction.png" alt="Scoring method">
@@ -45,4 +45,12 @@ In the fit_regr_random_forest process, the actual regression calculation is taki
  </figcaption>
 </figure>  
 
+## Validation
 
+Polygons were separated in the initial stage of the project for the validation. 512 polygons with 36 pixels each corresponding to the HRL tree density layer were used for the validation task. The comparison showed a correlation of 0.76 summarised in the plot below in Figure 4.
+
+<figure>
+    <img src="./Validation.png" alt="Scoring method">
+    <figcaption>Figure 4: Correlation plot with HRL tree density polygons
+ </figcaption>
+</figure>
