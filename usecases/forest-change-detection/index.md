@@ -10,6 +10,11 @@ Forests follow a seasonal growth: during the summer months, they carry more leav
 </figure>
 
 This approach can be applied to single pixels, looking into a particular area of interest, or more in general over a wide area, where each pixel time series is treated independently.
+The following figure shows such pixels with detected change from both Sentinel-1 and Sentinel-2
+<figure>
+    <img src="./S1_S2_predictedvsfitted.jpg" alt="S1 and S2 curve fitting and prediction steps">
+    <figcaption>Figure 2: Curve fitting and prediction for Sentinel-1 and Sentinel-2. In blue the S2 B08 and S1SIGÖ VH data and in orange the respective predicted values following the harmonic seasonal function.</figcaption>
+</figure>
 
 In this section, we will show how to combine openEO functionality into a basic change detection pipeline.
 
@@ -84,3 +89,9 @@ curve_prediction = builder.predict_curve(l2a_bands, curve_fitting, fitFunction, 
 </CodeSwitcher>
 
 The difference between the training data and the predicted values following the seasonal model is a key information, which is used to perform the change detection with new data. Please have a look at the [reference notebook](https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC6%20-%20Forest%20Dynamics.ipynb) for the complete pipeline.
+
+The results obtained over an area of South Tyrol in Northern Italy which was hit by the Vaia storm are shown below. Similar damages are detected from Sentinel-1 and Sentinel-2
+<figure>
+    <img src="./Change_S1S2.jpg" alt="Change detection from Sentinel-1 and Sentinel-2">
+    <figcaption>Figure 3: Change detection maps for the Vaia storm from Sentinel-1 and Sentinel-2.</figcaption>
+</figure>
