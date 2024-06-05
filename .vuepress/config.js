@@ -39,6 +39,7 @@ module.exports = {
           { text: 'Overview', link: '/usecases/ard/' },
           { text: 'SAR (Sentinel-1)', link: '/usecases/ard/sar/' },
           { text: 'Multi-Spectral Imagery', link: '/usecases/ard/msi/' },
+	  { text: 'Sen2Like', link: '/usecases/ard/sen2like/' },	
         ] },
         { text: 'Crop Classification', link: '/usecases/crop-classification/' },
         { text: 'Forest Change Detection', link: '/usecases/forest-change-detection/' },
