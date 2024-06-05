@@ -1,5 +1,9 @@
 # Sen2like
 
+::: warning Warning
+To use this service, you have to be registered at openEO platform. If you are not yet registered, you can apply [here](https://openeo.cloud/#plans).
+:::
+
 The sen2like processor was developed by ESA as part of the [EU Copernicus program](https://www.copernicus.eu/en). It creates Sentinel-2 like (Level-2F) fused surface reflectances by harmonizing Sentinel-2 and Landsat 8/Landsat 9 to increase the temporal revisits. Based on the resulting L2F product, multiple indices can be computed, such as the NDVI and LAI.
 The fusion also involves the upscaling of Landsat 8/Landsat 9 data to Sentinel-2 resolution. The Level 2F includes Blue, Green, Red Landsat 8 image bands rescaled to 10.0 m pixel spacing.
 
@@ -9,10 +13,6 @@ The fusion also involves the upscaling of Landsat 8/Landsat 9 data to Sentinel-2
 
 This document describes how to use the sen2like processor in OpenEO for a requested spatio-temporal extent. We’ve prepared a [Jupyter Notebook]( https://github.com/eodcgmbh/sen2like/blob/master/openeo/openeo-sen2like.ipynb) that you can use to run the process.
 
-
-::: warning Warning
-To use this service, you have to be registered at openEO platform. If you are not yet registered, you can apply [here](https://openeo.cloud/#plans).
-:::
 
 ## 1. sen2like for RGB
 
