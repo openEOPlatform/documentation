@@ -1,4 +1,4 @@
-# Sen2like
+# Sen2Like
 
 ::: warning Warning
 To use this service, you have to be registered at openEO platform. If you are not yet registered, you can apply [here](https://openeo.cloud/#plans).
@@ -172,5 +172,5 @@ plt.imshow(data,cmap='Greens')
 plt.colorbar()
 ```
 
-![image](./RGBplot_sen2like.png)
+![image](./NDVIplot_sen2like.png)
 
