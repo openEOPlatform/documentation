@@ -48,7 +48,8 @@ module.exports = {
         { text: 'Large scale processing', link: '/usecases/large-scale-processing/' },
         { text: 'Global flood monitoring', link: '/usecases/gfm/' },
         { text: 'Vessel Detection', link: '/usecases/vessel-detection/' },
-	{ text: 'Fractional canopy Cover', link: '/usecases/Fractional-canopy-Cover/' },         
+	{ text: 'Fractional canopy Cover', link: '/usecases/Fractional-canopy-Cover/' },
+	{ text: 'Crop Conditions', link: '/usecases/crop-conditions/' },          
       ] },      
       {text: 'Processes', items: [
         {text: 'JavaScript & R', link: '/processes/'},
