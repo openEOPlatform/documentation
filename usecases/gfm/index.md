@@ -21,7 +21,10 @@ elements:
 - Reference water mask (permament and seasonal water bodies)
 
 ## Links
-https://extwiki.eodc.eu/GFM
+More documentation can be found in the [GFM Wiki](https://extwiki.eodc.eu/GFM). 
+The Jupyter Notebook that is explained below can be found [here](https://github.com/eodcgmbh/openeo-examples/blob/master/UCs/UC11.ipynb). 
+
+
 
 ## Compute the maximum flood extent
 In this example, we have a closer look at an area in Pakistan, which was ravaged by the unprecedented floods of 2022. The flooding caused severe damage and economic losses and is referred to as the worst flood in the history of Pakistan. 
