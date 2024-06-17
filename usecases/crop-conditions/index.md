@@ -5,12 +5,15 @@
 To use this service, you have to be registered at openEO platform. If you are not yet registered, you can apply [here](https://openeo.cloud/#plans).
 :::
 
-The sen2like processor was developed by ESA as part of the EU Copernicus program. It creates Sentinel-2 like harmonized (Level-2H) or fused (Level-2F) surface reflectances by harmonizing Sentinel-2 and Landsat 8/Landsat 9 to increase the temporal revisits. Based on the resulting L2F product, multiple indices can be computed, such as the NDVI and LAI.
+
+To enable higher time-series resolution vegetation indices (such as NDVI, LAI, FAPAR, FCOVER) than the Sentinel-2 time series, we have implemented the computation based on the Sen2Like processor which enables users to process these indices on-demand.
+
+The Sen2Like processor was developed by ESA as part of the EU Copernicus program. It creates Sentinel-2 like harmonized (Level-2H) or fused (Level-2F) surface reflectances by harmonizing Sentinel-2 and Landsat 8/Landsat 9 to increase the temporal revisits. Based on the resulting L2F product, multiple indices can be computed, such as the NDVI and LAI.
 The fusion also involves the upscaling of Landsat 8/Landsat 9 data to Sentinel-2 resolution. 
 With the new L2F data higher time-series resolution vegetation indices (such as NDVI, LAI, FAPAR, FCOVER) can be calculated.
 
 
-This document describes how to use the sen2like processor in OpenEO for a requested spatio-temporal extent and how to use the new data to calculate indices. We’ve prepared [Jupyter Notebook](https://github.com/eodcgmbh/openeo-examples/blob/master/UCs/UC15-sen2like.ipynb) that you can use to run the Sen2Like process and another [Jupyter Notebook](https://github.com/eodcgmbh/openeo-examples/blob/master/UCs/UC15-indices.ipynb) to calculate some indices.
+This document describes how to use the Sen2Like processor in OpenEO for a requested spatio-temporal extent and how to use the new data to calculate indices. We’ve prepared [Jupyter Notebook](https://github.com/eodcgmbh/openeo-examples/blob/master/UCs/UC15-sen2like.ipynb) that you can use to run the Sen2Like process and another [Jupyter Notebook](https://github.com/eodcgmbh/openeo-examples/blob/master/UCs/UC15-indices.ipynb) to calculate some indices.
 
 
 
