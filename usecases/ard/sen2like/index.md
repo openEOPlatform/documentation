@@ -178,3 +178,114 @@ plt.colorbar()
 ![image](./NDVIplot_sen2like.png)
 
 
+## 3. Sen2Like processing in the openeo web editor
+
+The [openEO web editor](https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.eodc.eu%2Fopeneo%2F1.1.0) is another way to use the Sen2Like processor. To interact with the server, you need to log in first.
+
+When the editor is opened, you can see all previous batch jobs at the bottom, all available collections and processes on the left hand side and the main editor window on the top right side of the window. You can build your own graphs by connecting collections and processes.
+
+The processing graph for the Sen2Like processor looks like this:
+![image](./WE_graph.png)
+
+The structure is the same as in the notebooks. First, the Sentinel-2 data is selected. Then the Sen2Like process is executed, which is then filtered by time, extent and bands. The new data is then saved and can be used individually.
+
+Below the graph, you can switch between the `Visual Model` and `Code`. The Visual Model is the processing graph and Code is the JSON code of the built processing graph and can also be customized. The processing graph then automatically updates again.
+
+The JSON Code for Sen2Like looks like this.
+
+```
+{
+  "process_graph": {
+    "loadcollection1": {
+      "process_id": "load_collection",
+      "arguments": {
+        "bands": [
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B11",
+          "B12"
+        ],
+        "id": "SENTINEL2_L1C",
+        "spatial_extent": {
+          "west": 15.2,
+          "east": 17.6,
+          "south": 47.9,
+          "north": 49.5
+        },
+        "temporal_extent": [
+          "2023-06-01",
+          "2023-09-30"
+        ]
+      }
+    },
+    "sen2like1": {
+      "process_id": "sen2like",
+      "arguments": {
+        "data": {
+          "from_node": "loadcollection1"
+        }
+      }
+    },
+    "filtertemporal1": {
+      "process_id": "filter_temporal",
+      "arguments": {
+        "data": {
+          "from_node": "sen2like1"
+        },
+        "extent": [
+          "2023-06-01",
+          "2023-06-30"
+        ]
+      }
+    },
+    "filterbbox1": {
+      "process_id": "filter_bbox",
+      "arguments": {
+        "data": {
+          "from_node": "filtertemporal1"
+        },
+        "extent": {
+          "west": 16.6,
+          "east": 16.7,
+          "north": 48,
+          "south": 47.9
+        }
+      }
+    },
+    "filterbands1": {
+      "process_id": "filter_bands",
+      "arguments": {
+        "bands": [
+          "B02",
+          "B03",
+          "B04"
+        ],
+        "data": {
+          "from_node": "filterbbox1"
+        }
+      }
+    },
+    "saveresult1": {
+      "process_id": "save_result",
+      "arguments": {
+        "data": {
+          "from_node": "filterbands1"
+        },
+        "format": "NetCDF",
+        "options": {}
+      },
+      "result": true
+    }
+  },
+  "parameters": []
+}
+```
+
+
+
