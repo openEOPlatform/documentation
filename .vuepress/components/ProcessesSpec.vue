@@ -1,12 +1,14 @@
 <template>
-	<DocGen :document="documentUrl" apiVersion="1.1.0" />
+	<DocGen :document="documentUrl" apiVersion="1.1.0" showExperimentalByDefault />
 </template>
 
 <script>
+import DocGen from '@openeo/processes-docgen/src/DocGen.vue';
+
 export default {
 	name: 'ProcessesSpec',
 	components: {
-		DocGen: () => import('@openeo/processes-docgen/src/DocGen.vue') 
+		DocGen
 	},
 	computed: {
 		documentUrl() {
@@ -15,3 +17,9 @@ export default {
 	}
 };
 </script>
+
+<style>
+.docgen section.action-bar {
+	display: none !important;
+}
+</style>

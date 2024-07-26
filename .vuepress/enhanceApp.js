@@ -1,3 +1,9 @@
+// for openeo-processes-docgen
+// see https://github.com/vuejs/vuepress/issues/1434
+if (typeof window !== "undefined") {
+	window.global = window;
+}
+
 export default ({ router, Vue }) => {
 	Vue.config.ignoredElements = [
 		'redoc'
