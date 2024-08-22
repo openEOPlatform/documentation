@@ -45,7 +45,7 @@ gfm_data = conn.load_collection(
     collection, 
     spatial_extent=spatial_extent, 
     temporal_extent=temporal_extent, 
-    bands = ["flood_extent"]
+    bands = ["ensemble_flood_extent"]
 )
 gfm_sum = gfm_data.reduce_dimension(dimension="t", reducer=sum)
 
@@ -91,7 +91,7 @@ gfm_flood_frequency_tiff = gfm_flood_frequency.save_result(format="GTiff", optio
 ## Observed water (flood_extent + refwater)
 
 The observed water combines both flood extent and the reference water mask. The reference water mask represents permanent or seasonal water bodies, which are clearly distinct from flood events.
-With openEO, the two layers `flood_extent` and `refwater` can be combined directly and stored into one file. No need to download layers individually.
+With openEO, the two layers `ensemble_flood_extent` and `reference_water_mask` can be combined directly and stored into one file. No need to download layers individually.
 
 ```python
 spatial_extent  = {'west': 67.5, 'east': 70, 'south': 24.5, 'north': 26}
@@ -102,7 +102,7 @@ gfm_data = conn.load_collection(
     collection, 
     spatial_extent=spatial_extent, 
     temporal_extent=temporal_extent, 
-    bands = ["flood_extent", "refwater"]
+    bands = ["ensemble_flood_extent", "reference_water_mask"]
 )
 
 # retrieve all pixels which have been detected as water during the given period
