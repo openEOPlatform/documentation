@@ -1,8 +1,6 @@
 # Provisioning a Workspace
 
-John wants to create a user workspace at EODC, as he does not have a object-storage solution himself.
-
-It's a very simple task to provision a workspace at EODC, provided that you are already an openEO user.
+It's a very simple task to provision a workspace, provided that you are already an openEO user.
 
 All you need to do in order to create a workspace from scratch is post to the /workspaces endpoint
 in the openEO API with a body consisting of a create intent and the preferred title of your workspace.

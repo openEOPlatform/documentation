@@ -30,6 +30,6 @@ This method is less relevant to this tutorial, but you can always use a third-pa
 
 Some tools:
 
-- S3 Browser (for S3 systems like Ceph, you can use this for internal EODC Workspace)
+- S3 Browser (for S3 systems like Ceph)
 - Microsoft Azure Storage Explorer (for Azure Blob Storage)
 - ...

@@ -14,7 +14,7 @@ To export data to a workspace using the openeo library, you can simply use the f
 ```python
 import openeo
 
-connection = openeo.connect("https://example.openeo.eu/openeo/1.3.0")
+connection = openeo.connect("https://example.openeo.eu/openeo/1.2.0")
 connection = connection.authenticate_oidc(provider_id="egi")
 ```
 
