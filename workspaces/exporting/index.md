@@ -33,6 +33,7 @@ collection = connection.load_collection(
 )
 
 result = collection.save_result().process(
-    "export_workspace", arguments={"workspace": "WORKSPACE_NAME"}
+    "export_workspace", arguments={"workspace": WORKSPACE_NAME, "merge": None}, data=THIS
 )
+
 ```
