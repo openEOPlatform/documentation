@@ -2,7 +2,7 @@
 
 ## User Story: Registering a Workspace
 
-Instead of creating a internal workspace, you can register your own workspace and use it in much the same way.
+Instead of creating an internal workspace, you can register your own workspace and use it in much the same way.
 
 All you need to do is post to the "/workspaces" endpoint with a registering intent and submit your credentials.
 
