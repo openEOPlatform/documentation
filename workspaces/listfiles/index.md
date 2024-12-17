@@ -8,7 +8,7 @@ There is a variety of ways to list your workspace files.
 
 #### 1) openEO API
 
-There is only single step involved, assuming you already have a workspace with some data in it, you can simply make a request to the /workspaces/{WORKSPACE_NAME}/files endpoint and get a list of files returned.
+There is only a single step involved, assuming you already have a workspace with some data in it, you can simply make a request to the /workspaces/{WORKSPACE_NAME}/files endpoint and get a list of files returned.
 
 
 ```python
