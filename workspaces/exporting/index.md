@@ -4,7 +4,7 @@ In order to save results from openEO jobs to workspaces, make sure that either y
 
 To then export your data, add the export_workspace process after your save_result process in the process graph.
 
-Make sure to pass your workspaces name as an the workspace argument
+Make sure to pass your workspaces name as a workspace argument
 
 ## Using the openeo python library
 
