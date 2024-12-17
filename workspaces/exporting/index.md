@@ -20,6 +20,8 @@ connection = connection.authenticate_oidc(provider_id="egi")
 
 
 ```python
+from openeo.rest.datacube import THIS
+
 collection = connection.load_collection(
     collection_id="boa_sentinel_2",
     spatial_extent={
