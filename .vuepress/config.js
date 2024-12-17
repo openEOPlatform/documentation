@@ -60,6 +60,15 @@ module.exports = {
         { text: 'Accounting', link: '/federation/accounting.html'},
         { text: 'Federation Aspects', link: '/federation/index.html'},
         { text: 'Federation Contract', link: '/federation/backends/index.html' },
+        { text: 'Workspaces', items: [
+          { text: 'Overview', link: '/workspaces/index.md' },
+          { text: 'Provisioning a workspace', link: '/workspaces/provisioning/index.md' },
+          { text: 'Registering a workspace', link: '/workspaces/registering/index.md' },
+          { text: 'Exporting data to a workspace', link: '/workspaces/exporting/index.md' },
+          { text: 'Loading data from a workspace', link: '/workspaces/loading/index.md' },
+          { text: 'Listing Files', link: '/workspaces/listfiles/index.md' },
+          { text: 'User Collections', link: '/workspaces/usercollections/index.md' },
+        ]},
 /*      { text: 'Federation Contract', items: [
           { text: 'Introduction', link: '/federation/backends/' },
           { text: 'Collections', link: '/federation/backends/collections.html' },
