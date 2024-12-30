@@ -2,7 +2,7 @@
 
 ## Workspaces Overview
 
-Workspaces are an abstraction of object-storage for the openEO Platform. They allow you to have more control over their data, from where it is saved, to where it is loaded from.
+Workspaces are an abstraction of object-storage for the openEO Platform. They allow you to have more control over your data, from where it is saved, to where it is loaded from.
 
 There are multiple options available for the creation of a workspace, you can either provision one at a given backend, or register your own, so you can, for instance,
 save openEO results directly to a s3 bucket of your own choosing.
