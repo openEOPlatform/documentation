@@ -61,6 +61,7 @@ module.exports = {
         { text: 'Federation Aspects', link: '/federation/index.html'},
         { text: 'Federation Contract', link: '/federation/backends/index.html' },
         { text: 'Workspaces', link: '/workspaces/index.md' },
+        { text: 'Client Credentials', link: '/advanced/client-credentials/index.md' },
 /*      { text: 'Federation Contract', items: [
           { text: 'Introduction', link: '/federation/backends/' },
           { text: 'Collections', link: '/federation/backends/collections.html' },
