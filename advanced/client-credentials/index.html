@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Client credentials | openEO Platform Documentation</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="One of the most important properties for a future-oriented platform on earth observation is the orientation towards simple operation, with a special focus on efficiency of evaluation and availability. Complexity is kept hidden in the background to direct your focus on the data. This is done on one hand by the use of an aggregate API to access the infrastructure, but also by improved user-faced graphical processing. For access to the API, the user has the option to incorporate his own preferences, by choosing between several clients.">
+    
+    <link rel="preload" href="/assets/css/0.styles.c7169b72.css" as="style"><link rel="preload" href="/assets/js/app.3e2ccb9e.js" as="script"><link rel="preload" href="/assets/js/11.53cfae31.js" as="script"><link rel="preload" href="/assets/js/5.93ea5f91.js" as="script"><link rel="preload" href="/assets/js/63.198b5b4d.js" as="script"><link rel="prefetch" href="/assets/js/1.f8f7f058.js"><link rel="prefetch" href="/assets/js/10.3a7f20cd.js"><link rel="prefetch" href="/assets/js/12.9b226ff9.js"><link rel="prefetch" href="/assets/js/13.8811e769.js"><link rel="prefetch" href="/assets/js/14.3b456315.js"><link rel="prefetch" href="/assets/js/15.56bba556.js"><link rel="prefetch" href="/assets/js/16.bcbb8729.js"><link rel="prefetch" href="/assets/js/17.eee100d7.js"><link rel="prefetch" href="/assets/js/18.2d3e9ec2.js"><link rel="prefetch" href="/assets/js/2.d00ff5b0.js"><link rel="prefetch" href="/assets/js/21.4f1eda13.js"><link rel="prefetch" href="/assets/js/22.2b40d64c.js"><link rel="prefetch" href="/assets/js/23.1c6da364.js"><link rel="prefetch" href="/assets/js/24.99b1cdd9.js"><link rel="prefetch" href="/assets/js/25.cfd05e5d.js"><link rel="prefetch" href="/assets/js/26.0683763c.js"><link rel="prefetch" href="/assets/js/27.a217f9b2.js"><link rel="prefetch" href="/assets/js/28.84e0dcbe.js"><link rel="prefetch" href="/assets/js/29.35121048.js"><link rel="prefetch" href="/assets/js/3.1fe0858b.js"><link rel="prefetch" href="/assets/js/30.03827122.js"><link rel="prefetch" href="/assets/js/31.972ea6ab.js"><link rel="prefetch" href="/assets/js/32.ec8787c8.js"><link rel="prefetch" href="/assets/js/33.c1e5ffd0.js"><link rel="prefetch" href="/assets/js/34.b4a1342d.js"><link rel="prefetch" href="/assets/js/35.c82f837e.js"><link rel="prefetch" href="/assets/js/36.e88b8d50.js"><link rel="prefetch" href="/assets/js/37.5740e8ce.js"><link rel="prefetch" href="/assets/js/38.a0ed26cd.js"><link rel="prefetch" href="/assets/js/39.2ff5595c.js"><link rel="prefetch" href="/assets/js/4.6d61fd4f.js"><link rel="prefetch" href="/assets/js/40.4891c009.js"><link rel="prefetch" href="/assets/js/41.7c33ba56.js"><link rel="prefetch" href="/assets/js/42.1e7c3c13.js"><link rel="prefetch" href="/assets/js/43.ea752cc7.js"><link rel="prefetch" href="/assets/js/44.9185af5a.js"><link rel="prefetch" href="/assets/js/45.d104b396.js"><link rel="prefetch" href="/assets/js/46.3aa7fac0.js"><link rel="prefetch" href="/assets/js/47.48a97eef.js"><link rel="prefetch" href="/assets/js/48.6af60607.js"><link rel="prefetch" href="/assets/js/49.29e4238b.js"><link rel="prefetch" href="/assets/js/50.22489ccd.js"><link rel="prefetch" href="/assets/js/51.0defc51e.js"><link rel="prefetch" href="/assets/js/52.5057da00.js"><link rel="prefetch" href="/assets/js/53.4dab5959.js"><link rel="prefetch" href="/assets/js/54.e73a664c.js"><link rel="prefetch" href="/assets/js/55.b710d170.js"><link rel="prefetch" href="/assets/js/56.2f0f880c.js"><link rel="prefetch" href="/assets/js/57.6c62528b.js"><link rel="prefetch" href="/assets/js/58.70cd5be6.js"><link rel="prefetch" href="/assets/js/59.9c035ab1.js"><link rel="prefetch" href="/assets/js/6.da9938b7.js"><link rel="prefetch" href="/assets/js/60.2f68be4f.js"><link rel="prefetch" href="/assets/js/61.2e4d980d.js"><link rel="prefetch" href="/assets/js/62.db883d26.js"><link rel="prefetch" href="/assets/js/64.9fb3284c.js"><link rel="prefetch" href="/assets/js/65.04a17249.js"><link rel="prefetch" href="/assets/js/66.094a1ce0.js"><link rel="prefetch" href="/assets/js/67.9c2878c1.js"><link rel="prefetch" href="/assets/js/68.1b400af9.js"><link rel="prefetch" href="/assets/js/69.a7ec7108.js"><link rel="prefetch" href="/assets/js/7.1c6c8409.js"><link rel="prefetch" href="/assets/js/70.d4116030.js"><link rel="prefetch" href="/assets/js/71.cc707a71.js"><link rel="prefetch" href="/assets/js/72.2ba6fca1.js"><link rel="prefetch" href="/assets/js/73.0843cc74.js"><link rel="prefetch" href="/assets/js/74.efae17d1.js"><link rel="prefetch" href="/assets/js/75.cc341a2a.js"><link rel="prefetch" href="/assets/js/76.d57e0864.js"><link rel="prefetch" href="/assets/js/77.664383e3.js"><link rel="prefetch" href="/assets/js/78.8ff3c4c0.js"><link rel="prefetch" href="/assets/js/79.86381d5f.js"><link rel="prefetch" href="/assets/js/8.ac991f6c.js"><link rel="prefetch" href="/assets/js/80.45892bb7.js"><link rel="prefetch" href="/assets/js/81.ce56f334.js"><link rel="prefetch" href="/assets/js/82.34795382.js"><link rel="prefetch" href="/assets/js/83.398c076a.js"><link rel="prefetch" href="/assets/js/84.5a5f1b5e.js"><link rel="prefetch" href="/assets/js/85.c3a93175.js"><link rel="prefetch" href="/assets/js/86.6d18d163.js"><link rel="prefetch" href="/assets/js/87.2cd5f80c.js"><link rel="prefetch" href="/assets/js/9.179ec71e.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.23f66b9d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c7169b72.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://openeo.cloud/wp-content/themes/openeo_platform/images/logo-pages.svg" alt="openEO Platform Documentation" class="logo"> <span class="site-name can-hide">openEO Platform Documentation</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/data-collections/" class="nav-link">
+  Datasets
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Get Started" class="dropdown-title"><span class="title">Get Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Get Started" class="mobile-dropdown-title"><span class="title">Get Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/join/free_trial.html" class="nav-link">
+  Free Trial Registration
+</a></li><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/datacubes.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Data Cubes
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><h4>
+          Client Libraries
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/getting-started/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/getting-started/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/getting-started/r/" class="nav-link">
+  R
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Development Environments
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/getting-started/jupyterlab/" class="nav-link">
+  JupyterLab (Python)
+</a></li><li class="dropdown-subitem"><a href="/getting-started/editor/" class="nav-link">
+  Editor
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/cookbook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Cookbook
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/getting-started/client-side-processing/" class="nav-link">
+  Client-Side Processing (Python)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Clients" class="dropdown-title"><span class="title">Clients</span> <span class="arrow down"></span></button> <button type="button" aria-label="Clients" class="mobile-dropdown-title"><span class="title">Clients</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-js-client/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JavaScript
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-python-client/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Python
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-r-client/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  R
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Use Cases" class="dropdown-title"><span class="title">Use Cases</span> <span class="arrow down"></span></button> <button type="button" aria-label="Use Cases" class="mobile-dropdown-title"><span class="title">Use Cases</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/cookbook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Cookbook
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><h4>
+          Analysis-Ready Data (ARD)
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/usecases/ard/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/sar/" class="nav-link">
+  SAR (Sentinel-1)
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/msi/" class="nav-link">
+  Multi-Spectral Imagery
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/sen2like/" class="nav-link">
+  Sen2Like
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/usecases/crop-classification/" class="nav-link">
+  Crop Classification
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/forest-change-detection/" class="nav-link">
+  Forest Change Detection
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/landcover/" class="nav-link">
+  Land Cover Classification
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/no2-monitoring/" class="nav-link">
+  NO₂ monitoring
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/large-scale-processing/" class="nav-link">
+  Large scale processing
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/gfm/" class="nav-link">
+  Global flood monitoring
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/vessel-detection/" class="nav-link">
+  Vessel Detection
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/Fractional-canopy-Cover/" class="nav-link">
+  Fractional canopy Cover
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/crop-conditions/" class="nav-link">
+  Crop Conditions
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Processes" class="dropdown-title"><span class="title">Processes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Processes" class="mobile-dropdown-title"><span class="title">Processes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/processes/" class="nav-link">
+  JavaScript &amp; R
+</a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Python
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/file-formats/" class="nav-link">
+  File Formats
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Advanced" class="dropdown-title"><span class="title">Advanced</span> <span class="arrow down"></span></button> <button type="button" aria-label="Advanced" class="mobile-dropdown-title"><span class="title">Advanced</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/federation/accounting.html" class="nav-link">
+  Accounting
+</a></li><li class="dropdown-item"><!----> <a href="/federation/index.html" class="nav-link">
+  Federation Aspects
+</a></li><li class="dropdown-item"><!----> <a href="/federation/backends/index.html" class="nav-link">
+  Federation Contract
+</a></li><li class="dropdown-item"><!----> <a href="/workspaces/index.html" class="nav-link">
+  Workspaces
+</a></li><li class="dropdown-item"><!----> <a href="/advanced/client-credentials/index.html" class="nav-link">
+  Client Credentials
+</a></li><li class="dropdown-item"><!----> <a href="/api/" class="nav-link">
+  HTTP API
+</a></li></ul></div></div><div class="nav-item"><a href="https://openeo.cloud/contact/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Contact
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/data-collections/" class="nav-link">
+  Datasets
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Get Started" class="dropdown-title"><span class="title">Get Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Get Started" class="mobile-dropdown-title"><span class="title">Get Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/join/free_trial.html" class="nav-link">
+  Free Trial Registration
+</a></li><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/datacubes.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Data Cubes
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><h4>
+          Client Libraries
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/getting-started/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/getting-started/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/getting-started/r/" class="nav-link">
+  R
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Development Environments
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/getting-started/jupyterlab/" class="nav-link">
+  JupyterLab (Python)
+</a></li><li class="dropdown-subitem"><a href="/getting-started/editor/" class="nav-link">
+  Editor
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/cookbook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Cookbook
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/getting-started/client-side-processing/" class="nav-link">
+  Client-Side Processing (Python)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Clients" class="dropdown-title"><span class="title">Clients</span> <span class="arrow down"></span></button> <button type="button" aria-label="Clients" class="mobile-dropdown-title"><span class="title">Clients</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-js-client/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JavaScript
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-python-client/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Python
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-r-client/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  R
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Use Cases" class="dropdown-title"><span class="title">Use Cases</span> <span class="arrow down"></span></button> <button type="button" aria-label="Use Cases" class="mobile-dropdown-title"><span class="title">Use Cases</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://openeo.org/documentation/1.0/cookbook/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Cookbook
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><h4>
+          Analysis-Ready Data (ARD)
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/usecases/ard/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/sar/" class="nav-link">
+  SAR (Sentinel-1)
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/msi/" class="nav-link">
+  Multi-Spectral Imagery
+</a></li><li class="dropdown-subitem"><a href="/usecases/ard/sen2like/" class="nav-link">
+  Sen2Like
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/usecases/crop-classification/" class="nav-link">
+  Crop Classification
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/forest-change-detection/" class="nav-link">
+  Forest Change Detection
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/landcover/" class="nav-link">
+  Land Cover Classification
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/no2-monitoring/" class="nav-link">
+  NO₂ monitoring
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/large-scale-processing/" class="nav-link">
+  Large scale processing
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/gfm/" class="nav-link">
+  Global flood monitoring
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/vessel-detection/" class="nav-link">
+  Vessel Detection
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/Fractional-canopy-Cover/" class="nav-link">
+  Fractional canopy Cover
+</a></li><li class="dropdown-item"><!----> <a href="/usecases/crop-conditions/" class="nav-link">
+  Crop Conditions
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Processes" class="dropdown-title"><span class="title">Processes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Processes" class="mobile-dropdown-title"><span class="title">Processes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/processes/" class="nav-link">
+  JavaScript &amp; R
+</a></li><li class="dropdown-item"><!----> <a href="https://open-eo.github.io/openeo-python-client/api.html#module-openeo.rest.datacube" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Python
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/file-formats/" class="nav-link">
+  File Formats
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Advanced" class="dropdown-title"><span class="title">Advanced</span> <span class="arrow down"></span></button> <button type="button" aria-label="Advanced" class="mobile-dropdown-title"><span class="title">Advanced</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/federation/accounting.html" class="nav-link">
+  Accounting
+</a></li><li class="dropdown-item"><!----> <a href="/federation/index.html" class="nav-link">
+  Federation Aspects
+</a></li><li class="dropdown-item"><!----> <a href="/federation/backends/index.html" class="nav-link">
+  Federation Contract
+</a></li><li class="dropdown-item"><!----> <a href="/workspaces/index.html" class="nav-link">
+  Workspaces
+</a></li><li class="dropdown-item"><!----> <a href="/advanced/client-credentials/index.html" class="nav-link">
+  Client Credentials
+</a></li><li class="dropdown-item"><!----> <a href="/api/" class="nav-link">
+  HTTP API
+</a></li></ul></div></div><div class="nav-item"><a href="https://openeo.cloud/contact/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Contact
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Client credentials</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/advanced/client-credentials/#quick-oidc-overview" class="sidebar-link">Quick OIDC overview</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/advanced/client-credentials/#client-credentials-flow" class="sidebar-link">Client credentials flow</a></li></ul></li><li><a href="/advanced/client-credentials/#registering-a-new-oidc-client-for-openeo-platform-with-egi-check-in" class="sidebar-link">Registering a new OIDC client for openEO Platform with EGI Check-in</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/advanced/client-credentials/#some-notes-on-egi-environments-and-openeo-platform-support" class="sidebar-link">Some notes on EGI environments and openEO Platform support</a></li><li class="sidebar-sub-header"><a href="/advanced/client-credentials/#step-by-step-guide-to-register-a-new-oidc-client-for-client-credentials" class="sidebar-link">Step-by-step guide to register a new OIDC client for client credentials</a></li></ul></li><li><a href="/advanced/client-credentials/#caveats-and-security-considerations" class="sidebar-link">Caveats and security considerations</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="client-credentials"><a href="#client-credentials" class="header-anchor">#</a> Client credentials</h1> <h2 id="quick-oidc-overview"><a href="#quick-oidc-overview" class="header-anchor">#</a> Quick OIDC overview</h2> <p>User authentication in openEO is handled with the OpenID Connect (OIDC) protocol.
+In most cases and contexts, users will authenticate with OIDC authentication flows
+like the Authorization Code Flow (e.g. when using the openEO Web Editor)
+or the Device Code Flow (e.g. when using the openEO Python client).
+These flows typically involve some form of user interaction in a web browser at some point
+to complete the authentication.</p> <h3 id="client-credentials-flow"><a href="#client-credentials-flow" class="header-anchor">#</a> Client credentials flow</h3> <p>Some use cases require a non-interactive or &quot;machine-to-machine&quot; way of authentication,
+e.g. to allow running processing workflows in unattended environments.
+In OIDC this is typically achieved with the &quot;Client Credentials&quot; flow.
+This is a non-interactive flow based on a static client ID and client secret.
+Often, it is also referred to as &quot;service account&quot; authentication.</p> <p>The openEO Python client library has built-in support for service accounts and the client credentials flow,
+with the <a href="https://open-eo.github.io/openeo-python-client/auth.html#oidc-authentication-client-credentials-flow" target="_blank" rel="noopener noreferrer"><code>authenticate_oidc_client_credentials()</code> method<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+as follows:</p> <div class="language-python extra-class"><pre class="language-python"><code>connection<span class="token punctuation">.</span>authenticate_oidc_client_credentials<span class="token punctuation">(</span>
+    client_id<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+    client_secret<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token comment"># Note: Do not hardcode the secret here!</span>
+<span class="token punctuation">)</span>
+</code></pre></div><h2 id="registering-a-new-oidc-client-for-openeo-platform-with-egi-check-in"><a href="#registering-a-new-oidc-client-for-openeo-platform-with-egi-check-in" class="header-anchor">#</a> Registering a new OIDC client for openEO Platform with EGI Check-in</h2> <p>As illustrated above, using client credentials for authentication involves a <em>client ID</em> and <em>client secret</em>.
+This practically means that one has to register a new OIDC client with the OIDC provider.</p> <p>openEO Platform uses <a href="https://www.egi.eu/service/check-in/" target="_blank" rel="noopener noreferrer">EGI Check-in<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> as the OIDC identity provider (IdP).
+While EGI Check-in itself provides extensive documentation on <a href="https://docs.egi.eu/providers/check-in/sp/#openid-connect-service-provider" target="_blank" rel="noopener noreferrer">how to register as OIDC Service Provider in general<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>,
+here we provide a more focused guide on how to register a new OIDC client specifically for client credentials in openEO Platform.</p> <p><a id="egi-enviroments"></a></p> <h3 id="some-notes-on-egi-environments-and-openeo-platform-support"><a href="#some-notes-on-egi-environments-and-openeo-platform-support" class="header-anchor">#</a> Some notes on EGI environments and openEO Platform support</h3> <p>EGI Check-in provides three environments: &quot;production&quot;, &quot;demo&quot; and &quot;development&quot;
+(each of which corresponds to <a href="https://docs.egi.eu/providers/check-in/sp/#endpoints" target="_blank" rel="noopener noreferrer">different OIDC endpoints<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>).</p> <p>After you initiate the procedure to create a new OIDC client in the production and demo environments,
+you have to wait for <em>approval by an EGI administrator</em>.
+Clients created in the development environment can be self-reviewed without the need to wait for official approval,
+which is handy if you just want to test out the client credentials flow for your use case,
+but don't want to spend too much time upfront on fine-tuning all the registration details.</p> <p>Note however that the EGI environments are also linked to the openEO Platform environments:</p> <ul><li>The production instance of openEO Platform
+(at <a href="https://openeo.cloud/" target="_blank" rel="noopener noreferrer">openeo.cloud<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>)
+only works with the production environment of EGI Check-in.</li> <li>The development instance of openEO Platform
+at (<a href="https://openeocloud-dev.vito.be/" target="_blank" rel="noopener noreferrer">openeocloud-dev.vito.be<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>)
+supports both the production environment of EGI Check-in (the default)
+as well as the development environment of EGI Check-in,
+but that has to be specified explicitly,
+e.g. by providing and additional <code>provider_id=&quot;egi-dev&quot;</code> when calling <code>authenticate_oidc_client_credentials()</code>.</li></ul> <h3 id="step-by-step-guide-to-register-a-new-oidc-client-for-client-credentials"><a href="#step-by-step-guide-to-register-a-new-oidc-client-for-client-credentials" class="header-anchor">#</a> Step-by-step guide to register a new OIDC client for client credentials</h3> <ol><li>Go to the <a href="https://aai.egi.eu/federation" target="_blank" rel="noopener noreferrer">EGI Federation Registry<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> and log in</li> <li>Click on &quot;Manage services&quot; on the left menu bar</li> <li>Click &quot;+ New service&quot; button to start creating a new service</li></ol> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>That the form you are facing now has two tabs: &quot;General&quot; and &quot;Protocol Specific&quot;.
+You have to fill in both tabs fully before you can submit this form.
+Also note that if there is something wrong or missing in the form,
+the error messages might not always be very clear about which tab they refer to.</p></div> <ol start="4"><li><p>Fill in the first tab with general information.
+Also see the <a href="https://docs.egi.eu/providers/check-in/sp/#general-information" target="_blank" rel="noopener noreferrer">EGI Check-in documentation on general client information<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.
+Some additional notes:</p> <ul><li>Pick the desired &quot;Integration Environment&quot;: &quot;Production&quot; or &quot;Development&quot; as discussed <a href="#egi-enviroments">above</a></li> <li>Contacts: you have to enter at least one email address for each of the types (admin, technical, support, security).</li></ul></li> <li><p>Switch to the second tab &quot;Protocol Specific&quot; and select &quot;OIDC Service&quot;</p></li> <li><p>Fill in the OIDC specific sub form, with most importantly:</p> <ul><li><strong>Client ID</strong>: This is the ID that you will use in your client code to identify your client.
+It should be unique within the OIDC provider, so make sure to pick a descriptive and meaningful name.
+You can also choose to leave it empty to let the OIDC provider generate one for you.</li> <li><strong>Application Type</strong>: leave it at &quot;Web&quot;</li> <li><strong>Grant Types</strong>: only enable &quot;client credentials&quot; (disable other options that might be enabled by default).</li> <li><strong>Token Endpoint Authorization Method</strong>: leave it at &quot;Client Secret over HTTP Basic&quot;</li> <li><strong>Client Secret</strong>: leave the checkbox enabled</li> <li>You can leave all other fields as they are</li></ul></li> <li><p>Click &quot;Submit&quot; to create the new OIDC client.
+If there are any errors or missing information, you will be notified about them.
+As mentioned, make sure to verify both tabs for any missing or incorrect information.</p></li> <li><p>If submission was successful and you go to the &quot;Manage Services&quot; overview,
+you should see your new service listed there, with &quot;Registration Pending&quot; status.</p></li> <li><p>If you picked the production environment, you have to wait now for approval by an EGI administrator.
+You should get approval related emails on the &quot;admin&quot; email address provided earlier.</p> <p>If you picked the development environment, you can self-approve the client as follows.
+Click the corresponding &quot;Review&quot; button on service overview to go to a review view of the client information.
+Click the &quot;Review&quot; button at the top to fold out a more detailed review form.
+Select the &quot;Approve&quot; option and click the &quot;Submit Review&quot; button.
+Your client should now be approved and ready to use:
+the status on service overview should now state &quot;Deployed&quot;.</p></li></ol> <h2 id="caveats-and-security-considerations"><a href="#caveats-and-security-considerations" class="header-anchor">#</a> Caveats and security considerations</h2> <ul><li><p>Treat the client secret securely, like a password.
+Take extra care to not leak it accidentally.
+For example, given the simplicity of the <code>authenticate_oidc_client_credentials()</code> example snippet above,
+it might be tempting to hard-code the client secret in scripts or notebooks,
+potentially leading to its permanent storage in version control repositories.</p> <p>Instead, read the client secret from a secure location
+(e.g. a private file outside the reach of the version control repositories),
+or leverage environment variables (e.g as directly <a href="https://open-eo.github.io/openeo-python-client/auth.html#oidc-client-credentials-using-environment-variables" target="_blank" rel="noopener noreferrer">supported by the openEO Python client library<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>).</p></li> <li><p>The client credentials only identify an OAuth <em>client</em> or <em>service account</em>,
+not a personal <em>user</em> account.
+This means that openEO resources such as openEO batch jobs, their results, UDP's, etc
+from one identity are not available to the other.
+For example, batch jobs originally created with a service account
+cannot be listed when using a personal account.</p></li> <li><p>The client credentials flow is not supported in the openEO Web Editor.
+As mentioned above,
+this practically means that it can not be used to track the progress and
+status of batch jobs created with a service account.
+However, it is still possible to approximate the batch job overview of the web editor
+with a Jupyter Notebook using the openEO Python client library.</p></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/openEOPlatform/documentation/edit/main/advanced/client-credentials/index.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/21/2025, 5:44:05 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3e2ccb9e.js" defer></script><script src="/assets/js/11.53cfae31.js" defer></script><script src="/assets/js/5.93ea5f91.js" defer></script><script src="/assets/js/63.198b5b4d.js" defer></script>
+  </body>
+</html>
